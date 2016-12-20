@@ -65,6 +65,3 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots
 fastlane/test_output
-
-# So that my base url isn't checked in and public
-AppConfig.swift
