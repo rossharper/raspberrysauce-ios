@@ -1,0 +1,925 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9111B1F61E0946F700B309D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111B1F51E0946F700B309D5 /* AppDelegate.swift */; };
+		9111B1F81E0946F700B309D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111B1F71E0946F700B309D5 /* ViewController.swift */; };
+		9111B1FB1E0946F700B309D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9111B1F91E0946F700B309D5 /* Main.storyboard */; };
+		9111B1FD1E0946F700B309D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9111B1FC1E0946F700B309D5 /* Assets.xcassets */; };
+		9111B2001E0946F700B309D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9111B1FE1E0946F700B309D5 /* LaunchScreen.storyboard */; };
+		9111B20B1E0946F700B309D5 /* raspberrysauce_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111B20A1E0946F700B309D5 /* raspberrysauce_iosTests.swift */; };
+		9111B2161E0946F700B309D5 /* raspberrysauce_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111B2151E0946F700B309D5 /* raspberrysauce_iosUITests.swift */; };
+		912E89641E09E7420074A8A4 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912E89631E09E7420074A8A4 /* AppConfig.swift */; };
+		916A958D1E09991700C512D3 /* SigningInProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916A958C1E09991700C512D3 /* SigningInProgressViewController.swift */; };
+		916A958F1E09A32300C512D3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916A958E1E09A32300C512D3 /* MainViewController.swift */; };
+		916A95911E09A58700C512D3 /* TemperatureProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916A95901E09A58700C512D3 /* TemperatureProvider.swift */; };
+		916A95931E09A5E400C512D3 /* Temperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916A95921E09A5E400C512D3 /* Temperature.swift */; };
+		916A95951E09A66900C512D3 /* SauceApiTemperatureProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916A95941E09A66900C512D3 /* SauceApiTemperatureProvider.swift */; };
+		916A95971E09A70900C512D3 /* TemperatureProviderFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916A95961E09A70900C512D3 /* TemperatureProviderFactory.swift */; };
+		916A95991E09A76900C512D3 /* NetworkingFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916A95981E09A76900C512D3 /* NetworkingFactory.swift */; };
+		916A959B1E09A7CF00C512D3 /* AuthenticatedNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916A959A1E09A7CF00C512D3 /* AuthenticatedNetworking.swift */; };
+		916A95A21E09C2D300C512D3 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 916A95A01E09C2D300C512D3 /* Interface.storyboard */; };
+		916A95A41E09C2D300C512D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 916A95A31E09C2D300C512D3 /* Assets.xcassets */; };
+		916A95AB1E09C2D300C512D3 /* raspberrysaucewatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 916A95AA1E09C2D300C512D3 /* raspberrysaucewatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		916A95B21E09C2D300C512D3 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916A95B11E09C2D300C512D3 /* InterfaceController.swift */; };
+		916A95B41E09C2D300C512D3 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916A95B31E09C2D300C512D3 /* ExtensionDelegate.swift */; };
+		916A95B61E09C2D300C512D3 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916A95B51E09C2D300C512D3 /* NotificationController.swift */; };
+		916A95B81E09C2D300C512D3 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916A95B71E09C2D300C512D3 /* ComplicationController.swift */; };
+		916A95BA1E09C2D300C512D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 916A95B91E09C2D300C512D3 /* Assets.xcassets */; };
+		916A95BE1E09C2D300C512D3 /* raspberrysaucewatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 916A959E1E09C2D200C512D3 /* raspberrysaucewatch.app */; };
+		918F56691E09D33500FF4CEF /* TemperatureFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918F56681E09D33500FF4CEF /* TemperatureFormatter.swift */; };
+		91BF44C91E096314004EAE03 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BF44C81E096314004EAE03 /* SignInViewController.swift */; };
+		91BF44CB1E09661B004EAE03 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BF44CA1E09661B004EAE03 /* AuthManager.swift */; };
+		91BF44CD1E096667004EAE03 /* AuthManagerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BF44CC1E096667004EAE03 /* AuthManagerFactory.swift */; };
+		91BF44CF1E0966CD004EAE03 /* TokenAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BF44CE1E0966CD004EAE03 /* TokenAuthManager.swift */; };
+		91BF44D11E0969F4004EAE03 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BF44D01E0969F4004EAE03 /* Networking.swift */; };
+		91BF44D31E096BF1004EAE03 /* UrlSessionNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BF44D21E096BF1004EAE03 /* UrlSessionNetworking.swift */; };
+		91BF44D51E097818004EAE03 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BF44D41E097818004EAE03 /* Token.swift */; };
+		91BF44D71E0978C0004EAE03 /* TokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BF44D61E0978C0004EAE03 /* TokenStore.swift */; };
+		91BF44D91E097951004EAE03 /* UserDefaultsTokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BF44D81E097951004EAE03 /* UserDefaultsTokenStore.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9111B2071E0946F700B309D5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9111B1EA1E0946F700B309D5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9111B1F11E0946F700B309D5;
+			remoteInfo = "raspberrysauce-ios";
+		};
+		9111B2121E0946F700B309D5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9111B1EA1E0946F700B309D5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9111B1F11E0946F700B309D5;
+			remoteInfo = "raspberrysauce-ios";
+		};
+		916A95AC1E09C2D300C512D3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9111B1EA1E0946F700B309D5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 916A95A91E09C2D300C512D3;
+			remoteInfo = "raspberrysaucewatch Extension";
+		};
+		916A95BC1E09C2D300C512D3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9111B1EA1E0946F700B309D5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 916A959D1E09C2D200C512D3;
+			remoteInfo = raspberrysaucewatch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		916A95C21E09C2D300C512D3 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				916A95AB1E09C2D300C512D3 /* raspberrysaucewatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		916A95C61E09C2D300C512D3 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				916A95BE1E09C2D300C512D3 /* raspberrysaucewatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		9111B1F21E0946F700B309D5 /* raspberrysauce-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "raspberrysauce-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9111B1F51E0946F700B309D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9111B1F71E0946F700B309D5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9111B1FA1E0946F700B309D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9111B1FC1E0946F700B309D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9111B1FF1E0946F700B309D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9111B2011E0946F700B309D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9111B2061E0946F700B309D5 /* raspberrysauce-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "raspberrysauce-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9111B20A1E0946F700B309D5 /* raspberrysauce_iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = raspberrysauce_iosTests.swift; sourceTree = "<group>"; };
+		9111B20C1E0946F700B309D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9111B2111E0946F700B309D5 /* raspberrysauce-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "raspberrysauce-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9111B2151E0946F700B309D5 /* raspberrysauce_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = raspberrysauce_iosUITests.swift; sourceTree = "<group>"; };
+		9111B2171E0946F700B309D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		912E89631E09E7420074A8A4 /* AppConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		916A958C1E09991700C512D3 /* SigningInProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SigningInProgressViewController.swift; sourceTree = "<group>"; };
+		916A958E1E09A32300C512D3 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		916A95901E09A58700C512D3 /* TemperatureProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureProvider.swift; sourceTree = "<group>"; };
+		916A95921E09A5E400C512D3 /* Temperature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Temperature.swift; sourceTree = "<group>"; };
+		916A95941E09A66900C512D3 /* SauceApiTemperatureProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SauceApiTemperatureProvider.swift; sourceTree = "<group>"; };
+		916A95961E09A70900C512D3 /* TemperatureProviderFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureProviderFactory.swift; sourceTree = "<group>"; };
+		916A95981E09A76900C512D3 /* NetworkingFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingFactory.swift; sourceTree = "<group>"; };
+		916A959A1E09A7CF00C512D3 /* AuthenticatedNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticatedNetworking.swift; sourceTree = "<group>"; };
+		916A959E1E09C2D200C512D3 /* raspberrysaucewatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = raspberrysaucewatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		916A95A11E09C2D300C512D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		916A95A31E09C2D300C512D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		916A95A51E09C2D300C512D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		916A95AA1E09C2D300C512D3 /* raspberrysaucewatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "raspberrysaucewatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		916A95B01E09C2D300C512D3 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		916A95B11E09C2D300C512D3 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		916A95B31E09C2D300C512D3 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		916A95B51E09C2D300C512D3 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		916A95B71E09C2D300C512D3 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		916A95B91E09C2D300C512D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		916A95BB1E09C2D300C512D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		918F56641E09CD8C00FF4CEF /* raspberrysauce-ios.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "raspberrysauce-ios.entitlements"; sourceTree = "<group>"; };
+		918F56651E09CDC200FF4CEF /* raspberrysaucewatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = raspberrysaucewatch.entitlements; sourceTree = "<group>"; };
+		918F56661E09CDC700FF4CEF /* raspberrysaucewatch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "raspberrysaucewatch Extension.entitlements"; sourceTree = "<group>"; };
+		918F56681E09D33500FF4CEF /* TemperatureFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureFormatter.swift; sourceTree = "<group>"; };
+		91BF44C81E096314004EAE03 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		91BF44CA1E09661B004EAE03 /* AuthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		91BF44CC1E096667004EAE03 /* AuthManagerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthManagerFactory.swift; sourceTree = "<group>"; };
+		91BF44CE1E0966CD004EAE03 /* TokenAuthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenAuthManager.swift; sourceTree = "<group>"; };
+		91BF44D01E0969F4004EAE03 /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		91BF44D21E096BF1004EAE03 /* UrlSessionNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlSessionNetworking.swift; sourceTree = "<group>"; };
+		91BF44D41E097818004EAE03 /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		91BF44D61E0978C0004EAE03 /* TokenStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenStore.swift; sourceTree = "<group>"; };
+		91BF44D81E097951004EAE03 /* UserDefaultsTokenStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsTokenStore.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9111B1EF1E0946F700B309D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9111B2031E0946F700B309D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9111B20E1E0946F700B309D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		916A95A71E09C2D300C512D3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9111B1E91E0946F700B309D5 = {
+			isa = PBXGroup;
+			children = (
+				9111B1F41E0946F700B309D5 /* raspberrysauce-ios */,
+				9111B2091E0946F700B309D5 /* raspberrysauce-iosTests */,
+				9111B2141E0946F700B309D5 /* raspberrysauce-iosUITests */,
+				916A959F1E09C2D300C512D3 /* raspberrysaucewatch */,
+				916A95AE1E09C2D300C512D3 /* raspberrysaucewatch Extension */,
+				9111B1F31E0946F700B309D5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9111B1F31E0946F700B309D5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9111B1F21E0946F700B309D5 /* raspberrysauce-ios.app */,
+				9111B2061E0946F700B309D5 /* raspberrysauce-iosTests.xctest */,
+				9111B2111E0946F700B309D5 /* raspberrysauce-iosUITests.xctest */,
+				916A959E1E09C2D200C512D3 /* raspberrysaucewatch.app */,
+				916A95AA1E09C2D300C512D3 /* raspberrysaucewatch Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9111B1F41E0946F700B309D5 /* raspberrysauce-ios */ = {
+			isa = PBXGroup;
+			children = (
+				912E89631E09E7420074A8A4 /* AppConfig.swift */,
+				918F56641E09CD8C00FF4CEF /* raspberrysauce-ios.entitlements */,
+				9111B1F51E0946F700B309D5 /* AppDelegate.swift */,
+				9111B1F71E0946F700B309D5 /* ViewController.swift */,
+				9111B1F91E0946F700B309D5 /* Main.storyboard */,
+				9111B1FC1E0946F700B309D5 /* Assets.xcassets */,
+				9111B1FE1E0946F700B309D5 /* LaunchScreen.storyboard */,
+				9111B2011E0946F700B309D5 /* Info.plist */,
+				91BF44C81E096314004EAE03 /* SignInViewController.swift */,
+				91BF44CA1E09661B004EAE03 /* AuthManager.swift */,
+				91BF44CC1E096667004EAE03 /* AuthManagerFactory.swift */,
+				91BF44CE1E0966CD004EAE03 /* TokenAuthManager.swift */,
+				91BF44D01E0969F4004EAE03 /* Networking.swift */,
+				91BF44D21E096BF1004EAE03 /* UrlSessionNetworking.swift */,
+				91BF44D41E097818004EAE03 /* Token.swift */,
+				91BF44D61E0978C0004EAE03 /* TokenStore.swift */,
+				91BF44D81E097951004EAE03 /* UserDefaultsTokenStore.swift */,
+				916A958C1E09991700C512D3 /* SigningInProgressViewController.swift */,
+				916A958E1E09A32300C512D3 /* MainViewController.swift */,
+				916A95901E09A58700C512D3 /* TemperatureProvider.swift */,
+				916A95921E09A5E400C512D3 /* Temperature.swift */,
+				916A95941E09A66900C512D3 /* SauceApiTemperatureProvider.swift */,
+				916A95961E09A70900C512D3 /* TemperatureProviderFactory.swift */,
+				916A95981E09A76900C512D3 /* NetworkingFactory.swift */,
+				916A959A1E09A7CF00C512D3 /* AuthenticatedNetworking.swift */,
+				918F56681E09D33500FF4CEF /* TemperatureFormatter.swift */,
+			);
+			path = "raspberrysauce-ios";
+			sourceTree = "<group>";
+		};
+		9111B2091E0946F700B309D5 /* raspberrysauce-iosTests */ = {
+			isa = PBXGroup;
+			children = (
+				9111B20A1E0946F700B309D5 /* raspberrysauce_iosTests.swift */,
+				9111B20C1E0946F700B309D5 /* Info.plist */,
+			);
+			path = "raspberrysauce-iosTests";
+			sourceTree = "<group>";
+		};
+		9111B2141E0946F700B309D5 /* raspberrysauce-iosUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9111B2151E0946F700B309D5 /* raspberrysauce_iosUITests.swift */,
+				9111B2171E0946F700B309D5 /* Info.plist */,
+			);
+			path = "raspberrysauce-iosUITests";
+			sourceTree = "<group>";
+		};
+		916A959F1E09C2D300C512D3 /* raspberrysaucewatch */ = {
+			isa = PBXGroup;
+			children = (
+				918F56651E09CDC200FF4CEF /* raspberrysaucewatch.entitlements */,
+				916A95A01E09C2D300C512D3 /* Interface.storyboard */,
+				916A95A31E09C2D300C512D3 /* Assets.xcassets */,
+				916A95A51E09C2D300C512D3 /* Info.plist */,
+			);
+			path = raspberrysaucewatch;
+			sourceTree = "<group>";
+		};
+		916A95AE1E09C2D300C512D3 /* raspberrysaucewatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				918F56661E09CDC700FF4CEF /* raspberrysaucewatch Extension.entitlements */,
+				916A95B11E09C2D300C512D3 /* InterfaceController.swift */,
+				916A95B31E09C2D300C512D3 /* ExtensionDelegate.swift */,
+				916A95B51E09C2D300C512D3 /* NotificationController.swift */,
+				916A95B71E09C2D300C512D3 /* ComplicationController.swift */,
+				916A95B91E09C2D300C512D3 /* Assets.xcassets */,
+				916A95BB1E09C2D300C512D3 /* Info.plist */,
+				916A95AF1E09C2D300C512D3 /* Supporting Files */,
+			);
+			path = "raspberrysaucewatch Extension";
+			sourceTree = "<group>";
+		};
+		916A95AF1E09C2D300C512D3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				916A95B01E09C2D300C512D3 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9111B1F11E0946F700B309D5 /* raspberrysauce-ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9111B21A1E0946F700B309D5 /* Build configuration list for PBXNativeTarget "raspberrysauce-ios" */;
+			buildPhases = (
+				9111B1EE1E0946F700B309D5 /* Sources */,
+				9111B1EF1E0946F700B309D5 /* Frameworks */,
+				9111B1F01E0946F700B309D5 /* Resources */,
+				916A95C61E09C2D300C512D3 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				916A95BD1E09C2D300C512D3 /* PBXTargetDependency */,
+			);
+			name = "raspberrysauce-ios";
+			productName = "raspberrysauce-ios";
+			productReference = 9111B1F21E0946F700B309D5 /* raspberrysauce-ios.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9111B2051E0946F700B309D5 /* raspberrysauce-iosTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9111B21D1E0946F700B309D5 /* Build configuration list for PBXNativeTarget "raspberrysauce-iosTests" */;
+			buildPhases = (
+				9111B2021E0946F700B309D5 /* Sources */,
+				9111B2031E0946F700B309D5 /* Frameworks */,
+				9111B2041E0946F700B309D5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9111B2081E0946F700B309D5 /* PBXTargetDependency */,
+			);
+			name = "raspberrysauce-iosTests";
+			productName = "raspberrysauce-iosTests";
+			productReference = 9111B2061E0946F700B309D5 /* raspberrysauce-iosTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9111B2101E0946F700B309D5 /* raspberrysauce-iosUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9111B2201E0946F700B309D5 /* Build configuration list for PBXNativeTarget "raspberrysauce-iosUITests" */;
+			buildPhases = (
+				9111B20D1E0946F700B309D5 /* Sources */,
+				9111B20E1E0946F700B309D5 /* Frameworks */,
+				9111B20F1E0946F700B309D5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9111B2131E0946F700B309D5 /* PBXTargetDependency */,
+			);
+			name = "raspberrysauce-iosUITests";
+			productName = "raspberrysauce-iosUITests";
+			productReference = 9111B2111E0946F700B309D5 /* raspberrysauce-iosUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		916A959D1E09C2D200C512D3 /* raspberrysaucewatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 916A95C31E09C2D300C512D3 /* Build configuration list for PBXNativeTarget "raspberrysaucewatch" */;
+			buildPhases = (
+				916A959C1E09C2D200C512D3 /* Resources */,
+				916A95C21E09C2D300C512D3 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				916A95AD1E09C2D300C512D3 /* PBXTargetDependency */,
+			);
+			name = raspberrysaucewatch;
+			productName = raspberrysaucewatch;
+			productReference = 916A959E1E09C2D200C512D3 /* raspberrysaucewatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		916A95A91E09C2D300C512D3 /* raspberrysaucewatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 916A95BF1E09C2D300C512D3 /* Build configuration list for PBXNativeTarget "raspberrysaucewatch Extension" */;
+			buildPhases = (
+				916A95A61E09C2D300C512D3 /* Sources */,
+				916A95A71E09C2D300C512D3 /* Frameworks */,
+				916A95A81E09C2D300C512D3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "raspberrysaucewatch Extension";
+			productName = "raspberrysaucewatch Extension";
+			productReference = 916A95AA1E09C2D300C512D3 /* raspberrysaucewatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9111B1EA1E0946F700B309D5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = rossharper.net;
+				TargetAttributes = {
+					9111B1F11E0946F700B309D5 = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 8WE8BH2H6Q;
+						LastSwiftMigration = 0820;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					9111B2051E0946F700B309D5 = {
+						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0820;
+						TestTargetID = 9111B1F11E0946F700B309D5;
+					};
+					9111B2101E0946F700B309D5 = {
+						CreatedOnToolsVersion = 7.2.1;
+						LastSwiftMigration = 0820;
+						TestTargetID = 9111B1F11E0946F700B309D5;
+					};
+					916A959D1E09C2D200C512D3 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 8WE8BH2H6Q;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					916A95A91E09C2D300C512D3 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 8WE8BH2H6Q;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 9111B1ED1E0946F700B309D5 /* Build configuration list for PBXProject "raspberrysauce-ios" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9111B1E91E0946F700B309D5;
+			productRefGroup = 9111B1F31E0946F700B309D5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9111B1F11E0946F700B309D5 /* raspberrysauce-ios */,
+				9111B2051E0946F700B309D5 /* raspberrysauce-iosTests */,
+				9111B2101E0946F700B309D5 /* raspberrysauce-iosUITests */,
+				916A959D1E09C2D200C512D3 /* raspberrysaucewatch */,
+				916A95A91E09C2D300C512D3 /* raspberrysaucewatch Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9111B1F01E0946F700B309D5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9111B2001E0946F700B309D5 /* LaunchScreen.storyboard in Resources */,
+				9111B1FD1E0946F700B309D5 /* Assets.xcassets in Resources */,
+				9111B1FB1E0946F700B309D5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9111B2041E0946F700B309D5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9111B20F1E0946F700B309D5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		916A959C1E09C2D200C512D3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				916A95A41E09C2D300C512D3 /* Assets.xcassets in Resources */,
+				916A95A21E09C2D300C512D3 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		916A95A81E09C2D300C512D3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				916A95BA1E09C2D300C512D3 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9111B1EE1E0946F700B309D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				916A95991E09A76900C512D3 /* NetworkingFactory.swift in Sources */,
+				916A95951E09A66900C512D3 /* SauceApiTemperatureProvider.swift in Sources */,
+				91BF44D91E097951004EAE03 /* UserDefaultsTokenStore.swift in Sources */,
+				912E89641E09E7420074A8A4 /* AppConfig.swift in Sources */,
+				918F56691E09D33500FF4CEF /* TemperatureFormatter.swift in Sources */,
+				916A958F1E09A32300C512D3 /* MainViewController.swift in Sources */,
+				91BF44D51E097818004EAE03 /* Token.swift in Sources */,
+				916A958D1E09991700C512D3 /* SigningInProgressViewController.swift in Sources */,
+				91BF44CD1E096667004EAE03 /* AuthManagerFactory.swift in Sources */,
+				9111B1F81E0946F700B309D5 /* ViewController.swift in Sources */,
+				91BF44CB1E09661B004EAE03 /* AuthManager.swift in Sources */,
+				916A95971E09A70900C512D3 /* TemperatureProviderFactory.swift in Sources */,
+				91BF44CF1E0966CD004EAE03 /* TokenAuthManager.swift in Sources */,
+				916A959B1E09A7CF00C512D3 /* AuthenticatedNetworking.swift in Sources */,
+				916A95931E09A5E400C512D3 /* Temperature.swift in Sources */,
+				91BF44D71E0978C0004EAE03 /* TokenStore.swift in Sources */,
+				91BF44D31E096BF1004EAE03 /* UrlSessionNetworking.swift in Sources */,
+				9111B1F61E0946F700B309D5 /* AppDelegate.swift in Sources */,
+				916A95911E09A58700C512D3 /* TemperatureProvider.swift in Sources */,
+				91BF44C91E096314004EAE03 /* SignInViewController.swift in Sources */,
+				91BF44D11E0969F4004EAE03 /* Networking.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9111B2021E0946F700B309D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9111B20B1E0946F700B309D5 /* raspberrysauce_iosTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9111B20D1E0946F700B309D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9111B2161E0946F700B309D5 /* raspberrysauce_iosUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		916A95A61E09C2D300C512D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				916A95B61E09C2D300C512D3 /* NotificationController.swift in Sources */,
+				916A95B81E09C2D300C512D3 /* ComplicationController.swift in Sources */,
+				916A95B41E09C2D300C512D3 /* ExtensionDelegate.swift in Sources */,
+				916A95B21E09C2D300C512D3 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9111B2081E0946F700B309D5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9111B1F11E0946F700B309D5 /* raspberrysauce-ios */;
+			targetProxy = 9111B2071E0946F700B309D5 /* PBXContainerItemProxy */;
+		};
+		9111B2131E0946F700B309D5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9111B1F11E0946F700B309D5 /* raspberrysauce-ios */;
+			targetProxy = 9111B2121E0946F700B309D5 /* PBXContainerItemProxy */;
+		};
+		916A95AD1E09C2D300C512D3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 916A95A91E09C2D300C512D3 /* raspberrysaucewatch Extension */;
+			targetProxy = 916A95AC1E09C2D300C512D3 /* PBXContainerItemProxy */;
+		};
+		916A95BD1E09C2D300C512D3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 916A959D1E09C2D200C512D3 /* raspberrysaucewatch */;
+			targetProxy = 916A95BC1E09C2D300C512D3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9111B1F91E0946F700B309D5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9111B1FA1E0946F700B309D5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9111B1FE1E0946F700B309D5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9111B1FF1E0946F700B309D5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		916A95A01E09C2D300C512D3 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				916A95A11E09C2D300C512D3 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9111B2181E0946F700B309D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9111B2191E0946F700B309D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9111B21B1E0946F700B309D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "raspberrysauce-ios/raspberrysauce-ios.entitlements";
+				DEVELOPMENT_TEAM = 8WE8BH2H6Q;
+				INFOPLIST_FILE = "raspberrysauce-ios/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.rossharper.raspberrysauce-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		9111B21C1E0946F700B309D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "raspberrysauce-ios/raspberrysauce-ios.entitlements";
+				DEVELOPMENT_TEAM = 8WE8BH2H6Q;
+				INFOPLIST_FILE = "raspberrysauce-ios/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.rossharper.raspberrysauce-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		9111B21E1E0946F700B309D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "raspberrysauce-iosTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.rossharper.raspberrysauce-iosTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/raspberrysauce-ios.app/raspberrysauce-ios";
+			};
+			name = Debug;
+		};
+		9111B21F1E0946F700B309D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "raspberrysauce-iosTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.rossharper.raspberrysauce-iosTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/raspberrysauce-ios.app/raspberrysauce-ios";
+			};
+			name = Release;
+		};
+		9111B2211E0946F700B309D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "raspberrysauce-iosUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.rossharper.raspberrysauce-iosUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "raspberrysauce-ios";
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		9111B2221E0946F700B309D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "raspberrysauce-iosUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.rossharper.raspberrysauce-iosUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "raspberrysauce-ios";
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+		916A95C01E09C2D300C512D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_ENTITLEMENTS = "raspberrysaucewatch Extension/raspberrysaucewatch Extension.entitlements";
+				DEVELOPMENT_TEAM = 8WE8BH2H6Q;
+				INFOPLIST_FILE = "raspberrysaucewatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.rossharper.raspberrysauce-ios.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+			};
+			name = Debug;
+		};
+		916A95C11E09C2D300C512D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_ENTITLEMENTS = "raspberrysaucewatch Extension/raspberrysaucewatch Extension.entitlements";
+				DEVELOPMENT_TEAM = 8WE8BH2H6Q;
+				INFOPLIST_FILE = "raspberrysaucewatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "net.rossharper.raspberrysauce-ios.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+			};
+			name = Release;
+		};
+		916A95C41E09C2D300C512D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_ENTITLEMENTS = raspberrysaucewatch/raspberrysaucewatch.entitlements;
+				DEVELOPMENT_TEAM = 8WE8BH2H6Q;
+				IBSC_MODULE = raspberrysaucewatch_Extension;
+				INFOPLIST_FILE = raspberrysaucewatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.rossharper.raspberrysauce-ios.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+			};
+			name = Debug;
+		};
+		916A95C51E09C2D300C512D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_ENTITLEMENTS = raspberrysaucewatch/raspberrysaucewatch.entitlements;
+				DEVELOPMENT_TEAM = 8WE8BH2H6Q;
+				IBSC_MODULE = raspberrysaucewatch_Extension;
+				INFOPLIST_FILE = raspberrysaucewatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.rossharper.raspberrysauce-ios.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9111B1ED1E0946F700B309D5 /* Build configuration list for PBXProject "raspberrysauce-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9111B2181E0946F700B309D5 /* Debug */,
+				9111B2191E0946F700B309D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9111B21A1E0946F700B309D5 /* Build configuration list for PBXNativeTarget "raspberrysauce-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9111B21B1E0946F700B309D5 /* Debug */,
+				9111B21C1E0946F700B309D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9111B21D1E0946F700B309D5 /* Build configuration list for PBXNativeTarget "raspberrysauce-iosTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9111B21E1E0946F700B309D5 /* Debug */,
+				9111B21F1E0946F700B309D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9111B2201E0946F700B309D5 /* Build configuration list for PBXNativeTarget "raspberrysauce-iosUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9111B2211E0946F700B309D5 /* Debug */,
+				9111B2221E0946F700B309D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		916A95BF1E09C2D300C512D3 /* Build configuration list for PBXNativeTarget "raspberrysaucewatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				916A95C01E09C2D300C512D3 /* Debug */,
+				916A95C11E09C2D300C512D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		916A95C31E09C2D300C512D3 /* Build configuration list for PBXNativeTarget "raspberrysaucewatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				916A95C41E09C2D300C512D3 /* Debug */,
+				916A95C51E09C2D300C512D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9111B1EA1E0946F700B309D5 /* Project object */;
+}
