@@ -49,7 +49,6 @@ class UrlSessionNetworking : Networking {
                 onError()
             }
             else {
-                let responseString = String(data: data, encoding: .utf8) ?? ""
                 onSuccess(data)
             }
         }
