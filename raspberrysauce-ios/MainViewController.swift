@@ -14,9 +14,11 @@ class MainViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     let temperatureProvider = TemperatureProviderFactory.create()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        NotificationCenter.default.addObserver(forName: .UIApplicationWillEnterForeground, object: nil, queue: nil, using:didEnterForeground)
         
         self.loadTemperature()
     }
@@ -32,5 +34,9 @@ class MainViewController: UIViewController {
                 self.temperatureLabel.text = TemperatureFormatter.asString(temperature:temperature)
             }
         }
+    }
+    
+    func didEnterForeground(notification: Notification) {
+        self.loadTemperature()
     }
 }
