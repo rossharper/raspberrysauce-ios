@@ -10,22 +10,13 @@ import UIKit
 import WatchConnectivity
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var session: WCSession? {
-        didSet {
-            if let session = session {
-                session.delegate = self
-                session.activate()
-            }
-        }
-    }
+    var watchDelegate: WatchSessionDelegate?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        if WCSession.isSupported() {
-            session = WCSession.default()
-        }
+        watchDelegate = WatchSessionDelegate()
         return true
     }
 
@@ -42,21 +33,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
-    }
-    
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-    }
-    func sessionDidBecomeInactive(_ session: WCSession) {
-    }
-    func sessionDidDeactivate(_ session: WCSession) {
-    }
-
-    // HACK: temporary way of transferring data - investigate better methods
-    func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
-        if (message["loadTemperature"] as? String) != nil {
-            TemperatureProviderFactory.create().getTemperature(onTemperatureReceived: { temperature in
-                replyHandler(["temperature" : TemperatureFormatter.asString(temperature: temperature) as AnyObject])
-            })
-        }
     }
 }

@@ -15,6 +15,8 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
 
     @IBOutlet var label: WKInterfaceLabel!
     
+    //let tokenStore = TokenStore
+    
     var session: WCSession? {
         didSet {
             if let session = session {
@@ -34,15 +36,18 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
         
-        // Correct place to do this? This is when the UI will be displayed
-        self.loadTemperature()
+        self.updateDisplay()
     }
     
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
+    
+    private func updateDisplay() {
+    }
 
+    /*
     private func loadTemperature() {
         if WCSession.isSupported() {
             session = WCSession.default()
@@ -57,6 +62,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
             })
         }
     }
+ */
 
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState,
            error: Error?){
