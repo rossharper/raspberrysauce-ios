@@ -8,14 +8,18 @@
 
 import Foundation
 
+protocol TokenProvider {
+    func getAccessToken() -> Token?
+}
+
 class AuthenticatedNetworking : Networking {
     
     let networking : Networking
-    let authManager: AuthManager
+    let tokenProvider: TokenProvider
     
-    init(networking: Networking, authManager: AuthManager) {
+    init(networking: Networking, tokenProvider: TokenProvider) {
         self.networking = networking
-        self.authManager = authManager
+        self.tokenProvider = tokenProvider
     }
     
     func get(url: URL, onSuccess: @escaping (_ responseBody: Data) -> Void, onError: @escaping () -> Void) {
@@ -46,7 +50,7 @@ class AuthenticatedNetworking : Networking {
     
     func addAuthorizationHeader(headers: [String : String]?) -> [String : String]? {
         var appendedHeaders = headers ?? [String : String]()
-        let token = authManager.getAccessToken()
+        let token = tokenProvider.getAccessToken()
         if token == nil {
             return nil
         }

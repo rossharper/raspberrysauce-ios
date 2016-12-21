@@ -13,7 +13,15 @@ class NetworkingFactory {
         return UrlSessionNetworking()
     }
     
+    struct AuthManagerTokenProvider : TokenProvider {
+        let authManager : AuthManager
+        
+        func getAccessToken() -> Token? {
+            return authManager.getAccessToken()
+        }
+    }
+    
     static func createAuthentiatedNetworking() -> Networking {
-        return AuthenticatedNetworking(networking: createNetworking(), authManager: AuthManagerFactory.create())
+        return AuthenticatedNetworking(networking: createNetworking(), tokenProvider: AuthManagerTokenProvider(authManager: AuthManagerFactory.create()))
     }
 }
