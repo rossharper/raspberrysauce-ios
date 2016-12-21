@@ -10,8 +10,11 @@ import WatchKit
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
+    // TODO: should probably get data in here
+    
     func applicationDidFinishLaunching() {
         // Perform any final initialization of your application.
+        
     }
 
     func applicationDidBecomeActive() {

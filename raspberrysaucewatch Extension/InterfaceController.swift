@@ -34,6 +34,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
         
+        // Correct place to do this? This is when the UI will be displayed
         self.loadTemperature()
     }
     
