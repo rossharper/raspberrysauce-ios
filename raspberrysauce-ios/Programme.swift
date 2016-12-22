@@ -1,5 +1,5 @@
 //
-//  HomeViewData.swift
+//  Programme.swift
 //  raspberrysauce-ios
 //
 //  Created by Ross Harper on 22/12/2016.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct HomeViewData {
-    let temperature : Temperature
-    let programme: Programme
+struct Programme {
+    let heatingEnabled : Bool
+    let comfortLevelEnabled : Bool
 }

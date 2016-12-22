@@ -22,6 +22,8 @@
 		9124FC191E0BF749009D0699 /* SauceApiHomeViewDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9124FC171E0BF749009D0699 /* SauceApiHomeViewDataProvider.swift */; };
 		9124FC1B1E0BF92E009D0699 /* HomeViewDataProviderFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9124FC1A1E0BF92E009D0699 /* HomeViewDataProviderFactory.swift */; };
 		9124FC1C1E0BF92E009D0699 /* HomeViewDataProviderFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9124FC1A1E0BF92E009D0699 /* HomeViewDataProviderFactory.swift */; };
+		9124FC1E1E0C2655009D0699 /* Programme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9124FC1D1E0C2655009D0699 /* Programme.swift */; };
+		9124FC1F1E0C2655009D0699 /* Programme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9124FC1D1E0C2655009D0699 /* Programme.swift */; };
 		912E89641E09E7420074A8A4 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912E89631E09E7420074A8A4 /* AppConfig.swift */; };
 		912E89671E0AE6DD0074A8A4 /* WatchSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912E89661E0AE6DD0074A8A4 /* WatchSessionDelegate.swift */; };
 		912E89681E0AEEBC0074A8A4 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BF44CA1E09661B004EAE03 /* AuthManager.swift */; };
@@ -143,6 +145,7 @@
 		9124FC141E0BF6F3009D0699 /* HomeViewData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewData.swift; sourceTree = "<group>"; };
 		9124FC171E0BF749009D0699 /* SauceApiHomeViewDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SauceApiHomeViewDataProvider.swift; sourceTree = "<group>"; };
 		9124FC1A1E0BF92E009D0699 /* HomeViewDataProviderFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewDataProviderFactory.swift; sourceTree = "<group>"; };
+		9124FC1D1E0C2655009D0699 /* Programme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Programme.swift; sourceTree = "<group>"; };
 		912E89631E09E7420074A8A4 /* AppConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		912E89661E0AE6DD0074A8A4 /* WatchSessionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchSessionDelegate.swift; sourceTree = "<group>"; };
 		916A958C1E09991700C512D3 /* SigningInProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SigningInProgressViewController.swift; sourceTree = "<group>"; };
@@ -270,6 +273,7 @@
 				9124FC141E0BF6F3009D0699 /* HomeViewData.swift */,
 				9124FC171E0BF749009D0699 /* SauceApiHomeViewDataProvider.swift */,
 				9124FC1A1E0BF92E009D0699 /* HomeViewDataProviderFactory.swift */,
+				9124FC1D1E0C2655009D0699 /* Programme.swift */,
 			);
 			path = "raspberrysauce-ios";
 			sourceTree = "<group>";
@@ -565,6 +569,7 @@
 				9124FC181E0BF749009D0699 /* SauceApiHomeViewDataProvider.swift in Sources */,
 				9124FC151E0BF6F3009D0699 /* HomeViewData.swift in Sources */,
 				9111B1F81E0946F700B309D5 /* ViewController.swift in Sources */,
+				9124FC1E1E0C2655009D0699 /* Programme.swift in Sources */,
 				91BF44CB1E09661B004EAE03 /* AuthManager.swift in Sources */,
 				916A95971E09A70900C512D3 /* TemperatureProviderFactory.swift in Sources */,
 				91BF44CF1E0966CD004EAE03 /* TokenAuthManager.swift in Sources */,
@@ -614,6 +619,7 @@
 				912E896B1E0AEEBC0074A8A4 /* Networking.swift in Sources */,
 				9124FC191E0BF749009D0699 /* SauceApiHomeViewDataProvider.swift in Sources */,
 				912E89711E0AEEBC0074A8A4 /* AuthenticatedNetworking.swift in Sources */,
+				9124FC1F1E0C2655009D0699 /* Programme.swift in Sources */,
 				916A95B81E09C2D300C512D3 /* ComplicationController.swift in Sources */,
 				912E89731E0AF78D0074A8A4 /* Temperature.swift in Sources */,
 				916A95B41E09C2D300C512D3 /* ExtensionDelegate.swift in Sources */,
