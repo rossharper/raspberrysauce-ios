@@ -55,6 +55,10 @@ class InterfaceController: WKInterfaceController {
     }
     
     private func displayData(model : HomeViewData) {
+        addMenuItem(with: .repeat, title: "Auto", action: #selector(onAutoSelected))
+        addMenuItem(with: .play, title: "Comfort", action: #selector(onComfortSelected))
+        addMenuItem(with: .pause, title: "Setback", action: #selector(onSetbackSelected))
+        addMenuItem(with: .decline, title: "Off", action: #selector(onOffSelected))
         label.setHidden(true)
         temperatureLabel.setHidden(false)
         modeLabel.setHidden(false)
@@ -65,6 +69,7 @@ class InterfaceController: WKInterfaceController {
     }
     
     private func displayNoData() {
+        clearAllMenuItems()
         label.setHidden(false)
         temperatureLabel.setHidden(true)
         modeLabel.setHidden(true)
@@ -73,6 +78,7 @@ class InterfaceController: WKInterfaceController {
     }
     
     private func displaySignedOut() {
+        clearAllMenuItems()
         label.setHidden(false)
         autoLabel.setHidden(true)
         temperatureLabel.setHidden(true)
@@ -80,19 +86,19 @@ class InterfaceController: WKInterfaceController {
         label.setText("Not Signed In")
     }
     
-    @IBAction func onAutoSelected() {
+    func onAutoSelected() {
         (WKExtension.shared().delegate as! ExtensionDelegate).setHeatingMode(.Auto)
     }
     
-    @IBAction func onComfortSelected() {
+    func onComfortSelected() {
         (WKExtension.shared().delegate as! ExtensionDelegate).setHeatingMode(.Comfort)
     }
     
-    @IBAction func onSetbackSelected() {
+    func onSetbackSelected() {
         (WKExtension.shared().delegate as! ExtensionDelegate).setHeatingMode(.Setback)
     }
     
-    @IBAction func onOffSelected() {
+    func onOffSelected() {
         (WKExtension.shared().delegate as! ExtensionDelegate).setHeatingMode(.Off)
     }
 }
