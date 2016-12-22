@@ -79,9 +79,19 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
         if tokenValue != nil {
             print("didReceiveApplicationContext with token")
             UserDefaultsTokenStore().put(token: Token(value: tokenValue!))
+            updateModel() { model in
+                if let interface = WKExtension.shared().rootInterfaceController as! InterfaceController? {
+                    interface.updateDisplay(model: model)
+                }
+            }
         } else {
             print("didReceiveApplicationContext with no token, removing")
             UserDefaultsTokenStore().remove()
+            model = nil
+            if let interface = WKExtension.shared().rootInterfaceController as! InterfaceController? {
+                interface.updateDisplay(model: model)
+            }
+            updateComplications()
         }
     }
     

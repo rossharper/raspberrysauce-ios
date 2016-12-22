@@ -43,7 +43,7 @@ class InterfaceController: WKInterfaceController {
         super.didDeactivate()
     }
     
-    private func updateDisplay(model: Model?) {
+    func updateDisplay(model: Model?) {
         guard let model = model else {
             displayNoData()
             return
