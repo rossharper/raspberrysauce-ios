@@ -11,4 +11,5 @@ import Foundation
 struct Programme {
     let heatingEnabled : Bool
     let comfortLevelEnabled : Bool
+    let inOverride : Bool
 }

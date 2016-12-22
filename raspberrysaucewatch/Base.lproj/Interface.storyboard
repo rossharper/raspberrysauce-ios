@@ -23,6 +23,9 @@
                         <label width="1" alignment="center" verticalAlignment="center" hidden="YES" text="20.0˚C" textAlignment="center" id="gKC-Xc-cEb">
                             <fontDescription key="font" type="system" weight="thin" pointSize="42"/>
                         </label>
+                        <label alignment="center" verticalAlignment="center" hidden="YES" text="AUTO" textAlignment="center" id="yEs-0O-1Of">
+                            <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                        </label>
                     </items>
                     <menu key="menu" id="K40-p3-wFk">
                         <items>
@@ -49,6 +52,7 @@
                         </items>
                     </menu>
                     <connections>
+                        <outlet property="autoLabel" destination="yEs-0O-1Of" id="No4-mb-1CB"/>
                         <outlet property="label" destination="cVN-vd-Cd1" id="rYh-oA-vCZ"/>
                         <outlet property="modeLabel" destination="0x3-ZO-j24" id="Dbm-1I-znb"/>
                         <outlet property="temperatureLabel" destination="gKC-Xc-cEb" id="Gei-td-ZEe"/>

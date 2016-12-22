@@ -34,14 +34,15 @@ class SauceApiHomeViewDataProvider : HomeViewDataProvider {
         }
     }
     
-    func parse(body: Data) -> HomeViewData? {
-        if let homeViewData = try? JSONSerialization.jsonObject(with: body, options: .allowFragments) as? [String: Any],
-            let temperature = homeViewData?["temperature"] as? Float,
-            let programme = homeViewData?["programme"] as? [String : Any],
-            let heatingEnabled = programme["heatingEnabled"] as? Bool,
-            let comfortLevelEnabled = programme["comfortLevelEnabled"] as? Bool {
-            return HomeViewData(temperature: Temperature(value: Float(temperature)), programme: Programme(heatingEnabled: heatingEnabled, comfortLevelEnabled: comfortLevelEnabled))
+    func parse(body: Data) -> HomeViewData? {        
+        guard let homeViewData = try? JSONSerialization.jsonObject(with: body, options: .allowFragments) as! [String: Any],
+                    let temperature = homeViewData["temperature"] as? Float,
+                    let programmeData = homeViewData["programme"] as? [String : Any],
+                    let programme = ProgrammeParser().parse(programmeData) else {
+                return nil
         }
-        return nil
+        return HomeViewData(temperature: Temperature(value: Float(temperature)), programme: programme)
     }
+    
+
 }

@@ -36,7 +36,7 @@ class AuthenticatedNetworking : Networking {
     }
     
     func post(url: URL, body: String, onSuccess: @escaping (_ responseBody: Data) -> Void, onError: @escaping () -> Void) {
-        self.post(url: url, body: body, onSuccess: onSuccess, onError: onError)
+        self.post(url: url, headers: nil, body: body, onSuccess: onSuccess, onError: onError)
     }
     
     func post(url: URL, headers: [String : String]?, body: String, onSuccess: @escaping (_ responseBody: Data) -> Void, onError: @escaping () -> Void) {

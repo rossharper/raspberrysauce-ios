@@ -12,6 +12,7 @@ import WatchConnectivity
 class ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
 
     let authManager = AuthManagerFactory.create()
+    let heatingModeChanger = HeatingModeChangerFactory.create()
     private var model : HomeViewData?
     
     var session: WCSession? {
@@ -25,7 +26,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
     
     func applicationDidFinishLaunching() {
         // Perform any final initialization of your application.
-        print("watch didFinishLaunching")
+        print("delegate didFinishLaunching")
         
         if WCSession.isSupported() {
             session = WCSession.default()
@@ -34,8 +35,11 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
 
     func applicationDidBecomeActive() {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-        print("watch didBecomeActive")
+        print("delegate didBecomeActive")
         
+        updateModel() { model in
+            self.updateInterface()
+        }
     }
 
     func applicationWillResignActive() {
@@ -80,17 +84,13 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
             print("didReceiveApplicationContext with token")
             UserDefaultsTokenStore().put(token: Token(value: tokenValue!))
             updateModel() { model in
-                if let interface = WKExtension.shared().rootInterfaceController as! InterfaceController? {
-                    interface.updateDisplay(model: model)
-                }
+                self.updateInterface()
             }
         } else {
             print("didReceiveApplicationContext with no token, removing")
             UserDefaultsTokenStore().remove()
             model = nil
-            if let interface = WKExtension.shared().rootInterfaceController as! InterfaceController? {
-                interface.updateDisplay(model: model)
-            }
+            updateInterface()
             updateComplications()
         }
     }
@@ -107,10 +107,17 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
                 print("received temperature")  
                 
                 self.model = homeViewData
-                onComplete(self.model)
-                
                 self.updateComplications()
+                
+                onComplete(self.model)
             }
+        }
+    }
+    
+    func updateInterface() {
+        print("update interface")
+        if let interface = WKExtension.shared().rootInterfaceController as! InterfaceController? {
+            interface.updateDisplay(model: model)
         }
     }
     
@@ -121,6 +128,21 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
             for complication in complications! {
                 CLKComplicationServer.sharedInstance().reloadTimeline(for: complication)
             }
+        }
+    }
+    
+    func setHeatingMode(_ mode: HeatingMode) {
+        print("set heating mode" + mode.description)
+        heatingModeChanger.setHeatingMode(mode: mode, onSuccess: { (programme) in
+            print("mode set")
+            guard let model = self.model else {
+                return
+            }
+            self.model = HomeViewData(temperature: model.temperature, programme: programme)
+            self.updateInterface()
+            self.updateComplications()
+        }) {
+            print("error setting heating mode")
         }
     }
 }
