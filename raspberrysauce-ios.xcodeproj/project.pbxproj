@@ -14,6 +14,14 @@
 		9111B2001E0946F700B309D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9111B1FE1E0946F700B309D5 /* LaunchScreen.storyboard */; };
 		9111B20B1E0946F700B309D5 /* raspberrysauce_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111B20A1E0946F700B309D5 /* raspberrysauce_iosTests.swift */; };
 		9111B2161E0946F700B309D5 /* raspberrysauce_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111B2151E0946F700B309D5 /* raspberrysauce_iosUITests.swift */; };
+		9124FC121E0BF6B8009D0699 /* HomeViewDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9124FC111E0BF6B8009D0699 /* HomeViewDataProvider.swift */; };
+		9124FC131E0BF6B8009D0699 /* HomeViewDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9124FC111E0BF6B8009D0699 /* HomeViewDataProvider.swift */; };
+		9124FC151E0BF6F3009D0699 /* HomeViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9124FC141E0BF6F3009D0699 /* HomeViewData.swift */; };
+		9124FC161E0BF6F3009D0699 /* HomeViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9124FC141E0BF6F3009D0699 /* HomeViewData.swift */; };
+		9124FC181E0BF749009D0699 /* SauceApiHomeViewDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9124FC171E0BF749009D0699 /* SauceApiHomeViewDataProvider.swift */; };
+		9124FC191E0BF749009D0699 /* SauceApiHomeViewDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9124FC171E0BF749009D0699 /* SauceApiHomeViewDataProvider.swift */; };
+		9124FC1B1E0BF92E009D0699 /* HomeViewDataProviderFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9124FC1A1E0BF92E009D0699 /* HomeViewDataProviderFactory.swift */; };
+		9124FC1C1E0BF92E009D0699 /* HomeViewDataProviderFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9124FC1A1E0BF92E009D0699 /* HomeViewDataProviderFactory.swift */; };
 		912E89641E09E7420074A8A4 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912E89631E09E7420074A8A4 /* AppConfig.swift */; };
 		912E89671E0AE6DD0074A8A4 /* WatchSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912E89661E0AE6DD0074A8A4 /* WatchSessionDelegate.swift */; };
 		912E89681E0AEEBC0074A8A4 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BF44CA1E09661B004EAE03 /* AuthManager.swift */; };
@@ -29,7 +37,6 @@
 		912E89721E0AEEE80074A8A4 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912E89631E09E7420074A8A4 /* AppConfig.swift */; };
 		912E89731E0AF78D0074A8A4 /* Temperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916A95921E09A5E400C512D3 /* Temperature.swift */; };
 		912E89741E0AF7930074A8A4 /* TemperatureFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918F56681E09D33500FF4CEF /* TemperatureFormatter.swift */; };
-		912E89761E0AF9420074A8A4 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912E89751E0AF9420074A8A4 /* Model.swift */; };
 		912E89791E0B30910074A8A4 /* TemperatureProviderFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916A95961E09A70900C512D3 /* TemperatureProviderFactory.swift */; };
 		912E897A1E0B309C0074A8A4 /* TemperatureProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916A95901E09A58700C512D3 /* TemperatureProvider.swift */; };
 		912E897B1E0B309F0074A8A4 /* SauceApiTemperatureProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916A95941E09A66900C512D3 /* SauceApiTemperatureProvider.swift */; };
@@ -132,9 +139,12 @@
 		9111B2111E0946F700B309D5 /* raspberrysauce-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "raspberrysauce-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9111B2151E0946F700B309D5 /* raspberrysauce_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = raspberrysauce_iosUITests.swift; sourceTree = "<group>"; };
 		9111B2171E0946F700B309D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9124FC111E0BF6B8009D0699 /* HomeViewDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewDataProvider.swift; sourceTree = "<group>"; };
+		9124FC141E0BF6F3009D0699 /* HomeViewData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewData.swift; sourceTree = "<group>"; };
+		9124FC171E0BF749009D0699 /* SauceApiHomeViewDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SauceApiHomeViewDataProvider.swift; sourceTree = "<group>"; };
+		9124FC1A1E0BF92E009D0699 /* HomeViewDataProviderFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewDataProviderFactory.swift; sourceTree = "<group>"; };
 		912E89631E09E7420074A8A4 /* AppConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		912E89661E0AE6DD0074A8A4 /* WatchSessionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchSessionDelegate.swift; sourceTree = "<group>"; };
-		912E89751E0AF9420074A8A4 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		916A958C1E09991700C512D3 /* SigningInProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SigningInProgressViewController.swift; sourceTree = "<group>"; };
 		916A958E1E09A32300C512D3 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		916A95901E09A58700C512D3 /* TemperatureProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureProvider.swift; sourceTree = "<group>"; };
@@ -256,6 +266,10 @@
 				916A959A1E09A7CF00C512D3 /* AuthenticatedNetworking.swift */,
 				918F56681E09D33500FF4CEF /* TemperatureFormatter.swift */,
 				912E89661E0AE6DD0074A8A4 /* WatchSessionDelegate.swift */,
+				9124FC111E0BF6B8009D0699 /* HomeViewDataProvider.swift */,
+				9124FC141E0BF6F3009D0699 /* HomeViewData.swift */,
+				9124FC171E0BF749009D0699 /* SauceApiHomeViewDataProvider.swift */,
+				9124FC1A1E0BF92E009D0699 /* HomeViewDataProviderFactory.swift */,
 			);
 			path = "raspberrysauce-ios";
 			sourceTree = "<group>";
@@ -300,7 +314,6 @@
 				916A95B91E09C2D300C512D3 /* Assets.xcassets */,
 				916A95BB1E09C2D300C512D3 /* Info.plist */,
 				916A95AF1E09C2D300C512D3 /* Supporting Files */,
-				912E89751E0AF9420074A8A4 /* Model.swift */,
 			);
 			path = "raspberrysaucewatch Extension";
 			sourceTree = "<group>";
@@ -546,7 +559,11 @@
 				916A958F1E09A32300C512D3 /* MainViewController.swift in Sources */,
 				91BF44D51E097818004EAE03 /* Token.swift in Sources */,
 				916A958D1E09991700C512D3 /* SigningInProgressViewController.swift in Sources */,
+				9124FC1B1E0BF92E009D0699 /* HomeViewDataProviderFactory.swift in Sources */,
 				91BF44CD1E096667004EAE03 /* AuthManagerFactory.swift in Sources */,
+				9124FC121E0BF6B8009D0699 /* HomeViewDataProvider.swift in Sources */,
+				9124FC181E0BF749009D0699 /* SauceApiHomeViewDataProvider.swift in Sources */,
+				9124FC151E0BF6F3009D0699 /* HomeViewData.swift in Sources */,
 				9111B1F81E0946F700B309D5 /* ViewController.swift in Sources */,
 				91BF44CB1E09661B004EAE03 /* AuthManager.swift in Sources */,
 				916A95971E09A70900C512D3 /* TemperatureProviderFactory.swift in Sources */,
@@ -588,12 +605,14 @@
 				912E896D1E0AEEBC0074A8A4 /* Token.swift in Sources */,
 				912E89791E0B30910074A8A4 /* TemperatureProviderFactory.swift in Sources */,
 				912E897A1E0B309C0074A8A4 /* TemperatureProvider.swift in Sources */,
+				9124FC1C1E0BF92E009D0699 /* HomeViewDataProviderFactory.swift in Sources */,
 				912E89691E0AEEBC0074A8A4 /* AuthManagerFactory.swift in Sources */,
-				912E89761E0AF9420074A8A4 /* Model.swift in Sources */,
 				912E89741E0AF7930074A8A4 /* TemperatureFormatter.swift in Sources */,
+				9124FC161E0BF6F3009D0699 /* HomeViewData.swift in Sources */,
 				916A95B61E09C2D300C512D3 /* NotificationController.swift in Sources */,
 				912E89721E0AEEE80074A8A4 /* AppConfig.swift in Sources */,
 				912E896B1E0AEEBC0074A8A4 /* Networking.swift in Sources */,
+				9124FC191E0BF749009D0699 /* SauceApiHomeViewDataProvider.swift in Sources */,
 				912E89711E0AEEBC0074A8A4 /* AuthenticatedNetworking.swift in Sources */,
 				916A95B81E09C2D300C512D3 /* ComplicationController.swift in Sources */,
 				912E89731E0AF78D0074A8A4 /* Temperature.swift in Sources */,
@@ -602,6 +621,7 @@
 				916A95B21E09C2D300C512D3 /* InterfaceController.swift in Sources */,
 				912E897B1E0B309F0074A8A4 /* SauceApiTemperatureProvider.swift in Sources */,
 				912E896C1E0AEEBC0074A8A4 /* UrlSessionNetworking.swift in Sources */,
+				9124FC131E0BF6B8009D0699 /* HomeViewDataProvider.swift in Sources */,
 				912E89681E0AEEBC0074A8A4 /* AuthManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

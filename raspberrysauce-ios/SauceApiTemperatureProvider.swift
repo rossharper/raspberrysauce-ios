@@ -14,7 +14,7 @@ class SauceApiTemperatureProvider : TemperatureProvider {
     let config : Config
     
     struct Config {
-        let temperatureEndpoint : URL
+        let endpoint : URL
     }
     
     init(config: Config, networking: Networking) {
@@ -23,8 +23,8 @@ class SauceApiTemperatureProvider : TemperatureProvider {
     }
     
     func getTemperature(onTemperatureReceived: @escaping (_ temperature : Temperature) -> Void) {
-        networking.get(url: config.temperatureEndpoint, onSuccess: { value in
-            guard let parsedTemperature = self.parseTemperature(body: value) else {
+        networking.get(url: config.endpoint, onSuccess: { value in
+            guard let parsedTemperature = self.parse(body: value) else {
                 return
             }
             onTemperatureReceived(Temperature(value: parsedTemperature))
@@ -33,7 +33,7 @@ class SauceApiTemperatureProvider : TemperatureProvider {
         }
     }
     
-    private func parseTemperature(body: Data) -> Float? {
+    private func parse(body: Data) -> Float? {
         if let deviceTemperature = try? JSONSerialization.jsonObject(with: body, options: .allowFragments) as? [String: Any],
             let temperature = deviceTemperature?["temperature"] as? Float {
                 return Float(temperature)

@@ -43,7 +43,7 @@ class InterfaceController: WKInterfaceController {
         super.didDeactivate()
     }
     
-    func updateDisplay(model: Model?) {
+    func updateDisplay(model: HomeViewData?) {
         guard let model = model else {
             displayNoData()
             return
@@ -52,7 +52,7 @@ class InterfaceController: WKInterfaceController {
         displayData(model: model)
     }
     
-    private func displayData(model : Model) {
+    private func displayData(model : HomeViewData) {
         label.setText(TemperatureFormatter.asString(temperature: model.temperature))
     }
     

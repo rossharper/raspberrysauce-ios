@@ -12,7 +12,7 @@ import WatchConnectivity
 class ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
 
     let authManager = AuthManagerFactory.create()
-    private var model : Model?
+    private var model : HomeViewData?
     
     var session: WCSession? {
         didSet {
@@ -95,18 +95,18 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
         }
     }
     
-    func getModel() -> Model? {
+    func getModel() -> HomeViewData? {
         return model
     }
     
-    func updateModel(onComplete: @escaping (Model?) -> Void) {
+    func updateModel(onComplete: @escaping (HomeViewData?) -> Void) {
         print("update model")
         if(authManager.isSignedIn()) {
             print("signed in, making request")
-            TemperatureProviderFactory.create().getTemperature { temperature in
+            HomeViewDataProviderFactory.create().getHomeViewData() { homeViewData in
                 print("received temperature")  
                 
-                self.model = Model(temperature: temperature)
+                self.model = homeViewData
                 onComplete(self.model)
                 
                 self.updateComplications()

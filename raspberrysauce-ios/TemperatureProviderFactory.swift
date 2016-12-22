@@ -10,6 +10,6 @@ import Foundation
 
 class TemperatureProviderFactory {
     static func create() -> TemperatureProvider {
-        return SauceApiTemperatureProvider(config: SauceApiTemperatureProvider.Config(temperatureEndpoint: URL(string:"\(AppConfig.ApiBaseUrl)/api/temperature")!), networking: NetworkingFactory.createAuthentiatedNetworking())
+        return SauceApiTemperatureProvider(config: SauceApiTemperatureProvider.Config(endpoint: URL(string:"\(AppConfig.ApiBaseUrl)/api/temperature")!), networking: NetworkingFactory.createAuthentiatedNetworking())
     }
 }

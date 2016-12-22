@@ -1,13 +1,13 @@
 //
-//  Model.swift
+//  HomeViewData.swift
 //  raspberrysauce-ios
 //
-//  Created by Ross Harper on 21/12/2016.
+//  Created by Ross Harper on 22/12/2016.
 //  Copyright © 2016 rossharper.net. All rights reserved.
 //
 
 import Foundation
 
-struct Model {
+struct HomeViewData {
     let temperature : Temperature
 }
