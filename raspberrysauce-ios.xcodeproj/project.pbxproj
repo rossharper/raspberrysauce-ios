@@ -24,6 +24,8 @@
 		9124FC1C1E0BF92E009D0699 /* HomeViewDataProviderFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9124FC1A1E0BF92E009D0699 /* HomeViewDataProviderFactory.swift */; };
 		9124FC1E1E0C2655009D0699 /* Programme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9124FC1D1E0C2655009D0699 /* Programme.swift */; };
 		9124FC1F1E0C2655009D0699 /* Programme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9124FC1D1E0C2655009D0699 /* Programme.swift */; };
+		9124FC211E0C2E4E009D0699 /* ProgrammeModeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9124FC201E0C2E4E009D0699 /* ProgrammeModeFormatter.swift */; };
+		9124FC221E0C2E4E009D0699 /* ProgrammeModeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9124FC201E0C2E4E009D0699 /* ProgrammeModeFormatter.swift */; };
 		912E89641E09E7420074A8A4 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912E89631E09E7420074A8A4 /* AppConfig.swift */; };
 		912E89671E0AE6DD0074A8A4 /* WatchSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912E89661E0AE6DD0074A8A4 /* WatchSessionDelegate.swift */; };
 		912E89681E0AEEBC0074A8A4 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BF44CA1E09661B004EAE03 /* AuthManager.swift */; };
@@ -146,6 +148,7 @@
 		9124FC171E0BF749009D0699 /* SauceApiHomeViewDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SauceApiHomeViewDataProvider.swift; sourceTree = "<group>"; };
 		9124FC1A1E0BF92E009D0699 /* HomeViewDataProviderFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewDataProviderFactory.swift; sourceTree = "<group>"; };
 		9124FC1D1E0C2655009D0699 /* Programme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Programme.swift; sourceTree = "<group>"; };
+		9124FC201E0C2E4E009D0699 /* ProgrammeModeFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgrammeModeFormatter.swift; sourceTree = "<group>"; };
 		912E89631E09E7420074A8A4 /* AppConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		912E89661E0AE6DD0074A8A4 /* WatchSessionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchSessionDelegate.swift; sourceTree = "<group>"; };
 		916A958C1E09991700C512D3 /* SigningInProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SigningInProgressViewController.swift; sourceTree = "<group>"; };
@@ -274,6 +277,7 @@
 				9124FC171E0BF749009D0699 /* SauceApiHomeViewDataProvider.swift */,
 				9124FC1A1E0BF92E009D0699 /* HomeViewDataProviderFactory.swift */,
 				9124FC1D1E0C2655009D0699 /* Programme.swift */,
+				9124FC201E0C2E4E009D0699 /* ProgrammeModeFormatter.swift */,
 			);
 			path = "raspberrysauce-ios";
 			sourceTree = "<group>";
@@ -572,6 +576,7 @@
 				9124FC1E1E0C2655009D0699 /* Programme.swift in Sources */,
 				91BF44CB1E09661B004EAE03 /* AuthManager.swift in Sources */,
 				916A95971E09A70900C512D3 /* TemperatureProviderFactory.swift in Sources */,
+				9124FC211E0C2E4E009D0699 /* ProgrammeModeFormatter.swift in Sources */,
 				91BF44CF1E0966CD004EAE03 /* TokenAuthManager.swift in Sources */,
 				916A959B1E09A7CF00C512D3 /* AuthenticatedNetworking.swift in Sources */,
 				916A95931E09A5E400C512D3 /* Temperature.swift in Sources */,
@@ -628,6 +633,7 @@
 				912E897B1E0B309F0074A8A4 /* SauceApiTemperatureProvider.swift in Sources */,
 				912E896C1E0AEEBC0074A8A4 /* UrlSessionNetworking.swift in Sources */,
 				9124FC131E0BF6B8009D0699 /* HomeViewDataProvider.swift in Sources */,
+				9124FC221E0C2E4E009D0699 /* ProgrammeModeFormatter.swift in Sources */,
 				912E89681E0AEEBC0074A8A4 /* AuthManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

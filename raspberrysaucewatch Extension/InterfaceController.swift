@@ -12,6 +12,8 @@ import Foundation
 class InterfaceController: WKInterfaceController {
 
     @IBOutlet var label: WKInterfaceLabel!
+    @IBOutlet var temperatureLabel: WKInterfaceLabel!
+    @IBOutlet var modeLabel: WKInterfaceLabel!
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -53,14 +55,24 @@ class InterfaceController: WKInterfaceController {
     }
     
     private func displayData(model : HomeViewData) {
-        label.setText(TemperatureFormatter.asString(temperature: model.temperature))
+        label.setHidden(true)
+        temperatureLabel.setHidden(false)
+        modeLabel.setHidden(false)
+        modeLabel.setText(ProgrammeModeFormatter.asString(programme: model.programme))
+        temperatureLabel.setText(TemperatureFormatter.asString(temperature: model.temperature))
     }
     
     private func displayNoData() {
+        label.setHidden(false)
+        temperatureLabel.setHidden(true)
+        modeLabel.setHidden(true)
         label.setText("No data")
     }
     
     private func displaySignedOut() {
+        label.setHidden(false)
+        temperatureLabel.setHidden(true)
+        modeLabel.setHidden(true)
         label.setText("Not Signed In")
     }
 }

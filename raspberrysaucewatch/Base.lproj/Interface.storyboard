@@ -14,10 +14,20 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="raspberrysaucewatch" customModuleProvider="target">
                     <items>
-                        <label alignment="center" verticalAlignment="center" text="Loading..." id="gKC-Xc-cEb"/>
+                        <label alignment="center" verticalAlignment="center" text="Loading..." textAlignment="center" id="cVN-vd-Cd1">
+                            <fontDescription key="font" type="system" weight="thin" pointSize="16"/>
+                        </label>
+                        <label width="136" alignment="left" verticalAlignment="center" hidden="YES" text="COMFORT" textAlignment="center" id="0x3-ZO-j24">
+                            <fontDescription key="font" type="system" pointSize="16"/>
+                        </label>
+                        <label width="1" alignment="center" verticalAlignment="center" hidden="YES" text="20.0˚C" textAlignment="center" id="gKC-Xc-cEb">
+                            <fontDescription key="font" type="system" weight="thin" pointSize="42"/>
+                        </label>
                     </items>
                     <connections>
-                        <outlet property="label" destination="gKC-Xc-cEb" id="Ami-30-OA7"/>
+                        <outlet property="label" destination="cVN-vd-Cd1" id="rYh-oA-vCZ"/>
+                        <outlet property="modeLabel" destination="0x3-ZO-j24" id="Dbm-1I-znb"/>
+                        <outlet property="temperatureLabel" destination="gKC-Xc-cEb" id="Gei-td-ZEe"/>
                     </connections>
                 </controller>
             </objects>
