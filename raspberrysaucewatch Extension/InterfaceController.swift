@@ -64,8 +64,17 @@ class InterfaceController: WKInterfaceController {
         modeLabel.setHidden(false)
         autoLabel.setHidden(false)
         modeLabel.setText(ProgrammeModeFormatter.asString(programme: model.programme))
+        modeLabel.setTextColor(ProgrammeModeColor.colorForMode(model.programme))
         temperatureLabel.setText(TemperatureFormatter.asString(model.temperature))
-        autoLabel.setText(model.programme.inOverride || !model.programme.heatingEnabled ? "MANUAL" : "AUTO")
+        temperatureLabel.setTextColor(TemperatureColor.colorForTemperature(model.temperature))
+        if(model.programme.inOverride || !model.programme.heatingEnabled) {
+            autoLabel.setText("MANUAL")
+            autoLabel.setTextColor(ProgrammeModeColor.offColor)
+        }
+        else {
+            autoLabel.setText("AUTO")
+            autoLabel.setTextColor(ProgrammeModeColor.autoColor)
+        }
     }
     
     private func displayNoData() {

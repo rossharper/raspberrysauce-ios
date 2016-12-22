@@ -79,6 +79,10 @@
 		91BF44D51E097818004EAE03 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BF44D41E097818004EAE03 /* Token.swift */; };
 		91BF44D71E0978C0004EAE03 /* TokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BF44D61E0978C0004EAE03 /* TokenStore.swift */; };
 		91BF44D91E097951004EAE03 /* UserDefaultsTokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BF44D81E097951004EAE03 /* UserDefaultsTokenStore.swift */; };
+		91DB8B9E1E0C8BD90006AF0C /* ProgrammeModeColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DB8B9D1E0C8BD90006AF0C /* ProgrammeModeColor.swift */; };
+		91DB8B9F1E0C8D430006AF0C /* ProgrammeModeColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DB8B9D1E0C8BD90006AF0C /* ProgrammeModeColor.swift */; };
+		91DB8BA11E0C8E910006AF0C /* TemperatureColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DB8BA01E0C8E910006AF0C /* TemperatureColor.swift */; };
+		91DB8BA21E0C904F0006AF0C /* TemperatureColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DB8BA01E0C8E910006AF0C /* TemperatureColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -196,6 +200,8 @@
 		91BF44D41E097818004EAE03 /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		91BF44D61E0978C0004EAE03 /* TokenStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenStore.swift; sourceTree = "<group>"; };
 		91BF44D81E097951004EAE03 /* UserDefaultsTokenStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsTokenStore.swift; sourceTree = "<group>"; };
+		91DB8B9D1E0C8BD90006AF0C /* ProgrammeModeColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgrammeModeColor.swift; sourceTree = "<group>"; };
+		91DB8BA01E0C8E910006AF0C /* TemperatureColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -294,6 +300,8 @@
 				9124FC261E0C3D11009D0699 /* SauceApiHeatingModeChanger.swift */,
 				9124FC291E0C42EA009D0699 /* ProgrammeParser.swift */,
 				9124FC2C1E0C43D9009D0699 /* HeatingModeChangerFactory.swift */,
+				91DB8B9D1E0C8BD90006AF0C /* ProgrammeModeColor.swift */,
+				91DB8BA01E0C8E910006AF0C /* TemperatureColor.swift */,
 			);
 			path = "raspberrysauce-ios";
 			sourceTree = "<group>";
@@ -579,12 +587,14 @@
 				91BF44D91E097951004EAE03 /* UserDefaultsTokenStore.swift in Sources */,
 				912E89641E09E7420074A8A4 /* AppConfig.swift in Sources */,
 				918F56691E09D33500FF4CEF /* TemperatureFormatter.swift in Sources */,
+				91DB8B9E1E0C8BD90006AF0C /* ProgrammeModeColor.swift in Sources */,
 				912E89671E0AE6DD0074A8A4 /* WatchSessionDelegate.swift in Sources */,
 				916A958F1E09A32300C512D3 /* MainViewController.swift in Sources */,
 				91BF44D51E097818004EAE03 /* Token.swift in Sources */,
 				916A958D1E09991700C512D3 /* SigningInProgressViewController.swift in Sources */,
 				9124FC1B1E0BF92E009D0699 /* HomeViewDataProviderFactory.swift in Sources */,
 				91BF44CD1E096667004EAE03 /* AuthManagerFactory.swift in Sources */,
+				91DB8BA11E0C8E910006AF0C /* TemperatureColor.swift in Sources */,
 				9124FC121E0BF6B8009D0699 /* HomeViewDataProvider.swift in Sources */,
 				9124FC241E0C3C6F009D0699 /* HeatingModeChanger.swift in Sources */,
 				9124FC181E0BF749009D0699 /* SauceApiHomeViewDataProvider.swift in Sources */,
@@ -632,6 +642,7 @@
 				9124FC2B1E0C42EA009D0699 /* ProgrammeParser.swift in Sources */,
 				912E896F1E0AEEBC0074A8A4 /* UserDefaultsTokenStore.swift in Sources */,
 				912E896A1E0AEEBC0074A8A4 /* TokenAuthManager.swift in Sources */,
+				91DB8B9F1E0C8D430006AF0C /* ProgrammeModeColor.swift in Sources */,
 				9124FC281E0C3D11009D0699 /* SauceApiHeatingModeChanger.swift in Sources */,
 				912E896E1E0AEEBC0074A8A4 /* TokenStore.swift in Sources */,
 				9124FC2E1E0C43D9009D0699 /* HeatingModeChangerFactory.swift in Sources */,
@@ -658,6 +669,7 @@
 				912E896C1E0AEEBC0074A8A4 /* UrlSessionNetworking.swift in Sources */,
 				9124FC131E0BF6B8009D0699 /* HomeViewDataProvider.swift in Sources */,
 				9124FC221E0C2E4E009D0699 /* ProgrammeModeFormatter.swift in Sources */,
+				91DB8BA21E0C904F0006AF0C /* TemperatureColor.swift in Sources */,
 				912E89681E0AEEBC0074A8A4 /* AuthManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
