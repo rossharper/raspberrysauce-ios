@@ -9,40 +9,64 @@
 import Foundation
 import WatchConnectivity
 
-class WatchSessionDelegate : NSObject, WCSessionDelegate {
+class WatchSessionDelegate : NSObject, WCSessionDelegate, AuthObserver {
     
-    var session: WCSession? {
-        didSet {
-            if let session = session {
-                session.delegate = self
-                session.activate()
-            }
-        }
-    }
+    let authManager = AuthManagerFactory.create()
+    
+    var session: WCSession?
     
     override init() {
         super.init()
         if WCSession.isSupported() {
             session = WCSession.default()
+            if session != nil {
+                session!.delegate = self
+                session!.activate()
+            }
         }
-        // register to listen to auth events and update watch appropriately
+        authManager.setAuthObserver(observer: self)
     }
     
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         // TODO: handle session switching properly
+        print("iOS App Session Did activate")
+        if(authManager.isSignedIn()) {
+            sendToken(token: authManager.getAccessToken())
+        }
+        else {
+            sendSignedOut()
+        }
     }
     func sessionDidBecomeInactive(_ session: WCSession) {
+        print("iOS App Session Did become inactive")
     }
     func sessionDidDeactivate(_ session: WCSession) {
+        print("iOS App Session Did deactivate")
     }
     
-    // HACK: temporary way of transferring data - investigate better methods
-    /*
-    func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
-        if (message["loadTemperature"] as? String) != nil {
-            TemperatureProviderFactory.create().getTemperature(onTemperatureReceived: { temperature in
-                replyHandler(["temperature" : TemperatureFormatter.asString(temperature: temperature) as AnyObject])
-            })
-        }
-    }*/
+    func onSignedIn() {
+        sendToken(token: authManager.getAccessToken())
+    }
+    
+    func onSignedOut() {
+        sendSignedOut()
+    }
+    
+    func onSignInFailed() {
+    }
+    
+    func sendToken(token: Token?) {
+        print("send token...")
+        guard let token = authManager.getAccessToken() else { return }
+        guard let session = self.session else { return }
+        print("sending")
+        try? session.updateApplicationContext(["token" : token.value])
+    }
+    
+    func sendSignedOut() {
+        print("send signed out")
+        guard let session = self.session else { return }
+        print("sending")
+        try? session.updateApplicationContext([:])
+    }
 }

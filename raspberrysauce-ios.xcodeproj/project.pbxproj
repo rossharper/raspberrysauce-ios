@@ -16,6 +16,23 @@
 		9111B2161E0946F700B309D5 /* raspberrysauce_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111B2151E0946F700B309D5 /* raspberrysauce_iosUITests.swift */; };
 		912E89641E09E7420074A8A4 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912E89631E09E7420074A8A4 /* AppConfig.swift */; };
 		912E89671E0AE6DD0074A8A4 /* WatchSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912E89661E0AE6DD0074A8A4 /* WatchSessionDelegate.swift */; };
+		912E89681E0AEEBC0074A8A4 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BF44CA1E09661B004EAE03 /* AuthManager.swift */; };
+		912E89691E0AEEBC0074A8A4 /* AuthManagerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BF44CC1E096667004EAE03 /* AuthManagerFactory.swift */; };
+		912E896A1E0AEEBC0074A8A4 /* TokenAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BF44CE1E0966CD004EAE03 /* TokenAuthManager.swift */; };
+		912E896B1E0AEEBC0074A8A4 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BF44D01E0969F4004EAE03 /* Networking.swift */; };
+		912E896C1E0AEEBC0074A8A4 /* UrlSessionNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BF44D21E096BF1004EAE03 /* UrlSessionNetworking.swift */; };
+		912E896D1E0AEEBC0074A8A4 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BF44D41E097818004EAE03 /* Token.swift */; };
+		912E896E1E0AEEBC0074A8A4 /* TokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BF44D61E0978C0004EAE03 /* TokenStore.swift */; };
+		912E896F1E0AEEBC0074A8A4 /* UserDefaultsTokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BF44D81E097951004EAE03 /* UserDefaultsTokenStore.swift */; };
+		912E89701E0AEEBC0074A8A4 /* NetworkingFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916A95981E09A76900C512D3 /* NetworkingFactory.swift */; };
+		912E89711E0AEEBC0074A8A4 /* AuthenticatedNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916A959A1E09A7CF00C512D3 /* AuthenticatedNetworking.swift */; };
+		912E89721E0AEEE80074A8A4 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912E89631E09E7420074A8A4 /* AppConfig.swift */; };
+		912E89731E0AF78D0074A8A4 /* Temperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916A95921E09A5E400C512D3 /* Temperature.swift */; };
+		912E89741E0AF7930074A8A4 /* TemperatureFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918F56681E09D33500FF4CEF /* TemperatureFormatter.swift */; };
+		912E89761E0AF9420074A8A4 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912E89751E0AF9420074A8A4 /* Model.swift */; };
+		912E89791E0B30910074A8A4 /* TemperatureProviderFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916A95961E09A70900C512D3 /* TemperatureProviderFactory.swift */; };
+		912E897A1E0B309C0074A8A4 /* TemperatureProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916A95901E09A58700C512D3 /* TemperatureProvider.swift */; };
+		912E897B1E0B309F0074A8A4 /* SauceApiTemperatureProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916A95941E09A66900C512D3 /* SauceApiTemperatureProvider.swift */; };
 		916A958D1E09991700C512D3 /* SigningInProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916A958C1E09991700C512D3 /* SigningInProgressViewController.swift */; };
 		916A958F1E09A32300C512D3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916A958E1E09A32300C512D3 /* MainViewController.swift */; };
 		916A95911E09A58700C512D3 /* TemperatureProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916A95901E09A58700C512D3 /* TemperatureProvider.swift */; };
@@ -117,6 +134,7 @@
 		9111B2171E0946F700B309D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		912E89631E09E7420074A8A4 /* AppConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		912E89661E0AE6DD0074A8A4 /* WatchSessionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchSessionDelegate.swift; sourceTree = "<group>"; };
+		912E89751E0AF9420074A8A4 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		916A958C1E09991700C512D3 /* SigningInProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SigningInProgressViewController.swift; sourceTree = "<group>"; };
 		916A958E1E09A32300C512D3 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		916A95901E09A58700C512D3 /* TemperatureProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureProvider.swift; sourceTree = "<group>"; };
@@ -282,6 +300,7 @@
 				916A95B91E09C2D300C512D3 /* Assets.xcassets */,
 				916A95BB1E09C2D300C512D3 /* Info.plist */,
 				916A95AF1E09C2D300C512D3 /* Supporting Files */,
+				912E89751E0AF9420074A8A4 /* Model.swift */,
 			);
 			path = "raspberrysaucewatch Extension";
 			sourceTree = "<group>";
@@ -404,6 +423,9 @@
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
 							};
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
 						};
 					};
 					9111B2051E0946F700B309D5 = {
@@ -424,6 +446,9 @@
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
 							};
+							com.apple.BackgroundModes.watchos.app = {
+								enabled = 0;
+							};
 						};
 					};
 					916A95A91E09C2D300C512D3 = {
@@ -433,6 +458,9 @@
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
+							};
+							com.apple.BackgroundModes.watchos.extension = {
+								enabled = 0;
 							};
 						};
 					};
@@ -554,10 +582,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				912E896F1E0AEEBC0074A8A4 /* UserDefaultsTokenStore.swift in Sources */,
+				912E896A1E0AEEBC0074A8A4 /* TokenAuthManager.swift in Sources */,
+				912E896E1E0AEEBC0074A8A4 /* TokenStore.swift in Sources */,
+				912E896D1E0AEEBC0074A8A4 /* Token.swift in Sources */,
+				912E89791E0B30910074A8A4 /* TemperatureProviderFactory.swift in Sources */,
+				912E897A1E0B309C0074A8A4 /* TemperatureProvider.swift in Sources */,
+				912E89691E0AEEBC0074A8A4 /* AuthManagerFactory.swift in Sources */,
+				912E89761E0AF9420074A8A4 /* Model.swift in Sources */,
+				912E89741E0AF7930074A8A4 /* TemperatureFormatter.swift in Sources */,
 				916A95B61E09C2D300C512D3 /* NotificationController.swift in Sources */,
+				912E89721E0AEEE80074A8A4 /* AppConfig.swift in Sources */,
+				912E896B1E0AEEBC0074A8A4 /* Networking.swift in Sources */,
+				912E89711E0AEEBC0074A8A4 /* AuthenticatedNetworking.swift in Sources */,
 				916A95B81E09C2D300C512D3 /* ComplicationController.swift in Sources */,
+				912E89731E0AF78D0074A8A4 /* Temperature.swift in Sources */,
 				916A95B41E09C2D300C512D3 /* ExtensionDelegate.swift in Sources */,
+				912E89701E0AEEBC0074A8A4 /* NetworkingFactory.swift in Sources */,
 				916A95B21E09C2D300C512D3 /* InterfaceController.swift in Sources */,
+				912E897B1E0B309F0074A8A4 /* SauceApiTemperatureProvider.swift in Sources */,
+				912E896C1E0AEEBC0074A8A4 /* UrlSessionNetworking.swift in Sources */,
+				912E89681E0AEEBC0074A8A4 /* AuthManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

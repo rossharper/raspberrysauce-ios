@@ -7,18 +7,35 @@
 //
 
 import WatchKit
+import WatchConnectivity
 
-class ExtensionDelegate: NSObject, WKExtensionDelegate {
+class ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
 
-    // TODO: should probably get data in here
+    let authManager = AuthManagerFactory.create()
+    private var model : Model?
+    
+    var session: WCSession? {
+        didSet {
+            if let session = session {
+                session.delegate = self
+                session.activate()
+            }
+        }
+    }
     
     func applicationDidFinishLaunching() {
         // Perform any final initialization of your application.
+        print("watch didFinishLaunching")
         
+        if WCSession.isSupported() {
+            session = WCSession.default()
+        }
     }
 
     func applicationDidBecomeActive() {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        print("watch didBecomeActive")
+        
     }
 
     func applicationWillResignActive() {
@@ -33,15 +50,19 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
             switch task {
             case let backgroundTask as WKApplicationRefreshBackgroundTask:
                 // Be sure to complete the background task once you’re done.
+                print("watch WKApplicationRefreshBackgroundTask")
                 backgroundTask.setTaskCompleted()
             case let snapshotTask as WKSnapshotRefreshBackgroundTask:
                 // Snapshot tasks have a unique completion call, make sure to set your expiration date
+                print("watch WKSnapshotRefreshBackgroundTask")
                 snapshotTask.setTaskCompleted(restoredDefaultState: true, estimatedSnapshotExpiration: Date.distantFuture, userInfo: nil)
             case let connectivityTask as WKWatchConnectivityRefreshBackgroundTask:
                 // Be sure to complete the connectivity task once you’re done.
+                print("watch WKWatchConnectivityRefreshBackgroundTask")
                 connectivityTask.setTaskCompleted()
             case let urlSessionTask as WKURLSessionRefreshBackgroundTask:
                 // Be sure to complete the URL session task once you’re done.
+                print("watch WKURLSessionRefreshBackgroundTask")
                 urlSessionTask.setTaskCompleted()
             default:
                 // make sure to complete unhandled task types
@@ -49,5 +70,47 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
             }
         }
     }
-
+    
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+    }
+    
+    func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
+        let tokenValue = applicationContext["token"] as! String?
+        if tokenValue != nil {
+            print("didReceiveApplicationContext with token")
+            UserDefaultsTokenStore().put(token: Token(value: tokenValue!))
+        } else {
+            print("didReceiveApplicationContext with no token, removing")
+            UserDefaultsTokenStore().remove()
+        }
+    }
+    
+    func getModel() -> Model? {
+        return model
+    }
+    
+    func updateModel(onComplete: @escaping (Model?) -> Void) {
+        print("update model")
+        if(authManager.isSignedIn()) {
+            print("signed in, making request")
+            TemperatureProviderFactory.create().getTemperature { temperature in
+                print("received temperature")  
+                
+                self.model = Model(temperature: temperature)
+                onComplete(self.model)
+                
+                self.updateComplications()
+            }
+        }
+    }
+    
+    func updateComplications() {
+        let complicationServer = CLKComplicationServer.sharedInstance()
+        let complications = complicationServer.activeComplications
+        if(complications != nil) {
+            for complication in complications! {
+                CLKComplicationServer.sharedInstance().reloadTimeline(for: complication)
+            }
+        }
+    }
 }

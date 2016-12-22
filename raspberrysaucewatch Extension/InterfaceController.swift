@@ -8,35 +8,34 @@
 
 import WatchKit
 import Foundation
-import WatchConnectivity
 
-
-class InterfaceController: WKInterfaceController, WCSessionDelegate {
+class InterfaceController: WKInterfaceController {
 
     @IBOutlet var label: WKInterfaceLabel!
-    
-    //let tokenStore = TokenStore
-    
-    var session: WCSession? {
-        didSet {
-            if let session = session {
-                session.delegate = self
-                session.activate()
-            }
-        }
-    }
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
         // Configure interface objects here.
+        print("watch awake")
     }
     
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
         
-        self.updateDisplay()
+        print("watch view willActivate")
+        
+        let extensionDelegate = WKExtension.shared().delegate as! ExtensionDelegate
+        
+        if(!extensionDelegate.authManager.isSignedIn()) {
+            displaySignedOut()
+            return
+        }
+        
+        extensionDelegate.updateModel() { model in
+            self.updateDisplay(model: model)
+        }
     }
     
     override func didDeactivate() {
@@ -44,27 +43,24 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         super.didDeactivate()
     }
     
-    private func updateDisplay() {
-    }
-
-    /*
-    private func loadTemperature() {
-        if WCSession.isSupported() {
-            session = WCSession.default()
-            // HACK: probably not the correct way to try and load data
-            session!.sendMessage(["loadTemperature" : "load"], replyHandler: { response in
-                let temperature = response["temperature"] as? String
-                // HACK: temporarily store in user defaults to get through to complication
-                UserDefaults.standard.set(temperature, forKey: "currentTemperature")
-                self.label.setText(temperature)
-            }, errorHandler: { error in
-                self.label.setText("error")
-            })
+    private func updateDisplay(model: Model?) {
+        guard let model = model else {
+            displayNoData()
+            return
         }
+        
+        displayData(model: model)
     }
- */
-
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState,
-           error: Error?){
+    
+    private func displayData(model : Model) {
+        label.setText(TemperatureFormatter.asString(temperature: model.temperature))
+    }
+    
+    private func displayNoData() {
+        label.setText("No data")
+    }
+    
+    private func displaySignedOut() {
+        label.setText("Not Signed In")
     }
 }

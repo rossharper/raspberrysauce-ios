@@ -7,7 +7,7 @@
 //
 
 import ClockKit
-
+import WatchKit
 
 class ComplicationController: NSObject, CLKComplicationDataSource {
     
@@ -24,15 +24,17 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         //let myDelegate = WKExtension.sharedExtension().delegate as! ExtensionDelegate
         //var data : Dictionary = myDelegate.myComplicationData[ComplicationCurrentEntry]!
         
-        var entry : CLKComplicationTimelineEntry?
-        let now = Date()
-    
-        let textTemplate = CLKComplicationTemplateModularSmallSimpleText()
-        // HACK: temporary to get data through
-        let text = UserDefaults.standard.object(forKey: "currentTemperature") as! String? ?? "??"
-        textTemplate.textProvider = CLKSimpleTextProvider(text: text, shortText: text)
+        print("watch getCurrentTimelineEntry")
         
-        entry = CLKComplicationTimelineEntry(date: now, complicationTemplate: textTemplate)
+        let extensionDelegate = WKExtension.shared().delegate as! ExtensionDelegate
+        let textTemplate = CLKComplicationTemplateModularSmallSimpleText()
+        
+        let model = extensionDelegate.getModel()
+        
+        let text = (model != nil) ? TemperatureFormatter.asString(temperature: model!.temperature) : "??"
+        
+        textTemplate.textProvider = CLKSimpleTextProvider(text: text, shortText: text)
+        let entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: textTemplate)
 
         handler(entry)
     }
@@ -41,6 +43,8 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     func getLocalizableSampleTemplate(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTemplate?) -> Void) {
         // This method will be called once per supported complication, and the results will be cached
+        
+        // TODO: implement placeholder template
         handler(nil)
     }
     

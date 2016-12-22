@@ -32,6 +32,6 @@ class UserDefaultsTokenStore : TokenStore {
     }
     
     func getDefaults() -> UserDefaults? {
-        return UserDefaults.init(suiteName: "group.raspberrysauce.tokens")
+        return UserDefaults.standard
     }
 }
