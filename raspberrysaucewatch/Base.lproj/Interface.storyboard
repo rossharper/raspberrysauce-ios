@@ -9,21 +9,21 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11508"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--Raspberry Sauce-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="raspberrysaucewatch" customModuleProvider="target">
+                <controller title="Raspberry Sauce" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="raspberrysaucewatch" customModuleProvider="target">
                     <items>
-                        <label alignment="center" verticalAlignment="center" text="Loading..." textAlignment="center" id="cVN-vd-Cd1">
+                        <label width="1" alignment="center" verticalAlignment="center" text="Loading..." textAlignment="center" id="cVN-vd-Cd1">
                             <fontDescription key="font" type="system" weight="thin" pointSize="16"/>
                         </label>
-                        <label width="136" alignment="left" verticalAlignment="center" hidden="YES" text="COMFORT" textAlignment="center" id="0x3-ZO-j24">
+                        <label width="1" alignment="center" verticalAlignment="center" text="COMFORT" textAlignment="center" id="0x3-ZO-j24">
                             <fontDescription key="font" type="system" pointSize="16"/>
                         </label>
-                        <label width="1" alignment="center" verticalAlignment="center" hidden="YES" text="20.0˚C" textAlignment="center" id="gKC-Xc-cEb">
+                        <label width="1" alignment="center" verticalAlignment="center" text="20.0˚C" textAlignment="center" id="gKC-Xc-cEb">
                             <fontDescription key="font" type="system" weight="thin" pointSize="42"/>
                         </label>
-                        <label alignment="center" verticalAlignment="center" hidden="YES" text="AUTO" textAlignment="center" id="yEs-0O-1Of">
+                        <label width="1" alignment="center" verticalAlignment="center" text="AUTO" textAlignment="center" id="yEs-0O-1Of">
                             <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
                         </label>
                     </items>
