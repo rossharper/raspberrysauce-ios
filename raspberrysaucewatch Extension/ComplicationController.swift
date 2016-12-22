@@ -27,14 +27,52 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         print("watch getCurrentTimelineEntry")
         
         let extensionDelegate = WKExtension.shared().delegate as! ExtensionDelegate
-        let textTemplate = CLKComplicationTemplateModularSmallSimpleText()
+        guard let model = extensionDelegate.getModel() else {
+            handler(nil)
+            return
+        }
         
-        let model = extensionDelegate.getModel()
+        let fullText = TemperatureFormatter.asString(model.temperature)
+        let valueText = TemperatureFormatter.valueAsString(model.temperature)
+        let unitText = TemperatureFormatter.unitAsString(model.temperature)
         
-        let text = (model != nil) ? TemperatureFormatter.asString(temperature: model!.temperature) : "??"
+        var template : CLKComplicationTemplate
         
-        textTemplate.textProvider = CLKSimpleTextProvider(text: text, shortText: text)
-        let entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: textTemplate)
+        switch(complication.family) {
+        case .circularSmall:
+            let textTemplate = CLKComplicationTemplateCircularSmallStackText()
+            textTemplate.line1TextProvider = CLKSimpleTextProvider(text: valueText)
+            textTemplate.line2TextProvider = CLKSimpleTextProvider(text: unitText)
+            template = textTemplate
+        case .modularSmall:
+            let textTemplate = CLKComplicationTemplateModularSmallStackText()
+            textTemplate.line1TextProvider = CLKSimpleTextProvider(text: valueText)
+            textTemplate.line2TextProvider = CLKSimpleTextProvider(text: unitText)
+            template = textTemplate
+        case .modularLarge:
+            let textTemplate = CLKComplicationTemplateModularLargeTallBody()
+            textTemplate.headerTextProvider = CLKSimpleTextProvider(text: ProgrammeModeFormatter.asString(programme: model.programme))
+            textTemplate.bodyTextProvider = CLKSimpleTextProvider(text: fullText)
+            template = textTemplate
+        case .utilitarianSmall:
+            let textTemplate = CLKComplicationTemplateUtilitarianSmallFlat()
+            textTemplate.textProvider = CLKSimpleTextProvider(text: fullText)
+            template = textTemplate
+        case .utilitarianSmallFlat:
+            let textTemplate = CLKComplicationTemplateUtilitarianSmallFlat()
+            textTemplate.textProvider = CLKSimpleTextProvider(text: fullText)
+            template = textTemplate
+        case .utilitarianLarge:
+            let textTemplate = CLKComplicationTemplateUtilitarianLargeFlat()
+            textTemplate.textProvider = CLKSimpleTextProvider(text: fullText)
+            template = textTemplate
+        case .extraLarge:
+            let textTemplate = CLKComplicationTemplateExtraLargeSimpleText()
+            textTemplate.textProvider = CLKSimpleTextProvider(text: fullText)
+            template = textTemplate
+        }
+        
+        let entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
 
         handler(entry)
     }

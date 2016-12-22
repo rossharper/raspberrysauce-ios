@@ -60,7 +60,7 @@ class InterfaceController: WKInterfaceController {
         modeLabel.setHidden(false)
         autoLabel.setHidden(false)
         modeLabel.setText(ProgrammeModeFormatter.asString(programme: model.programme))
-        temperatureLabel.setText(TemperatureFormatter.asString(temperature: model.temperature))
+        temperatureLabel.setText(TemperatureFormatter.asString(model.temperature))
         autoLabel.setText(model.programme.inOverride || !model.programme.heatingEnabled ? "MANUAL" : "AUTO")
     }
     

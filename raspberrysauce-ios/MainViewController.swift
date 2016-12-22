@@ -31,7 +31,7 @@ class MainViewController: UIViewController {
         self.temperatureProvider.getTemperature { temperature in
             DispatchQueue.main.async {
                 self.activityIndicator.isHidden = true
-                self.temperatureLabel.text = TemperatureFormatter.asString(temperature:temperature)
+                self.temperatureLabel.text = TemperatureFormatter.asString(temperature)
             }
         }
     }

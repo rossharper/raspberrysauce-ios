@@ -9,10 +9,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11508"/>
     </dependencies>
     <scenes>
-        <!--Raspberry Sauce-->
+        <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller title="Raspberry Sauce" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="raspberrysaucewatch" customModuleProvider="target">
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="raspberrysaucewatch" customModuleProvider="target">
                     <items>
                         <label width="1" alignment="center" verticalAlignment="center" text="Loading..." textAlignment="center" id="cVN-vd-Cd1">
                             <fontDescription key="font" type="system" weight="thin" pointSize="16"/>

@@ -9,7 +9,15 @@
 import Foundation
 
 struct TemperatureFormatter {
-    static func asString(temperature: Temperature) -> String {
-        return String(format: "%.1fºC", temperature.value)
+    static func asString(_ temperature: Temperature) -> String {
+        return "\(valueAsString(temperature))\(unitAsString(temperature))"
+    }
+    
+    static func valueAsString(_ temperature: Temperature) -> String {
+        return String(format: "%.1f", temperature.value)
+    }
+    
+    static func unitAsString(_ temperature: Temperature) -> String {
+        return "ºC"
     }
 }
