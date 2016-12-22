@@ -24,6 +24,30 @@
                             <fontDescription key="font" type="system" weight="thin" pointSize="42"/>
                         </label>
                     </items>
+                    <menu key="menu" id="K40-p3-wFk">
+                        <items>
+                            <menuItem title="Auto" icon="repeat" id="hPM-FB-IvW">
+                                <connections>
+                                    <action selector="onAutoSelected" destination="AgC-eL-Hgc" id="QuC-Ih-vba"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Comfort" icon="play" id="XVM-Kr-fuZ">
+                                <connections>
+                                    <action selector="onComfortSelected" destination="AgC-eL-Hgc" id="aHQ-7c-0BA"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Setback" icon="pause" id="2N2-lk-ZxU">
+                                <connections>
+                                    <action selector="onSetbackSelected" destination="AgC-eL-Hgc" id="VnH-Ol-iLf"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Off" icon="decline" id="Urk-nz-bSv">
+                                <connections>
+                                    <action selector="onOffSelected" destination="AgC-eL-Hgc" id="UHl-HJ-ItZ"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
                     <connections>
                         <outlet property="label" destination="cVN-vd-Cd1" id="rYh-oA-vCZ"/>
                         <outlet property="modeLabel" destination="0x3-ZO-j24" id="Dbm-1I-znb"/>

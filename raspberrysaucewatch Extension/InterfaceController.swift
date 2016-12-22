@@ -75,4 +75,16 @@ class InterfaceController: WKInterfaceController {
         modeLabel.setHidden(true)
         label.setText("Not Signed In")
     }
+    
+    @IBAction func onAutoSelected() {
+    }
+    
+    @IBAction func onComfortSelected() {
+    }
+    
+    @IBAction func onSetbackSelected() {
+    }
+    
+    @IBAction func onOffSelected() {
+    }
 }
