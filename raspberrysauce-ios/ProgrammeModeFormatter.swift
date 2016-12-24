@@ -11,7 +11,7 @@ import Foundation
 struct ProgrammeModeFormatter {
     static func asString(programme: Programme) -> String {
         if(programme.heatingEnabled) {
-            return (programme.comfortLevelEnabled) ? "COMFORT" : "SETBACK"
+            return (programme.comfortLevelEnabled) ? "COMFORT" : "ECONOMY"
         } else {
             return "OFF"
         }

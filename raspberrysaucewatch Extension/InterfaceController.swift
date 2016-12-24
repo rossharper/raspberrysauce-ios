@@ -57,7 +57,7 @@ class InterfaceController: WKInterfaceController {
     private func displayData(model : HomeViewData) {
         addMenuItem(withImageNamed: "AutoModeMenuIcon", title: "Auto", action: #selector(onAutoSelected))
         addMenuItem(withImageNamed: "ComfortModeMenuIcon", title: "Comfort", action: #selector(onComfortSelected))
-        addMenuItem(withImageNamed: "SetbackModeMenuIcon", title: "Setback", action: #selector(onSetbackSelected))
+        addMenuItem(withImageNamed: "SetbackModeMenuIcon", title: "Economy", action: #selector(onSetbackSelected))
         addMenuItem(withImageNamed: "OffModeMenuIcon", title: "Off", action: #selector(onOffSelected))
         label.setHidden(true)
         temperatureLabel.setHidden(false)
