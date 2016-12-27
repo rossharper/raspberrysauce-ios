@@ -15,6 +15,8 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
     let heatingModeChanger = HeatingModeChangerFactory.create()
     private var model : HomeViewData?
     
+    let lastModelUpdate : Date?
+    
     var session: WCSession? {
         didSet {
             if let session = session {
@@ -59,7 +61,8 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
             case let snapshotTask as WKSnapshotRefreshBackgroundTask:
                 // Snapshot tasks have a unique completion call, make sure to set your expiration date
                 print("watch WKSnapshotRefreshBackgroundTask")
-                snapshotTask.setTaskCompleted(restoredDefaultState: true, estimatedSnapshotExpiration: Date.distantFuture, userInfo: nil)
+                updateInterface()
+                snapshotTask.setTaskCompleted(restoredDefaultState: true, estimatedSnapshotExpiration: Date().addingTimeInterval(2 * 60), userInfo: nil)
             case let connectivityTask as WKWatchConnectivityRefreshBackgroundTask:
                 // Be sure to complete the connectivity task once you’re done.
                 print("watch WKWatchConnectivityRefreshBackgroundTask")

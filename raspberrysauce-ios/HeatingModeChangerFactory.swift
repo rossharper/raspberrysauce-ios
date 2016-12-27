@@ -10,6 +10,6 @@ import Foundation
 
 class HeatingModeChangerFactory {
     static func create() -> HeatingModeChanger {
-        return SauceApiHeatingModeChanger(config: SauceApiHeatingModeChanger.Config(endpoint: URL(string:"\(AppConfig.ApiBaseUrl)/api/programme/setMode/")!), networking: NetworkingFactory.createAuthentiatedNetworking())
+        return SauceApiHeatingModeChanger(config: SauceApiHeatingModeChanger.Config(endpoint: URL(string:SauceApiEndpoints.setModeEndpoint)!), networking: NetworkingFactory.createAuthentiatedNetworking())
     }
 }

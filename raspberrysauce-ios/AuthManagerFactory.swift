@@ -10,7 +10,7 @@ import Foundation
 
 class AuthManagerFactory {
     static func create() -> AuthManager {
-        let config = AuthConfig(tokenRequestEndpoint: URL(string: "\(AppConfig.ApiBaseUrl)/requestAppToken")!)
+        let config = AuthConfig(tokenRequestEndpoint: URL(string: SauceApiEndpoints.accessTokenEndpoint)!)
         return TokenAuthManager(config: config, networking: NetworkingFactory.createNetworking(), tokenStore: UserDefaultsTokenStore())
     }
 }

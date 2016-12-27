@@ -10,6 +10,6 @@ import Foundation
 
 class HomeViewDataProviderFactory {
     static func create() -> HomeViewDataProvider {
-        return SauceApiHomeViewDataProvider(config: SauceApiHomeViewDataProvider.Config(endpoint: URL(string:"\(AppConfig.ApiBaseUrl)/api/views/ios/home")!), networking: NetworkingFactory.createAuthentiatedNetworking())
+        return SauceApiHomeViewDataProvider(config: SauceApiHomeViewDataProvider.Config(endpoint: URL(string:SauceApiEndpoints.homeViewEndpoint)!), networking: NetworkingFactory.createAuthentiatedNetworking())
     }
 }
