@@ -23,7 +23,7 @@ class SauceApiHomeViewDataProvider : HomeViewDataProvider {
     
     func getHomeViewData(onReceived: @escaping (_ homeViewData : HomeViewData) -> Void) {
         networking.get(url: config.endpoint, onSuccess: { value in
-            guard let homeViewData = self.parse(body: value) else {
+            guard let homeViewData = self.parse(value) else {
                 print ("failed to parse")
                 return
             }
@@ -34,7 +34,7 @@ class SauceApiHomeViewDataProvider : HomeViewDataProvider {
         }
     }
     
-    func parse(body: Data) -> HomeViewData? {        
+    func parse(_ body: Data) -> HomeViewData? {
         guard let homeViewData = try? JSONSerialization.jsonObject(with: body, options: .allowFragments) as! [String: Any],
                     let temperature = homeViewData["temperature"] as? Float,
                     let programmeData = homeViewData["programme"] as? [String : Any],

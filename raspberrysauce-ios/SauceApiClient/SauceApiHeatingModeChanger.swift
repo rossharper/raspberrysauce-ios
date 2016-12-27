@@ -35,7 +35,7 @@ class SauceApiHeatingModeChanger : HeatingModeChanger {
     func setHeatingMode(mode: HeatingMode, onSuccess: @escaping (Programme) -> Void, onError: @escaping () -> Void) {
         let url = buildUrl(mode)
         networking.post(url: url, body: "", onSuccess: { (data) in
-            guard let programme = self.parse(body: data) else {
+            guard let programme = self.parse(data) else {
                 onError()
                 return
             }
@@ -49,7 +49,7 @@ class SauceApiHeatingModeChanger : HeatingModeChanger {
         return config.endpoint.appendingPathComponent(mode.description)
     }
     
-    func parse(body: Data) -> Programme? {
+    func parse(_ body: Data) -> Programme? {
         guard let programmeData = try? JSONSerialization.jsonObject(with: body, options: .allowFragments) as! [String: Any] else {
             return nil
         }

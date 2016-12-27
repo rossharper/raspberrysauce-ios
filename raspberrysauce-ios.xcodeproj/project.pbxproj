@@ -85,6 +85,7 @@
 		91DB8BA21E0C904F0006AF0C /* TemperatureColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DB8BA01E0C8E910006AF0C /* TemperatureColor.swift */; };
 		91DB8BA41E12E7EB0006AF0C /* SauceApiEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DB8BA31E12E7EB0006AF0C /* SauceApiEndpoints.swift */; };
 		91DB8BA51E12E7EB0006AF0C /* SauceApiEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DB8BA31E12E7EB0006AF0C /* SauceApiEndpoints.swift */; };
+		91DB8BB41E130A580006AF0C /* SauceApiBackgroundHomeViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DB8BB31E130A580006AF0C /* SauceApiBackgroundHomeViewProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -205,6 +206,7 @@
 		91DB8B9D1E0C8BD90006AF0C /* ProgrammeModeColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgrammeModeColor.swift; sourceTree = "<group>"; };
 		91DB8BA01E0C8E910006AF0C /* TemperatureColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureColor.swift; sourceTree = "<group>"; };
 		91DB8BA31E12E7EB0006AF0C /* SauceApiEndpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SauceApiEndpoints.swift; sourceTree = "<group>"; };
+		91DB8BB31E130A580006AF0C /* SauceApiBackgroundHomeViewProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SauceApiBackgroundHomeViewProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -322,6 +324,7 @@
 				916A95B11E09C2D300C512D3 /* InterfaceController.swift */,
 				916A95B51E09C2D300C512D3 /* NotificationController.swift */,
 				918F56661E09CDC700FF4CEF /* raspberrysaucewatch Extension.entitlements */,
+				91DB8BB31E130A580006AF0C /* SauceApiBackgroundHomeViewProvider.swift */,
 			);
 			path = "raspberrysaucewatch Extension";
 			sourceTree = "<group>";
@@ -331,7 +334,6 @@
 			children = (
 				916A95B01E09C2D300C512D3 /* PushNotificationPayload.apns */,
 			);
-			name = "Supporting Files";
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
@@ -342,7 +344,6 @@
 				916A95981E09A76900C512D3 /* NetworkingFactory.swift */,
 				91BF44D21E096BF1004EAE03 /* UrlSessionNetworking.swift */,
 			);
-			name = Networking;
 			path = Networking;
 			sourceTree = "<group>";
 		};
@@ -357,7 +358,6 @@
 				91BF44D41E097818004EAE03 /* Token.swift */,
 				91BF44CE1E0966CD004EAE03 /* TokenAuthManager.swift */,
 			);
-			name = Authentication;
 			path = Authentication;
 			sourceTree = "<group>";
 		};
@@ -370,7 +370,6 @@
 				9111B1F71E0946F700B309D5 /* ViewController.swift */,
 				912E89661E0AE6DD0074A8A4 /* WatchSessionDelegate.swift */,
 			);
-			name = App;
 			path = App;
 			sourceTree = "<group>";
 		};
@@ -379,7 +378,6 @@
 			children = (
 				916A958E1E09A32300C512D3 /* MainViewController.swift */,
 			);
-			name = MainView;
 			path = MainView;
 			sourceTree = "<group>";
 		};
@@ -390,7 +388,6 @@
 				91DB8BAB1E12EA3E0006AF0C /* Temperature */,
 				9124FC1D1E0C2655009D0699 /* Programme.swift */,
 			);
-			name = Model;
 			path = Model;
 			sourceTree = "<group>";
 		};
@@ -400,7 +397,6 @@
 				916A95921E09A5E400C512D3 /* Temperature.swift */,
 				916A95901E09A58700C512D3 /* TemperatureProvider.swift */,
 			);
-			name = Temperature;
 			path = Temperature;
 			sourceTree = "<group>";
 		};
@@ -410,7 +406,6 @@
 				9124FC141E0BF6F3009D0699 /* HomeViewData.swift */,
 				9124FC111E0BF6B8009D0699 /* HomeViewDataProvider.swift */,
 			);
-			name = HomeView;
 			path = HomeView;
 			sourceTree = "<group>";
 		};
@@ -426,7 +421,6 @@
 				916A95941E09A66900C512D3 /* SauceApiTemperatureProvider.swift */,
 				916A95961E09A70900C512D3 /* TemperatureProviderFactory.swift */,
 			);
-			name = SauceApiClient;
 			path = SauceApiClient;
 			sourceTree = "<group>";
 		};
@@ -436,7 +430,6 @@
 				91BF44C81E096314004EAE03 /* SignInViewController.swift */,
 				916A958C1E09991700C512D3 /* SigningInProgressViewController.swift */,
 			);
-			name = UI;
 			path = UI;
 			sourceTree = "<group>";
 		};
@@ -445,7 +438,6 @@
 			children = (
 				916A959A1E09A7CF00C512D3 /* AuthenticatedNetworking.swift */,
 			);
-			name = Networking;
 			path = Networking;
 			sourceTree = "<group>";
 		};
@@ -455,7 +447,6 @@
 				91BF44D61E0978C0004EAE03 /* TokenStore.swift */,
 				91BF44D81E097951004EAE03 /* UserDefaultsTokenStore.swift */,
 			);
-			name = TokenStore;
 			path = TokenStore;
 			sourceTree = "<group>";
 		};
@@ -467,7 +458,6 @@
 				91DB8BA01E0C8E910006AF0C /* TemperatureColor.swift */,
 				918F56681E09D33500FF4CEF /* TemperatureFormatter.swift */,
 			);
-			name = UI;
 			path = UI;
 			sourceTree = "<group>";
 		};
@@ -476,7 +466,6 @@
 			children = (
 				9124FC231E0C3C6F009D0699 /* HeatingModeChanger.swift */,
 			);
-			name = HeatingMode;
 			path = HeatingMode;
 			sourceTree = "<group>";
 		};
@@ -794,6 +783,7 @@
 				9124FC131E0BF6B8009D0699 /* HomeViewDataProvider.swift in Sources */,
 				9124FC221E0C2E4E009D0699 /* ProgrammeModeFormatter.swift in Sources */,
 				91DB8BA21E0C904F0006AF0C /* TemperatureColor.swift in Sources */,
+				91DB8BB41E130A580006AF0C /* SauceApiBackgroundHomeViewProvider.swift in Sources */,
 				912E89681E0AEEBC0074A8A4 /* AuthManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

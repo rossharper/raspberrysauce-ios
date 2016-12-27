@@ -17,6 +17,8 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
     
     var lastModelUpdate : Date?
     
+    let backgroundHomeViewProvider = SauceApiBackgroundHomeViewProvider()
+    
     var session: WCSession? {
         didSet {
             if let session = session {
@@ -64,7 +66,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
                 // Snapshot tasks have a unique completion call, make sure to set your expiration date
                 print("watch WKSnapshotRefreshBackgroundTask")
                 updateInterface()
-                snapshotTask.setTaskCompleted(restoredDefaultState: true, estimatedSnapshotExpiration: Date().addingTimeInterval(2 * 60), userInfo: nil)
+                snapshotTask.setTaskCompleted(restoredDefaultState: true, estimatedSnapshotExpiration: .distantFuture, userInfo: nil)
             case let connectivityTask as WKWatchConnectivityRefreshBackgroundTask:
                 // Be sure to complete the connectivity task once you’re done.
                 print("watch WKWatchConnectivityRefreshBackgroundTask")
@@ -109,7 +111,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
         if(authManager.isSignedIn()) {
             print("signed in, making request")
             HomeViewDataProviderFactory.create().getHomeViewData() { homeViewData in
-                print("received temperature")  
+                print("received model")
                 
                 self.model = homeViewData
                 self.updateComplications()
@@ -156,15 +158,27 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
     }
     
     func scheduleBackgroundRefresh() {
-        // todo: shouldn't be every 2 minutes!
-        let updateInterval : TimeInterval = 2 * 60
+        let updateInterval : TimeInterval = 30 * 60
         let updateDate = lastModelUpdate?.addingTimeInterval(updateInterval) ?? Date().addingTimeInterval(updateInterval)
         print("schedule background refresh for \(updateDate)")
         WKExtension.shared().scheduleBackgroundRefresh(withPreferredDate: updateDate, userInfo: nil) { error in
         }
     }
     
+    func scheduleSnapshotUpdate() {
+        WKExtension.shared().scheduleSnapshotRefresh(withPreferredDate: Date(), userInfo: nil) { error in
+        }
+    }
+    
     func performBackgroundUpdate() {
         print("perform background update")
+        
+        backgroundHomeViewProvider.getHomeViewData { homeViewData in
+            self.model = homeViewData
+            self.updateInterface()
+            self.scheduleSnapshotUpdate()
+            self.updateComplications()
+            
+        }
     }
 }
