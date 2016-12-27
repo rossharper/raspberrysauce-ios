@@ -266,46 +266,18 @@
 		9111B1F41E0946F700B309D5 /* raspberrysauce-ios */ = {
 			isa = PBXGroup;
 			children = (
-				912E89631E09E7420074A8A4 /* AppConfig.swift */,
+				91DB8BA81E12E9D10006AF0C /* App */,
+				91DB8BA71E12E9840006AF0C /* Authentication */,
 				918F56641E09CD8C00FF4CEF /* raspberrysauce-ios.entitlements */,
-				9111B1F51E0946F700B309D5 /* AppDelegate.swift */,
-				9111B1F71E0946F700B309D5 /* ViewController.swift */,
-				9111B1F91E0946F700B309D5 /* Main.storyboard */,
 				9111B1FC1E0946F700B309D5 /* Assets.xcassets */,
 				9111B1FE1E0946F700B309D5 /* LaunchScreen.storyboard */,
 				9111B2011E0946F700B309D5 /* Info.plist */,
-				91BF44C81E096314004EAE03 /* SignInViewController.swift */,
-				91BF44CA1E09661B004EAE03 /* AuthManager.swift */,
-				91BF44CC1E096667004EAE03 /* AuthManagerFactory.swift */,
-				91BF44CE1E0966CD004EAE03 /* TokenAuthManager.swift */,
-				91BF44D01E0969F4004EAE03 /* Networking.swift */,
-				91BF44D21E096BF1004EAE03 /* UrlSessionNetworking.swift */,
-				91BF44D41E097818004EAE03 /* Token.swift */,
-				91BF44D61E0978C0004EAE03 /* TokenStore.swift */,
-				91BF44D81E097951004EAE03 /* UserDefaultsTokenStore.swift */,
-				916A958C1E09991700C512D3 /* SigningInProgressViewController.swift */,
-				916A958E1E09A32300C512D3 /* MainViewController.swift */,
-				916A95901E09A58700C512D3 /* TemperatureProvider.swift */,
-				916A95921E09A5E400C512D3 /* Temperature.swift */,
-				916A95941E09A66900C512D3 /* SauceApiTemperatureProvider.swift */,
-				916A95961E09A70900C512D3 /* TemperatureProviderFactory.swift */,
-				916A95981E09A76900C512D3 /* NetworkingFactory.swift */,
-				916A959A1E09A7CF00C512D3 /* AuthenticatedNetworking.swift */,
-				918F56681E09D33500FF4CEF /* TemperatureFormatter.swift */,
-				912E89661E0AE6DD0074A8A4 /* WatchSessionDelegate.swift */,
-				9124FC111E0BF6B8009D0699 /* HomeViewDataProvider.swift */,
-				9124FC141E0BF6F3009D0699 /* HomeViewData.swift */,
-				9124FC171E0BF749009D0699 /* SauceApiHomeViewDataProvider.swift */,
-				9124FC1A1E0BF92E009D0699 /* HomeViewDataProviderFactory.swift */,
-				9124FC1D1E0C2655009D0699 /* Programme.swift */,
-				9124FC201E0C2E4E009D0699 /* ProgrammeModeFormatter.swift */,
-				9124FC231E0C3C6F009D0699 /* HeatingModeChanger.swift */,
-				9124FC261E0C3D11009D0699 /* SauceApiHeatingModeChanger.swift */,
-				9124FC291E0C42EA009D0699 /* ProgrammeParser.swift */,
-				9124FC2C1E0C43D9009D0699 /* HeatingModeChangerFactory.swift */,
-				91DB8B9D1E0C8BD90006AF0C /* ProgrammeModeColor.swift */,
-				91DB8BA01E0C8E910006AF0C /* TemperatureColor.swift */,
-				91DB8BA31E12E7EB0006AF0C /* SauceApiEndpoints.swift */,
+				91DB8BB21E12EB6A0006AF0C /* HeatingMode */,
+				91DB8BA61E12E97B0006AF0C /* Networking */,
+				91DB8BA91E12E9F00006AF0C /* MainView */,
+				91DB8BAA1E12EA290006AF0C /* Model */,
+				91DB8BAD1E12EA6B0006AF0C /* SauceApiClient */,
+				91DB8BB11E12EB160006AF0C /* UI */,
 			);
 			path = "raspberrysauce-ios";
 			sourceTree = "<group>";
@@ -360,6 +332,138 @@
 				916A95B01E09C2D300C512D3 /* PushNotificationPayload.apns */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		91DB8BA61E12E97B0006AF0C /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				91BF44D01E0969F4004EAE03 /* Networking.swift */,
+				916A95981E09A76900C512D3 /* NetworkingFactory.swift */,
+				91BF44D21E096BF1004EAE03 /* UrlSessionNetworking.swift */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		91DB8BA71E12E9840006AF0C /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				91DB8BB01E12EABB0006AF0C /* TokenStore */,
+				91DB8BAF1E12EAB50006AF0C /* Networking */,
+				91DB8BAE1E12EAAE0006AF0C /* UI */,
+				91BF44CA1E09661B004EAE03 /* AuthManager.swift */,
+				91BF44CC1E096667004EAE03 /* AuthManagerFactory.swift */,
+				91BF44CE1E0966CD004EAE03 /* TokenAuthManager.swift */,
+				91BF44D41E097818004EAE03 /* Token.swift */,
+			);
+			name = Authentication;
+			sourceTree = "<group>";
+		};
+		91DB8BA81E12E9D10006AF0C /* App */ = {
+			isa = PBXGroup;
+			children = (
+				912E89631E09E7420074A8A4 /* AppConfig.swift */,
+				9111B1F51E0946F700B309D5 /* AppDelegate.swift */,
+				9111B1F71E0946F700B309D5 /* ViewController.swift */,
+				912E89661E0AE6DD0074A8A4 /* WatchSessionDelegate.swift */,
+				9111B1F91E0946F700B309D5 /* Main.storyboard */,
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
+		91DB8BA91E12E9F00006AF0C /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				916A958E1E09A32300C512D3 /* MainViewController.swift */,
+			);
+			name = MainView;
+			sourceTree = "<group>";
+		};
+		91DB8BAA1E12EA290006AF0C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9124FC1D1E0C2655009D0699 /* Programme.swift */,
+				91DB8BAC1E12EA570006AF0C /* HomeView */,
+				91DB8BAB1E12EA3E0006AF0C /* Temperature */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		91DB8BAB1E12EA3E0006AF0C /* Temperature */ = {
+			isa = PBXGroup;
+			children = (
+				916A95921E09A5E400C512D3 /* Temperature.swift */,
+				916A95901E09A58700C512D3 /* TemperatureProvider.swift */,
+			);
+			name = Temperature;
+			sourceTree = "<group>";
+		};
+		91DB8BAC1E12EA570006AF0C /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				9124FC141E0BF6F3009D0699 /* HomeViewData.swift */,
+				9124FC111E0BF6B8009D0699 /* HomeViewDataProvider.swift */,
+			);
+			name = HomeView;
+			sourceTree = "<group>";
+		};
+		91DB8BAD1E12EA6B0006AF0C /* SauceApiClient */ = {
+			isa = PBXGroup;
+			children = (
+				91DB8BA31E12E7EB0006AF0C /* SauceApiEndpoints.swift */,
+				916A95961E09A70900C512D3 /* TemperatureProviderFactory.swift */,
+				916A95941E09A66900C512D3 /* SauceApiTemperatureProvider.swift */,
+				9124FC1A1E0BF92E009D0699 /* HomeViewDataProviderFactory.swift */,
+				9124FC171E0BF749009D0699 /* SauceApiHomeViewDataProvider.swift */,
+				9124FC2C1E0C43D9009D0699 /* HeatingModeChangerFactory.swift */,
+				9124FC261E0C3D11009D0699 /* SauceApiHeatingModeChanger.swift */,
+				9124FC291E0C42EA009D0699 /* ProgrammeParser.swift */,
+			);
+			name = SauceApiClient;
+			sourceTree = "<group>";
+		};
+		91DB8BAE1E12EAAE0006AF0C /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				91BF44C81E096314004EAE03 /* SignInViewController.swift */,
+				916A958C1E09991700C512D3 /* SigningInProgressViewController.swift */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		91DB8BAF1E12EAB50006AF0C /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				916A959A1E09A7CF00C512D3 /* AuthenticatedNetworking.swift */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		91DB8BB01E12EABB0006AF0C /* TokenStore */ = {
+			isa = PBXGroup;
+			children = (
+				91BF44D61E0978C0004EAE03 /* TokenStore.swift */,
+				91BF44D81E097951004EAE03 /* UserDefaultsTokenStore.swift */,
+			);
+			name = TokenStore;
+			sourceTree = "<group>";
+		};
+		91DB8BB11E12EB160006AF0C /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				918F56681E09D33500FF4CEF /* TemperatureFormatter.swift */,
+				91DB8B9D1E0C8BD90006AF0C /* ProgrammeModeColor.swift */,
+				9124FC201E0C2E4E009D0699 /* ProgrammeModeFormatter.swift */,
+				91DB8BA01E0C8E910006AF0C /* TemperatureColor.swift */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		91DB8BB21E12EB6A0006AF0C /* HeatingMode */ = {
+			isa = PBXGroup;
+			children = (
+				9124FC231E0C3C6F009D0699 /* HeatingModeChanger.swift */,
+			);
+			name = HeatingMode;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

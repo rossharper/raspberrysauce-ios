@@ -38,6 +38,7 @@ class TokenAuthManager : AuthManager {
     }
     
     func signIn(username: String, password: String) {
+        // TODO: extract to SauceAPIClient
         networking.post(url: config.tokenRequestEndpoint, body: "username=\(username)&password=\(password)",
             onSuccess: {responseBody in
                 guard let tokenValue = String(data: responseBody, encoding: .utf8) else {
