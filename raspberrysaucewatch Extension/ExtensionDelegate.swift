@@ -57,6 +57,8 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
             case let backgroundTask as WKApplicationRefreshBackgroundTask:
                 // Be sure to complete the background task once you’re done.
                 print("watch WKApplicationRefreshBackgroundTask")
+                performBackgroundUpdate()
+                scheduleBackgroundRefresh()
                 backgroundTask.setTaskCompleted()
             case let snapshotTask as WKSnapshotRefreshBackgroundTask:
                 // Snapshot tasks have a unique completion call, make sure to set your expiration date
@@ -112,6 +114,8 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
                 self.model = homeViewData
                 self.updateComplications()
                 
+                self.scheduleBackgroundRefresh()
+                
                 onComplete(self.model)
             }
         }
@@ -149,5 +153,18 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
                 print("error setting heating mode")
             }
         }
+    }
+    
+    func scheduleBackgroundRefresh() {
+        // todo: shouldn't be every 2 minutes!
+        let updateInterval : TimeInterval = 2 * 60
+        let updateDate = lastModelUpdate?.addingTimeInterval(updateInterval) ?? Date().addingTimeInterval(updateInterval)
+        print("schedule background refresh for \(updateDate)")
+        WKExtension.shared().scheduleBackgroundRefresh(withPreferredDate: updateDate, userInfo: nil) { error in
+        }
+    }
+    
+    func performBackgroundUpdate() {
+        print("perform background update")
     }
 }
