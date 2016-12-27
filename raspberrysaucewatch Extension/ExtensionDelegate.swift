@@ -15,7 +15,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
     let heatingModeChanger = HeatingModeChangerFactory.create()
     private var model : HomeViewData?
     
-    let lastModelUpdate : Date?
+    var lastModelUpdate : Date?
     
     var session: WCSession? {
         didSet {
