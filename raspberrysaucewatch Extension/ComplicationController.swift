@@ -78,13 +78,17 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     }
     
     private func imageForProgrammeMode(_ programme: Programme) -> UIImage {
-        switch(programme.heatingEnabled, programme.comfortLevelEnabled) {
-        case (false, _):
-            return #imageLiteral(resourceName: "OffModeMenuIcon").withRenderingMode(.alwaysTemplate)
-        case (true, true):
-            return #imageLiteral(resourceName: "ComfortModeMenuIcon").withRenderingMode(.alwaysTemplate)
-        case (true, false):
-            return #imageLiteral(resourceName: "SetbackModeMenuIcon").withRenderingMode(.alwaysTemplate)
+        switch(programme.heatingEnabled, programme.comfortLevelEnabled, programme.inOverride) {
+        case (false, _, _):
+            return #imageLiteral(resourceName: "OffModeMenuIcon")
+        case (true, true, false):
+            return #imageLiteral(resourceName: "ComfortModeMenuIcon")
+        case (true, false, false):
+            return #imageLiteral(resourceName: "SetbackModeMenuIcon")
+        case (true, true, true):
+            return #imageLiteral(resourceName: "ComfortModeMenuIcon")
+        case(true, false, true):
+            return #imageLiteral(resourceName: "SetbackModeMenuIcon")
         }
     }
     
