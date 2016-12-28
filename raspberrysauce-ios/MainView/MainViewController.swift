@@ -11,32 +11,50 @@ import UIKit
 class MainViewController: UIViewController {
 
     @IBOutlet weak var temperatureLabel: UILabel!
+    @IBOutlet weak var modeSelector: UISegmentedControl!
     
-    let temperatureProvider = TemperatureProviderFactory.create()
+    let homeViewDataProvider = HomeViewDataProviderFactory.create()
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         NotificationCenter.default.addObserver(forName: .UIApplicationWillEnterForeground, object: nil, queue: nil, using:didEnterForeground)
         
-        self.loadTemperature()
+        self.loadData()
     }
 
     @IBAction func onSignOutPressed(_ sender: Any) {
         AuthManagerFactory.create().signOut()
     }
     
-    private func loadTemperature() {
+    private func loadData() {
         performSegue(withIdentifier: "DisplayLoadingView", sender: self)
-        self.temperatureProvider.getTemperature { temperature in
+        self.homeViewDataProvider.getHomeViewData(onReceived: { homeViewData in
             DispatchQueue.main.async {
-                self.temperatureLabel.text = TemperatureFormatter.asString(temperature)
+                self.setModeSelector(homeViewData.programme)
+                self.temperatureLabel.text = TemperatureFormatter.asString(homeViewData.temperature)
                 self.dismiss(animated: true)
             }
+        })
+    }
+    
+    private func setModeSelector(_ programme: Programme) {
+        switch(programme.heatingEnabled, programme.comfortLevelEnabled, programme.inOverride) {
+        case (false, _, _):
+            modeSelector.selectedSegmentIndex = 3
+        case (true, _, false):
+            modeSelector.selectedSegmentIndex = 0
+        case (true, true, true):
+            modeSelector.selectedSegmentIndex = 1
+        case (true, false, true):
+            modeSelector.selectedSegmentIndex = 2
         }
     }
     
+    @IBAction func onModeSelected(_ sender: Any) {
+    }
+    
     func didEnterForeground(notification: Notification) {
-        self.loadTemperature()
+        self.loadData()
     }
 }

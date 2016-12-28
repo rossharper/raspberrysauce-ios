@@ -58,17 +58,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FPg-Wy-Fdv">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FPg-Wy-Fdv">
                                 <rect key="frame" x="20" y="686" width="374" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Sign Out">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.75686274509999996" green="0.08235294118" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="onSignOutPressed:" destination="Ssu-sD-gKT" eventType="touchUpInside" id="hEt-Gu-aqN"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uVN-ha-8wc">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uVN-ha-8wc" userLabel="TopBarView">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="114"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Raspberry Sauce" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jbf-Fy-TZE">
@@ -90,8 +90,21 @@
                                     <constraint firstAttribute="bottom" secondItem="jbf-Fy-TZE" secondAttribute="bottom" constant="10" id="vtk-Bk-Fvh"/>
                                 </constraints>
                             </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="8eK-ik-KUO">
+                                <rect key="frame" x="20" y="124" width="374" height="29"/>
+                                <segments>
+                                    <segment title="Auto"/>
+                                    <segment title="Comfort"/>
+                                    <segment title="Economy"/>
+                                    <segment title="Off"/>
+                                </segments>
+                                <color key="tintColor" red="0.75686274509999996" green="0.08235294118" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="onModeSelected:" destination="Ssu-sD-gKT" eventType="valueChanged" id="IZP-xu-vuR"/>
+                                </connections>
+                            </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="22N-C5-RsJ">
-                                <rect key="frame" x="20" y="124" width="374" height="57"/>
+                                <rect key="frame" x="20" y="172" width="374" height="57"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="57" id="A8V-gt-rfu"/>
                                 </constraints>
@@ -103,15 +116,22 @@
                         <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="uVN-ha-8wc" firstAttribute="leading" secondItem="DoL-rs-gPK" secondAttribute="leading" id="00M-g0-JZl"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="8eK-ik-KUO" secondAttribute="leading" id="07s-o3-7Of"/>
+                            <constraint firstAttribute="bottom" secondItem="FPg-Wy-Fdv" secondAttribute="bottom" constant="20" symbolic="YES" id="9qL-Co-gnX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8eK-ik-KUO" secondAttribute="trailing" id="CPP-SZ-yWn"/>
                             <constraint firstAttribute="trailing" secondItem="uVN-ha-8wc" secondAttribute="trailing" id="P0y-aH-p6E"/>
-                            <constraint firstItem="22N-C5-RsJ" firstAttribute="top" secondItem="uVN-ha-8wc" secondAttribute="bottom" constant="10" id="aNV-ea-Nbu"/>
+                            <constraint firstItem="8eK-ik-KUO" firstAttribute="top" secondItem="uVN-ha-8wc" secondAttribute="bottom" constant="10" id="S7U-7d-3dI"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="FPg-Wy-Fdv" secondAttribute="leading" id="VkD-VW-KKL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="22N-C5-RsJ" secondAttribute="trailing" id="aWf-aT-plr"/>
+                            <constraint firstItem="22N-C5-RsJ" firstAttribute="top" secondItem="8eK-ik-KUO" secondAttribute="bottom" constant="20" id="byp-hy-7XZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FPg-Wy-Fdv" secondAttribute="trailing" id="gzA-BT-2rm"/>
                             <constraint firstAttribute="leadingMargin" secondItem="22N-C5-RsJ" secondAttribute="leading" id="lD0-kT-fvz"/>
                             <constraint firstItem="uVN-ha-8wc" firstAttribute="top" secondItem="DoL-rs-gPK" secondAttribute="top" id="tfV-M9-FBg"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="KnJ-3F-OO6" id="gOD-em-385"/>
+                        <outlet property="modeSelector" destination="8eK-ik-KUO" id="Z8a-uJ-URN"/>
                         <outlet property="temperatureLabel" destination="22N-C5-RsJ" id="Qrg-Rj-lZ1"/>
                         <segue destination="4Iw-Wq-irc" kind="presentation" identifier="DisplayLoadingView" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="tX7-xz-mUY"/>
                     </connections>
