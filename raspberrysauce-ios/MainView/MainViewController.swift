@@ -12,6 +12,7 @@ class MainViewController: UIViewController {
 
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var modeSelector: UISegmentedControl!
+    @IBOutlet weak var modeIcon: UIImageView!
     
     let authManager = AuthManagerFactory.create()
     let homeViewDataProvider = HomeViewDataProviderFactory.create()
@@ -39,6 +40,7 @@ class MainViewController: UIViewController {
     private func updateDisplay(_ homeViewData: HomeViewData) {
         DispatchQueue.main.async {
             self.setModeSelector(homeViewData.programme)
+            self.setModeIcon(homeViewData.programme)
             self.temperatureLabel.text = TemperatureFormatter.asString(homeViewData.temperature)
             self.dismiss(animated: true)
         }
@@ -55,6 +57,19 @@ class MainViewController: UIViewController {
         case (true, false, true):
             modeSelector.selectedSegmentIndex = 2
         }
+    }
+    
+    private func setModeIcon(_ programme: Programme) {
+        switch(programme.heatingEnabled, programme.comfortLevelEnabled) {
+        case (false, _):
+            modeIcon.image = #imageLiteral(resourceName: "OffModeIcon")
+        case (true, true):
+            modeIcon.image = #imageLiteral(resourceName: "ComfortModeIcon")
+        case (true, false):
+            modeIcon.image = #imageLiteral(resourceName: "SetbackModeIcon")
+        }
+        modeIcon.image = modeIcon.image?.withRenderingMode(.alwaysTemplate)
+        modeIcon.tintColor = ProgrammeModeColor.colorForMode(programme)
     }
     
     @IBAction func onModeSelected(_ sender: Any) {
@@ -78,6 +93,7 @@ class MainViewController: UIViewController {
                 print("mode set")
                 DispatchQueue.main.async {
                     self.setModeSelector(programme)
+                    self.setModeIcon(programme)
                 }
             }) {
                 print("error setting heating mode")
