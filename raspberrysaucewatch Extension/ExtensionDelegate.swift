@@ -113,6 +113,8 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
             HomeViewDataProviderFactory.create().getHomeViewData() { homeViewData in
                 print("received model")
                 
+                self.lastModelUpdate = Date()
+                
                 self.model = homeViewData
                 self.updateComplications()
                 

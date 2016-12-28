@@ -63,7 +63,7 @@ class InterfaceController: WKInterfaceController {
         temperatureLabel.setHidden(false)
         modeLabel.setHidden(false)
         autoLabel.setHidden(false)
-        modeLabel.setText(ProgrammeModeFormatter.asString(programme: model.programme))
+        modeLabel.setText(ProgrammeModeFormatter.asString(model.programme))
         modeLabel.setTextColor(ProgrammeModeColor.colorForMode(model.programme))
         temperatureLabel.setText(TemperatureFormatter.asString(model.temperature))
         temperatureLabel.setTextColor(TemperatureColor.colorForTemperature(model.temperature))

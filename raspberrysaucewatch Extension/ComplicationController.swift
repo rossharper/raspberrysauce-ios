@@ -47,11 +47,13 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         case .modularSmall:
             let stacktemplate = CLKComplicationTemplateModularSmallStackImage()
             stacktemplate.line1ImageProvider = getModSmallImageProvider(model.programme)
-            stacktemplate.line2TextProvider = CLKSimpleTextProvider(text: fullText)
+            let textProvider = CLKSimpleTextProvider(text: fullText)
+            stacktemplate.line2TextProvider = textProvider
+            stacktemplate.tintColor = UIColor.white
             template = stacktemplate
         case .modularLarge:
             let textTemplate = CLKComplicationTemplateModularLargeTallBody()
-            textTemplate.headerTextProvider = CLKSimpleTextProvider(text: ProgrammeModeFormatter.asString(programme: model.programme))
+            textTemplate.headerTextProvider = CLKSimpleTextProvider(text: ProgrammeModeFormatter.asStringWithEmoji(model.programme))
             textTemplate.bodyTextProvider = CLKSimpleTextProvider(text: fullText)
             template = textTemplate
         case .utilitarianSmall:
