@@ -46,7 +46,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             template = textTemplate
         case .modularSmall:
             let stacktemplate = CLKComplicationTemplateModularSmallStackImage()
-            stacktemplate.line1ImageProvider = CLKImageProvider(onePieceImage: imageForProgrammeMode(model.programme))
+            stacktemplate.line1ImageProvider = getModSmallImageProvider(model.programme)
             stacktemplate.line2TextProvider = CLKSimpleTextProvider(text: fullText)
             template = stacktemplate
         case .modularLarge:
@@ -77,19 +77,20 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         handler(entry)
     }
     
-    private func imageForProgrammeMode(_ programme: Programme) -> UIImage {
-        switch(programme.heatingEnabled, programme.comfortLevelEnabled, programme.inOverride) {
-        case (false, _, _):
-            return #imageLiteral(resourceName: "OffModeMenuIcon")
-        case (true, true, false):
-            return #imageLiteral(resourceName: "ComfortModeMenuIcon")
-        case (true, false, false):
-            return #imageLiteral(resourceName: "SetbackModeMenuIcon")
-        case (true, true, true):
-            return #imageLiteral(resourceName: "ComfortModeMenuIcon")
-        case(true, false, true):
-            return #imageLiteral(resourceName: "SetbackModeMenuIcon")
+    private func getModSmallImageProvider(_ programme: Programme) -> CLKImageProvider {
+        var imageProvider : CLKImageProvider
+        
+        switch(programme.heatingEnabled, programme.comfortLevelEnabled) {
+        case (false, _):
+            imageProvider =  CLKImageProvider(onePieceImage: #imageLiteral(resourceName: "ModSmallOffIcon"))
+        case (true, true):
+            imageProvider = CLKImageProvider(onePieceImage: #imageLiteral(resourceName: "ModSmallComfortIcon"))
+        case (true, false):
+            imageProvider =  CLKImageProvider(onePieceImage: #imageLiteral(resourceName: "ModSmallSetbackIcon"))
         }
+        
+        imageProvider.tintColor = ProgrammeModeColor.colorForMode(programme)
+        return imageProvider
     }
     
     // MARK: - Placeholder Templates

@@ -2,13 +2,13 @@
   "images" : [
     {
       "idiom" : "watch",
-      "filename" : "ManualComfortModStackComp@2x.png",
+      "filename" : "ComfortModeCompIcon38@2x.png",
       "screen-width" : "<=145",
       "scale" : "2x"
     },
     {
       "idiom" : "watch",
-      "filename" : "ManualComfortModStackComp38@2x.png",
+      "filename" : "ComfortModeCompIcon42@2x.png",
       "screen-width" : ">145",
       "scale" : "2x"
     }
