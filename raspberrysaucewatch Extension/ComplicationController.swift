@@ -45,10 +45,10 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             textTemplate.line2TextProvider = CLKSimpleTextProvider(text: unitText)
             template = textTemplate
         case .modularSmall:
-            let textTemplate = CLKComplicationTemplateModularSmallStackText()
-            textTemplate.line1TextProvider = CLKSimpleTextProvider(text: valueText)
-            textTemplate.line2TextProvider = CLKSimpleTextProvider(text: unitText)
-            template = textTemplate
+            let stacktemplate = CLKComplicationTemplateModularSmallStackImage()
+            stacktemplate.line1ImageProvider = CLKImageProvider(onePieceImage: imageForProgrammeMode(model.programme))
+            stacktemplate.line2TextProvider = CLKSimpleTextProvider(text: fullText)
+            template = stacktemplate
         case .modularLarge:
             let textTemplate = CLKComplicationTemplateModularLargeTallBody()
             textTemplate.headerTextProvider = CLKSimpleTextProvider(text: ProgrammeModeFormatter.asString(programme: model.programme))
@@ -75,6 +75,17 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         let entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
 
         handler(entry)
+    }
+    
+    private func imageForProgrammeMode(_ programme: Programme) -> UIImage {
+        switch(programme.heatingEnabled, programme.comfortLevelEnabled) {
+        case (false, _):
+            return #imageLiteral(resourceName: "OffModeMenuIcon").withRenderingMode(.alwaysTemplate)
+        case (true, true):
+            return #imageLiteral(resourceName: "ComfortModeMenuIcon").withRenderingMode(.alwaysTemplate)
+        case (true, false):
+            return #imageLiteral(resourceName: "SetbackModeMenuIcon").withRenderingMode(.alwaysTemplate)
+        }
     }
     
     // MARK: - Placeholder Templates

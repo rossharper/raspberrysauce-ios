@@ -89,6 +89,7 @@
 		91DB8BB81E13E4C30006AF0C /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DB8BB71E13E4C30006AF0C /* LoadingViewController.swift */; };
 		91DB8BBC1E1400750006AF0C /* HeatingMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DB8BBB1E1400750006AF0C /* HeatingMode.swift */; };
 		91DB8BBD1E1400750006AF0C /* HeatingMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DB8BBB1E1400750006AF0C /* HeatingMode.swift */; };
+		91DB8BBE1E14155B0006AF0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 916A95A31E09C2D300C512D3 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -689,6 +690,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91DB8BBE1E14155B0006AF0C /* Assets.xcassets in Resources */,
 				916A95BA1E09C2D300C512D3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
