@@ -8,13 +8,6 @@
 
 import Foundation
 
-enum HeatingMode {
-    case Auto
-    case Comfort
-    case Setback
-    case Off
-}
-
 protocol HeatingModeChanger {
     func setHeatingMode(mode: HeatingMode, onSuccess: @escaping (Programme) -> Void, onError: @escaping () -> Void)
 }

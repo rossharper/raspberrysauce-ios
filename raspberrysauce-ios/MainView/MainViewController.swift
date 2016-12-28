@@ -13,7 +13,9 @@ class MainViewController: UIViewController {
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var modeSelector: UISegmentedControl!
     
+    let authManager = AuthManagerFactory.create()
     let homeViewDataProvider = HomeViewDataProviderFactory.create()
+    let heatingModeChanger = HeatingModeChangerFactory.create()
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -30,12 +32,16 @@ class MainViewController: UIViewController {
     private func loadData() {
         performSegue(withIdentifier: "DisplayLoadingView", sender: self)
         self.homeViewDataProvider.getHomeViewData(onReceived: { homeViewData in
-            DispatchQueue.main.async {
-                self.setModeSelector(homeViewData.programme)
-                self.temperatureLabel.text = TemperatureFormatter.asString(homeViewData.temperature)
-                self.dismiss(animated: true)
-            }
+            self.updateDisplay(homeViewData)
         })
+    }
+    
+    private func updateDisplay(_ homeViewData: HomeViewData) {
+        DispatchQueue.main.async {
+            self.setModeSelector(homeViewData.programme)
+            self.temperatureLabel.text = TemperatureFormatter.asString(homeViewData.temperature)
+            self.dismiss(animated: true)
+        }
     }
     
     private func setModeSelector(_ programme: Programme) {
@@ -52,6 +58,31 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func onModeSelected(_ sender: Any) {
+        switch(modeSelector.selectedSegmentIndex) {
+        case 1:
+            setHeatingMode(.Comfort)
+        case 2:
+            setHeatingMode(.Setback)
+        case 3:
+            setHeatingMode(.Off)
+        default:
+            setHeatingMode(.Auto)
+        }
+    }
+    
+    // TODO: duplication between this and watch extension delegate
+    func setHeatingMode(_ mode: HeatingMode) {
+        print("set heating mode" + mode.description)
+        if(authManager.isSignedIn()) {
+            heatingModeChanger.setHeatingMode(mode: mode, onSuccess: { (programme) in
+                print("mode set")
+                DispatchQueue.main.async {
+                    self.setModeSelector(programme)
+                }
+            }) {
+                print("error setting heating mode")
+            }
+        }
     }
     
     func didEnterForeground(notification: Notification) {
