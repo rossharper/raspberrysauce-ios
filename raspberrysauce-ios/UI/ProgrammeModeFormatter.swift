@@ -27,25 +27,21 @@ struct ProgrammeModeFormatter {
     }
     
     static func asEmoji(_ programme: Programme) -> String {
-        if(programme.heatingEnabled) {
-            return (programme.comfortLevelEnabled) ? comfortEmoji : setbackEmoji
-        } else {
-            return offEmoji
+        switch(programme.heatingEnabled, programme.comfortLevelEnabled, programme.inOverride) {
+        case(true, true, true):
+            return "\(comfortEmoji)"
+        case (true, false, true):
+            return "\(setbackEmoji)"
+        case (true, true, false):
+            return "\(autoEmoji) \(comfortEmoji)"
+        case (true, false, false):
+            return "\(autoEmoji) \(setbackEmoji)"
+        default:
+            return "\(offEmoji)"
         }
     }
     
     static func asStringWithEmoji(_ programme: Programme) -> String {
-        switch(programme.heatingEnabled, programme.comfortLevelEnabled, programme.inOverride) {
-        case(true, true, true):
-            return "\(comfortEmoji) \(comfortText)"
-        case (true, false, true):
-            return "\(setbackEmoji) \(setbackText)"
-        case (true, true, false):
-            return "\(autoEmoji) \(comfortEmoji) \(comfortText)"
-        case (true, false, false):
-            return "\(autoEmoji) \(setbackEmoji) \(setbackText)"
-        default:
-            return "\(offEmoji) \(offText)"
-        }
+        return "\(asEmoji(programme)) \(asString(programme))"
     }
 }

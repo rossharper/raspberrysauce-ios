@@ -33,23 +33,21 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         }
         
         let fullText = TemperatureFormatter.asString(model.temperature)
-        let valueText = TemperatureFormatter.valueAsString(model.temperature)
-        let unitText = TemperatureFormatter.unitAsString(model.temperature)
         
         var template : CLKComplicationTemplate
         
         switch(complication.family) {
         case .circularSmall:
-            let textTemplate = CLKComplicationTemplateCircularSmallStackText()
-            textTemplate.line1TextProvider = CLKSimpleTextProvider(text: valueText)
-            textTemplate.line2TextProvider = CLKSimpleTextProvider(text: unitText)
-            template = textTemplate
+            let stacktemplate = CLKComplicationTemplateCircularSmallStackImage()
+            stacktemplate.line1ImageProvider = getModSmallImageProvider(model.programme)
+            let textProvider = CLKSimpleTextProvider(text: fullText)
+            stacktemplate.line2TextProvider = textProvider
+            template = stacktemplate
         case .modularSmall:
             let stacktemplate = CLKComplicationTemplateModularSmallStackImage()
             stacktemplate.line1ImageProvider = getModSmallImageProvider(model.programme)
             let textProvider = CLKSimpleTextProvider(text: fullText)
             stacktemplate.line2TextProvider = textProvider
-            stacktemplate.tintColor = UIColor.white
             template = stacktemplate
         case .modularLarge:
             let textTemplate = CLKComplicationTemplateModularLargeTallBody()
@@ -58,7 +56,7 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             template = textTemplate
         case .utilitarianSmall:
             let textTemplate = CLKComplicationTemplateUtilitarianSmallFlat()
-            textTemplate.textProvider = CLKSimpleTextProvider(text: fullText)
+            textTemplate.textProvider = CLKSimpleTextProvider(text: "\(ProgrammeModeFormatter.asEmoji(model.programme)) \(fullText)")
             template = textTemplate
         case .utilitarianSmallFlat:
             let textTemplate = CLKComplicationTemplateUtilitarianSmallFlat()
@@ -69,9 +67,12 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             textTemplate.textProvider = CLKSimpleTextProvider(text: fullText)
             template = textTemplate
         case .extraLarge:
-            let textTemplate = CLKComplicationTemplateExtraLargeSimpleText()
-            textTemplate.textProvider = CLKSimpleTextProvider(text: fullText)
-            template = textTemplate
+            let stacktemplate = CLKComplicationTemplateExtraLargeStackImage()
+            // TODO: larger icon required here
+            stacktemplate.line1ImageProvider = getModSmallImageProvider(model.programme)
+            let textProvider = CLKSimpleTextProvider(text: fullText)
+            stacktemplate.line2TextProvider = textProvider
+            template = stacktemplate
         }
         
         let entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
