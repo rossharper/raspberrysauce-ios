@@ -20,8 +20,8 @@
                         <label width="1" alignment="center" verticalAlignment="center" text="COMFORT" textAlignment="center" id="0x3-ZO-j24">
                             <fontDescription key="font" type="system" pointSize="16"/>
                         </label>
-                        <label width="1" alignment="center" verticalAlignment="center" text="20.0˚C" textAlignment="center" id="gKC-Xc-cEb">
-                            <fontDescription key="font" type="system" weight="thin" pointSize="42"/>
+                        <label width="1" alignment="center" verticalAlignment="center" text="20.0˚" textAlignment="center" id="gKC-Xc-cEb">
+                            <fontDescription key="font" type="system" weight="thin" pointSize="64"/>
                         </label>
                         <label width="1" alignment="center" verticalAlignment="center" text="AUTO" textAlignment="center" id="yEs-0O-1Of">
                             <fontDescription key="font" style="UICTFontTextStyleCaption1"/>

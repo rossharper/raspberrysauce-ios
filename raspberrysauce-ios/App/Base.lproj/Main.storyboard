@@ -91,11 +91,11 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="22N-C5-RsJ">
-                                <rect key="frame" x="20" y="262" width="374" height="57"/>
+                                <rect key="frame" x="20" y="262" width="374" height="95"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="57" id="A8V-gt-rfu"/>
+                                    <constraint firstAttribute="height" constant="95" id="A8V-gt-rfu"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="48"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="72"/>
                                 <color key="textColor" red="0.75686274509999996" green="0.08235294118" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
