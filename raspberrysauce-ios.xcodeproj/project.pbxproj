@@ -86,6 +86,7 @@
 		91DB8BA41E12E7EB0006AF0C /* SauceApiEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DB8BA31E12E7EB0006AF0C /* SauceApiEndpoints.swift */; };
 		91DB8BA51E12E7EB0006AF0C /* SauceApiEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DB8BA31E12E7EB0006AF0C /* SauceApiEndpoints.swift */; };
 		91DB8BB41E130A580006AF0C /* SauceApiBackgroundHomeViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DB8BB31E130A580006AF0C /* SauceApiBackgroundHomeViewProvider.swift */; };
+		91DB8BB81E13E4C30006AF0C /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DB8BB71E13E4C30006AF0C /* LoadingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -207,6 +208,7 @@
 		91DB8BA01E0C8E910006AF0C /* TemperatureColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureColor.swift; sourceTree = "<group>"; };
 		91DB8BA31E12E7EB0006AF0C /* SauceApiEndpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SauceApiEndpoints.swift; sourceTree = "<group>"; };
 		91DB8BB31E130A580006AF0C /* SauceApiBackgroundHomeViewProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SauceApiBackgroundHomeViewProvider.swift; sourceTree = "<group>"; };
+		91DB8BB71E13E4C30006AF0C /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoadingViewController.swift; path = ../App/LoadingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -453,6 +455,7 @@
 		91DB8BB11E12EB160006AF0C /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				91DB8BB71E13E4C30006AF0C /* LoadingViewController.swift */,
 				91DB8B9D1E0C8BD90006AF0C /* ProgrammeModeColor.swift */,
 				9124FC201E0C2E4E009D0699 /* ProgrammeModeFormatter.swift */,
 				91DB8BA01E0C8E910006AF0C /* TemperatureColor.swift */,
@@ -716,6 +719,7 @@
 				9111B1F81E0946F700B309D5 /* ViewController.swift in Sources */,
 				9124FC1E1E0C2655009D0699 /* Programme.swift in Sources */,
 				91BF44CB1E09661B004EAE03 /* AuthManager.swift in Sources */,
+				91DB8BB81E13E4C30006AF0C /* LoadingViewController.swift in Sources */,
 				916A95971E09A70900C512D3 /* TemperatureProviderFactory.swift in Sources */,
 				9124FC211E0C2E4E009D0699 /* ProgrammeModeFormatter.swift in Sources */,
 				9124FC271E0C3D11009D0699 /* SauceApiHeatingModeChanger.swift in Sources */,

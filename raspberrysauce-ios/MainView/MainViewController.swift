@@ -11,7 +11,6 @@ import UIKit
 class MainViewController: UIViewController {
 
     @IBOutlet weak var temperatureLabel: UILabel!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     let temperatureProvider = TemperatureProviderFactory.create()
     
@@ -28,10 +27,11 @@ class MainViewController: UIViewController {
     }
     
     private func loadTemperature() {
+        performSegue(withIdentifier: "DisplayLoadingView", sender: self)
         self.temperatureProvider.getTemperature { temperature in
             DispatchQueue.main.async {
-                self.activityIndicator.isHidden = true
                 self.temperatureLabel.text = TemperatureFormatter.asString(temperature)
+                self.dismiss(animated: true)
             }
         }
     }
