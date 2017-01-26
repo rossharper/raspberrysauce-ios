@@ -12,40 +12,55 @@ protocol TokenProvider {
     func getAccessToken() -> Token?
 }
 
+protocol AuthorizationFailureListener {
+    func onAuthorizationFailure()
+}
+
 class AuthenticatedNetworking : Networking {
     
     let networking : Networking
     let tokenProvider: TokenProvider
+    let authorizationFailureListener : AuthorizationFailureListener
     
-    init(networking: Networking, tokenProvider: TokenProvider) {
+    init(networking: Networking, tokenProvider: TokenProvider, authorizationFailureListener: AuthorizationFailureListener) {
         self.networking = networking
         self.tokenProvider = tokenProvider
+        self.authorizationFailureListener = authorizationFailureListener
     }
     
-    func get(url: URL, onSuccess: @escaping (_ responseBody: Data) -> Void, onError: @escaping () -> Void) {
+    func authenticationErrorHandlerDecorator(_ errorHandler: @escaping (Int?) -> Void) -> ((Int?) -> Void) {
+        return { httpStatusCode in
+            if(httpStatusCode == 401) {
+                self.authorizationFailureListener.onAuthorizationFailure()
+            }
+            errorHandler(httpStatusCode)
+        }
+    }
+    
+    func get(url: URL, onSuccess: @escaping (_ responseBody: Data) -> Void, onError: @escaping (Int?) -> Void) {
         self.get(url: url, headers: nil, onSuccess: onSuccess, onError: onError)
     }
     
-    func get(url: URL, headers: [String : String]?, onSuccess: @escaping (_ responseBody: Data) -> Void, onError: @escaping () -> Void) {
+    func get(url: URL, headers: [String : String]?, onSuccess: @escaping (_ responseBody: Data) -> Void, onError: @escaping (Int?) -> Void) {
         let appendedHeaders = addAuthorizationHeader(headers: headers)
         if appendedHeaders == nil {
-            onError()
+            onError(nil)
             return
         }
-        networking.get(url: url, headers: appendedHeaders, onSuccess: onSuccess, onError: onError)
+        networking.get(url: url, headers: appendedHeaders, onSuccess: onSuccess, onError: authenticationErrorHandlerDecorator(onError))
     }
     
-    func post(url: URL, body: String, onSuccess: @escaping (_ responseBody: Data) -> Void, onError: @escaping () -> Void) {
+    func post(url: URL, body: String, onSuccess: @escaping (_ responseBody: Data) -> Void, onError: @escaping (Int?) -> Void) {
         self.post(url: url, headers: nil, body: body, onSuccess: onSuccess, onError: onError)
     }
     
-    func post(url: URL, headers: [String : String]?, body: String, onSuccess: @escaping (_ responseBody: Data) -> Void, onError: @escaping () -> Void) {
+    func post(url: URL, headers: [String : String]?, body: String, onSuccess: @escaping (_ responseBody: Data) -> Void, onError: @escaping (Int?) -> Void) {
         let appendedHeaders = addAuthorizationHeader(headers: headers)
         if appendedHeaders == nil {
-            onError()
+            onError(nil)
             return
         }
-        networking.post(url: url, headers: appendedHeaders, body: body, onSuccess: onSuccess, onError: onError)
+        networking.post(url: url, headers: appendedHeaders, body: body, onSuccess: onSuccess, onError: authenticationErrorHandlerDecorator(onError))
     }
     
     func addAuthorizationHeader(headers: [String : String]?) -> [String : String]? {

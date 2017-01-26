@@ -28,9 +28,9 @@ class SauceApiHomeViewDataProvider : HomeViewDataProvider {
                 return
             }
             onReceived(homeViewData)
-        }) {
+        }) {_ in
             print("error loading request")
-            // TODO: something on error
+            // TODO: something on error!
         }
     }
     

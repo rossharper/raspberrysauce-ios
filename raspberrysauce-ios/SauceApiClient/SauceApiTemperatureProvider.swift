@@ -28,7 +28,7 @@ class SauceApiTemperatureProvider : TemperatureProvider {
                 return
             }
             onTemperatureReceived(Temperature(value: parsedTemperature))
-        }) { 
+        }) { _ in 
             // TODO: do something on error
         }
     }

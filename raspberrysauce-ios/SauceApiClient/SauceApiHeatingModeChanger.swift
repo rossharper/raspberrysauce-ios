@@ -40,7 +40,7 @@ class SauceApiHeatingModeChanger : HeatingModeChanger {
                 return
             }
             onSuccess(programme)
-        }) { 
+        }) { _ in 
             onError()
         }
     }

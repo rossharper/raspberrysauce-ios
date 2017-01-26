@@ -47,14 +47,13 @@ class TokenAuthManager : AuthManager {
                 self.tokenStore.put(token: Token(value: tokenValue))
                 self.broadcastSignIn()
         },
-            onError: {
+            onError: { _ in
                 self.broadcastSignInFailed()
         })
     }
     
     func signOut() {
-        tokenStore.remove()
-        broadcastSignedOut()
+        deleteAccessToken()
     }
     
     func setAuthObserver(observer: AuthObserver?) {
@@ -63,6 +62,11 @@ class TokenAuthManager : AuthManager {
     
     func getAccessToken() -> Token? {
         return tokenStore.get()
+    }
+    
+    func deleteAccessToken() {
+        tokenStore.remove()
+        broadcastSignedOut()
     }
     
     private func broadcastSignIn() {

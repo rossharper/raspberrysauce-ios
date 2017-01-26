@@ -21,7 +21,16 @@ class NetworkingFactory {
         }
     }
     
+    struct AuthManagerAuthorizationFailureListener : AuthorizationFailureListener {
+        let authManager : AuthManager
+        
+        func onAuthorizationFailure() {
+            authManager.deleteAccessToken()
+        }
+    }
+    
     static func createAuthentiatedNetworking() -> Networking {
-        return AuthenticatedNetworking(networking: createNetworking(), tokenProvider: AuthManagerTokenProvider(authManager: AuthManagerFactory.create()))
+        let authManager = AuthManagerFactory.create()
+        return AuthenticatedNetworking(networking: createNetworking(), tokenProvider: AuthManagerTokenProvider(authManager: authManager), authorizationFailureListener: AuthManagerAuthorizationFailureListener(authManager: authManager))
     }
 }

@@ -20,4 +20,5 @@ protocol AuthManager {
     func signOut()
     func setAuthObserver(observer: AuthObserver?)
     func getAccessToken() -> Token?
+    func deleteAccessToken()
 }
