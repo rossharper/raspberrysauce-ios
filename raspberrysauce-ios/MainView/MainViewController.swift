@@ -31,10 +31,18 @@ class MainViewController: UIViewController {
     }
     
     private func loadData() {
-        performSegue(withIdentifier: "DisplayLoadingView", sender: self)
+        showLoadingScreen()
         self.homeViewDataProvider.getHomeViewData(onReceived: { homeViewData in
             self.updateDisplay(homeViewData)
         })
+    }
+    
+    private func showLoadingScreen() {
+        performSegue(withIdentifier: "DisplayLoadingView", sender: self)
+    }
+    
+    private func hideLoadingScreen() {
+        self.dismiss(animated: true)
     }
     
     private func updateDisplay(_ homeViewData: HomeViewData) {
@@ -42,7 +50,7 @@ class MainViewController: UIViewController {
             self.setModeSelector(homeViewData.programme)
             self.setModeIcon(homeViewData.programme)
             self.temperatureLabel.text = TemperatureFormatter.asString(homeViewData.temperature)
-            self.dismiss(animated: true)
+            self.hideLoadingScreen()
         }
     }
     

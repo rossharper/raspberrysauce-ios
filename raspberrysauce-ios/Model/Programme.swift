@@ -8,8 +8,15 @@
 
 import Foundation
 
+struct ProgrammePeriod {
+    let isComfort : Bool
+    let startTime : String
+    let endTime : String
+}
+
 struct Programme {
     let heatingEnabled : Bool
     let comfortLevelEnabled : Bool
     let inOverride : Bool
+    let periods : [ProgrammePeriod]
 }
