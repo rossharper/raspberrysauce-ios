@@ -9,5 +9,5 @@
 import Foundation
 
 struct AppConfig {
-    static let ApiBaseUrl = "https://pi.rharper.co.uk"
+    static let ApiBaseUrl = "API_URL_DONT_CHECK_IN"
 }
