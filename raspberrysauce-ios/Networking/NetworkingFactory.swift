@@ -10,7 +10,7 @@ import Foundation
 
 class NetworkingFactory {
     static func createNetworking() -> Networking {
-        return UrlSessionNetworking()
+        return UrlSessionNetworking(URLSession.shared)
     }
     
     struct AuthManagerTokenProvider : TokenProvider {
