@@ -11,8 +11,7 @@ import Foundation
 struct AppConfig {
     static var ApiBaseUrl : String {
         get {
-            guard let rawValue = getenv("API_BASE_URL") else { return "" }
-            let baseUrl = String(utf8String: rawValue)
+            let baseUrl = String(utf8String: API_BASE_URL)
             return baseUrl ?? ""
         }
     }
