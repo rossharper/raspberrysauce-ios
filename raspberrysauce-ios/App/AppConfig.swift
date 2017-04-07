@@ -9,6 +9,12 @@
 import Foundation
 
 struct AppConfig {
-    static let ApiBaseUrl = "API_URL_DONT_CHECK_IN"
+    static var ApiBaseUrl : String {
+        get {
+            guard let rawValue = getenv("API_BASE_URL") else { return "" }
+            let baseUrl = String(utf8String: rawValue)
+            return baseUrl ?? ""
+        }
+    }
 }
 
