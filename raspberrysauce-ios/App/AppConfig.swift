@@ -11,8 +11,8 @@ import Foundation
 struct AppConfig {
     static var ApiBaseUrl : String {
         get {
-            let baseUrl = String(utf8String: API_BASE_URL)
-            return baseUrl ?? ""
+            let baseUrl = String(utf8String: Bundle.main.infoDictionary!["API_BASE_URL"] as! String)
+            return baseUrl!
         }
     }
 }
