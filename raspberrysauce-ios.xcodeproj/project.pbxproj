@@ -247,6 +247,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		79908622C20B3A8DCB96A18A /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		79908BACF97A48EC51580301 /* StatusView */ = {
+			isa = PBXGroup;
+			children = (
+				79908622C20B3A8DCB96A18A /* UseCases */,
+			);
+			path = StatusView;
+			sourceTree = "<group>";
+		};
 		9111B1E91E0946F700B309D5 = {
 			isa = PBXGroup;
 			children = (
@@ -286,6 +301,7 @@
 				9111B2011E0946F700B309D5 /* Info.plist */,
 				9111B1FE1E0946F700B309D5 /* LaunchScreen.storyboard */,
 				918F56641E09CD8C00FF4CEF /* raspberrysauce-ios.entitlements */,
+				79908BACF97A48EC51580301 /* StatusView */,
 			);
 			path = "raspberrysauce-ios";
 			sourceTree = "<group>";
@@ -581,9 +597,9 @@
 				TargetAttributes = {
 					9111B1F11E0946F700B309D5 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = PPH9EJ7977;
+						DevelopmentTeam = 4RK6572RH6;
 						LastSwiftMigration = 0820;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 0;
@@ -949,13 +965,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = PPH9EJ7977;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 4RK6572RH6;
 				INFOPLIST_FILE = "raspberrysauce-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.rossharper.raspberrysauce-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "25c8fd12-e3be-4b8f-8da7-e593436f613a";
-				PROVISIONING_PROFILE_SPECIFIER = Prototyping;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -964,13 +981,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = PPH9EJ7977;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 4RK6572RH6;
 				INFOPLIST_FILE = "raspberrysauce-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.rossharper.raspberrysauce-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "25c8fd12-e3be-4b8f-8da7-e593436f613a";
-				PROVISIONING_PROFILE_SPECIFIER = Prototyping;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
