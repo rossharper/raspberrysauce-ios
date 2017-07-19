@@ -13,6 +13,8 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
     
     // MARK: - Timeline Configuration
     
+    let noDataMessage = "?"
+    
     func getSupportedTimeTravelDirections(for complication: CLKComplication, withHandler handler: @escaping (CLKComplicationTimeTravelDirections) -> Void) {
         handler([])
     }
@@ -25,59 +27,124 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
         //var data : Dictionary = myDelegate.myComplicationData[ComplicationCurrentEntry]!
         
         print("watch getCurrentTimelineEntry")
+
+        var template : CLKComplicationTemplate
         
         let extensionDelegate = WKExtension.shared().delegate as! ExtensionDelegate
-        guard let model = extensionDelegate.getModel() else {
-            handler(nil)
-            return
-        }
-        
-        let fullText = TemperatureFormatter.asString(model.temperature)
-        
-        var template : CLKComplicationTemplate
+        let model = extensionDelegate.getModel()
         
         switch(complication.family) {
         case .circularSmall:
-            let stacktemplate = CLKComplicationTemplateCircularSmallStackImage()
-            stacktemplate.line1ImageProvider = getModSmallImageProvider(model.programme)
-            let textProvider = CLKSimpleTextProvider(text: fullText)
-            stacktemplate.line2TextProvider = textProvider
-            template = stacktemplate
+            template = templateForCircularSmall(with: model)
         case .modularSmall:
-            let stacktemplate = CLKComplicationTemplateModularSmallStackImage()
-            stacktemplate.line1ImageProvider = getModSmallImageProvider(model.programme)
-            let textProvider = CLKSimpleTextProvider(text: fullText)
-            stacktemplate.line2TextProvider = textProvider
-            template = stacktemplate
+            template = templateForModularSmall(with: model)
         case .modularLarge:
-            let textTemplate = CLKComplicationTemplateModularLargeTallBody()
-            textTemplate.headerTextProvider = CLKSimpleTextProvider(text: ProgrammeModeFormatter.asStringWithEmoji(model.programme))
-            textTemplate.bodyTextProvider = CLKSimpleTextProvider(text: fullText)
-            template = textTemplate
+            template = templateForModularLarge(with: model)
         case .utilitarianSmall:
-            let textTemplate = CLKComplicationTemplateUtilitarianSmallFlat()
-            textTemplate.textProvider = CLKSimpleTextProvider(text: "\(ProgrammeModeFormatter.asEmoji(model.programme)) \(fullText)")
-            template = textTemplate
+            template = templateForUtilitarianSmall(with: model)
         case .utilitarianSmallFlat:
-            let textTemplate = CLKComplicationTemplateUtilitarianSmallFlat()
-            textTemplate.textProvider = CLKSimpleTextProvider(text: fullText)
-            template = textTemplate
+            template = templateForUtilitarianSmallFlat(with: model)
         case .utilitarianLarge:
-            let textTemplate = CLKComplicationTemplateUtilitarianLargeFlat()
-            textTemplate.textProvider = CLKSimpleTextProvider(text: fullText)
-            template = textTemplate
+            template = templateForUtiliratianLarge(with: model)
         case .extraLarge:
-            let stacktemplate = CLKComplicationTemplateExtraLargeStackImage()
-            // TODO: larger icon required here
-            stacktemplate.line1ImageProvider = getModSmallImageProvider(model.programme)
-            let textProvider = CLKSimpleTextProvider(text: fullText)
-            stacktemplate.line2TextProvider = textProvider
-            template = stacktemplate
+            template = templateForExtraLarge(with: model)
         }
         
         let entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)
 
         handler(entry)
+    }
+    
+    private func templateForCircularSmall(with model : HomeViewData?) -> CLKComplicationTemplate {
+        guard let model = model else {
+            let template = CLKComplicationTemplateCircularSmallSimpleText()
+            template.textProvider = CLKSimpleTextProvider(text: noDataMessage)
+            return template
+        }
+        
+        let stacktemplate = CLKComplicationTemplateCircularSmallStackImage()
+        stacktemplate.line1ImageProvider = getModSmallImageProvider(model.programme)
+        let textProvider = CLKSimpleTextProvider(text: TemperatureFormatter.asString(model.temperature))
+        stacktemplate.line2TextProvider = textProvider
+        return stacktemplate
+    }
+    
+    private func templateForModularSmall(with model : HomeViewData?) -> CLKComplicationTemplate {
+        guard let model = model else {
+            let template = CLKComplicationTemplateModularSmallSimpleText()
+            template.textProvider = CLKSimpleTextProvider(text: noDataMessage)
+            return template
+        }
+        
+        let stacktemplate = CLKComplicationTemplateModularSmallStackImage()
+        stacktemplate.line1ImageProvider = getModSmallImageProvider(model.programme)
+        let textProvider = CLKSimpleTextProvider(text: TemperatureFormatter.asString(model.temperature))
+        stacktemplate.line2TextProvider = textProvider
+        return stacktemplate
+    }
+    
+    private func templateForModularLarge(with model : HomeViewData?) -> CLKComplicationTemplate {
+        guard let model = model else {
+            let template = CLKComplicationTemplateModularLargeTallBody()
+            template.headerTextProvider = CLKSimpleTextProvider(text: noDataMessage)
+            return template
+        }
+        
+        let textTemplate = CLKComplicationTemplateModularLargeTallBody()
+        textTemplate.headerTextProvider = CLKSimpleTextProvider(text: ProgrammeModeFormatter.asStringWithEmoji(model.programme))
+        textTemplate.bodyTextProvider = CLKSimpleTextProvider(text: TemperatureFormatter.asString(model.temperature))
+        return textTemplate
+    }
+    
+    private func templateForUtilitarianSmall(with model : HomeViewData?) -> CLKComplicationTemplate {
+        guard let model = model else {
+            let template = CLKComplicationTemplateUtilitarianSmallFlat()
+            template.textProvider = CLKSimpleTextProvider(text: noDataMessage)
+            return template
+        }
+        
+        let textTemplate = CLKComplicationTemplateUtilitarianSmallFlat()
+        textTemplate.textProvider = CLKSimpleTextProvider(text: "\(ProgrammeModeFormatter.asEmoji(model.programme)) \(TemperatureFormatter.asString(model.temperature))")
+        return textTemplate
+    }
+    
+    private func templateForUtilitarianSmallFlat(with model : HomeViewData?) -> CLKComplicationTemplate {
+        guard let model = model else {
+            let template = CLKComplicationTemplateUtilitarianSmallFlat()
+            template.textProvider = CLKSimpleTextProvider(text: noDataMessage)
+            return template
+        }
+        
+        let textTemplate = CLKComplicationTemplateUtilitarianSmallFlat()
+        textTemplate.textProvider = CLKSimpleTextProvider(text: TemperatureFormatter.asString(model.temperature))
+        return textTemplate
+    }
+    
+    private func templateForUtiliratianLarge(with model : HomeViewData?) -> CLKComplicationTemplate {
+        guard let model = model else {
+            let template = CLKComplicationTemplateUtilitarianLargeFlat()
+            template.textProvider = CLKSimpleTextProvider(text: noDataMessage)
+            return template
+        }
+        
+        let textTemplate = CLKComplicationTemplateUtilitarianLargeFlat()
+        textTemplate.textProvider = CLKSimpleTextProvider(text: TemperatureFormatter.asString(model.temperature))
+        return textTemplate
+    }
+    
+    private func templateForExtraLarge(with model : HomeViewData?) -> CLKComplicationTemplate {
+        guard let model = model else {
+            let template = CLKComplicationTemplateExtraLargeSimpleText()
+            template.textProvider = CLKSimpleTextProvider(text: noDataMessage)
+            return template
+        }
+        
+        let stacktemplate = CLKComplicationTemplateExtraLargeStackImage()
+        // TODO: larger icon required here
+        stacktemplate.line1ImageProvider = getModSmallImageProvider(model.programme)
+        let textProvider = CLKSimpleTextProvider(text: TemperatureFormatter.asString(model.temperature))
+        stacktemplate.line2TextProvider = textProvider
+        return stacktemplate
     }
     
     private func getModSmallImageProvider(_ programme: Programme) -> CLKImageProvider {

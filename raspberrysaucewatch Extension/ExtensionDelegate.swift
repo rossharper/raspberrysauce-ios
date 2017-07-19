@@ -28,6 +28,10 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
         }
     }
     
+    override init() {
+        print("delegate init")
+    }
+    
     func applicationDidFinishLaunching() {
         // Perform any final initialization of your application.
         print("delegate didFinishLaunching")
