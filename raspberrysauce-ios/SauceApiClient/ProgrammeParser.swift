@@ -16,12 +16,13 @@ struct ProgrammeParser {
             let periodsData = data["todaysPeriods"] as? [[String : Any]] else {
                 return nil
         }
-        return Programme(heatingEnabled: heatingEnabled, comfortLevelEnabled: comfortLevelEnabled, inOverride: inOverride, periods: parsePeriods(periodsData))
+        let periods = parsePeriods(periodsData)
+        return Programme(heatingEnabled: heatingEnabled, comfortLevelEnabled: comfortLevelEnabled, inOverride: inOverride, periods: periods)
     }
     
     private func parsePeriods(_ data: [[String : Any]]) -> [ProgrammePeriod] {
         var periods : [ProgrammePeriod] = []
-        
+
         for periodData in data {
             if let isComfort = periodData["isComfort"] as? Bool,
                 let startTime = periodData["startTime"] as? String,

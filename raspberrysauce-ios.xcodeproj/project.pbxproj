@@ -75,6 +75,7 @@
 		916A95BA1E09C2D300C512D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 916A95B91E09C2D300C512D3 /* Assets.xcassets */; };
 		916A95BE1E09C2D300C512D3 /* raspberrysaucewatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 916A959E1E09C2D200C512D3 /* raspberrysaucewatch.app */; };
 		917141CD1FCAEDF000E9CD6F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917141CC1FCAEDF000E9CD6F /* SettingsViewController.swift */; };
+		917141D41FCB0B3D00E9CD6F /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917141D31FCB0B3D00E9CD6F /* ScheduleViewController.swift */; };
 		918F56691E09D33500FF4CEF /* TemperatureFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918F56681E09D33500FF4CEF /* TemperatureFormatter.swift */; };
 		91BF44C91E096314004EAE03 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BF44C81E096314004EAE03 /* SignInViewController.swift */; };
 		91BF44CB1E09661B004EAE03 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BF44CA1E09661B004EAE03 /* AuthManager.swift */; };
@@ -212,6 +213,7 @@
 		916A95B91E09C2D300C512D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		916A95BB1E09C2D300C512D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		917141CC1FCAEDF000E9CD6F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		917141D31FCB0B3D00E9CD6F /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		918F56641E09CD8C00FF4CEF /* raspberrysauce-ios.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "raspberrysauce-ios.entitlements"; sourceTree = "<group>"; };
 		918F56651E09CDC200FF4CEF /* raspberrysaucewatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = raspberrysaucewatch.entitlements; sourceTree = "<group>"; };
 		918F56661E09CDC700FF4CEF /* raspberrysaucewatch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "raspberrysaucewatch Extension.entitlements"; sourceTree = "<group>"; };
@@ -313,6 +315,7 @@
 		9111B1F41E0946F700B309D5 /* raspberrysauce-ios */ = {
 			isa = PBXGroup;
 			children = (
+				917141D21FCB0B2800E9CD6F /* Schedule */,
 				917141CB1FCAEDD100E9CD6F /* Settings */,
 				91DB8BA81E12E9D10006AF0C /* App */,
 				91DB8BA71E12E9840006AF0C /* Authentication */,
@@ -389,6 +392,14 @@
 				917141CC1FCAEDF000E9CD6F /* SettingsViewController.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		917141D21FCB0B2800E9CD6F /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				917141D31FCB0B3D00E9CD6F /* ScheduleViewController.swift */,
+			);
+			path = Schedule;
 			sourceTree = "<group>";
 		};
 		91DB8BA61E12E97B0006AF0C /* Networking */ = {
@@ -770,6 +781,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				917141D41FCB0B3D00E9CD6F /* ScheduleViewController.swift in Sources */,
 				916A95991E09A76900C512D3 /* NetworkingFactory.swift in Sources */,
 				916A95951E09A66900C512D3 /* SauceApiTemperatureProvider.swift in Sources */,
 				91BF44D91E097951004EAE03 /* UserDefaultsTokenStore.swift in Sources */,

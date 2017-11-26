@@ -14,9 +14,16 @@ struct ProgrammePeriod {
     let endTime : String
 }
 
-struct Programme {
+class Programme {
     let heatingEnabled : Bool
     let comfortLevelEnabled : Bool
     let inOverride : Bool
     let periods : [ProgrammePeriod]
+    
+    init(heatingEnabled: Bool, comfortLevelEnabled: Bool, inOverride: Bool, periods: [ProgrammePeriod]) {
+        self.heatingEnabled = heatingEnabled
+        self.comfortLevelEnabled = comfortLevelEnabled
+        self.inOverride = inOverride
+        self.periods = periods
+    }
 }

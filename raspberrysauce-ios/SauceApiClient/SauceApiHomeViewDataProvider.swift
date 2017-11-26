@@ -8,6 +8,24 @@
 
 import Foundation
 
+struct ApiPeriod : Decodable {
+    let isComfort : Bool
+    let startTime : String
+    let endTime : String
+}
+
+struct ApiProgramme : Decodable {
+    let heatingEnabled : Bool
+    let comfortLevelEnabled : Bool
+    let inOverride : Bool
+    let todaysPeriods : [ApiPeriod]
+}
+
+struct ApiHomeViewData : Decodable {
+    let temperature : Float
+    let programme : ApiProgramme
+}
+
 class SauceApiHomeViewDataProvider : HomeViewDataProvider {
     let networking : Networking
     let config : Config
@@ -23,11 +41,11 @@ class SauceApiHomeViewDataProvider : HomeViewDataProvider {
     
     func getHomeViewData(onReceived: @escaping (_ homeViewData : HomeViewData) -> Void) {
         networking.get(url: config.endpoint, onSuccess: { value in
-            guard let homeViewData = self.parse(value) else {
+            guard let parsedData = self.parse(value) else {
                 print ("failed to parse")
                 return
             }
-            onReceived(homeViewData)
+            onReceived(parsedData)
         }) {_ in
             print("error loading request")
             // TODO: something on error!
@@ -35,13 +53,29 @@ class SauceApiHomeViewDataProvider : HomeViewDataProvider {
     }
     
     func parse(_ body: Data) -> HomeViewData? {
-        guard let homeViewData = try? JSONSerialization.jsonObject(with: body, options: .allowFragments) as! [String: Any],
-                    let temperature = homeViewData["temperature"] as? Float,
-                    let programmeData = homeViewData["programme"] as? [String : Any],
-                    let programme = ProgrammeParser().parse(programmeData) else {
-                return nil
+        
+        guard let apiHomeViewData = try? JSONDecoder().decode(ApiHomeViewData.self, from: body) else {
+            return nil
         }
-        return HomeViewData(temperature: Temperature(value: Float(temperature)), programme: programme)
+
+        let periods = apiHomeViewData.programme.todaysPeriods.map {
+            apiPeriod in
+            return ProgrammePeriod(isComfort: apiPeriod.isComfort, startTime: apiPeriod.startTime, endTime: apiPeriod.endTime)
+        }
+        
+        let programme = Programme(heatingEnabled: apiHomeViewData.programme.heatingEnabled, comfortLevelEnabled: apiHomeViewData.programme.comfortLevelEnabled, inOverride: apiHomeViewData.programme.inOverride, periods: periods)
+        
+        let homeData = HomeViewData(temperature: Temperature(value: apiHomeViewData.temperature), programme: programme)
+        
+        return homeData
+//
+//        guard let homeViewData = try? JSONSerialization.jsonObject(with: body, options: .allowFragments) as! [String: Any],
+//                    let temperature = homeViewData["temperature"] as? Float,
+//                    let programmeData = homeViewData["programme"] as? [String : Any],
+//                    let programme = ProgrammeParser().parse(programmeData) else {
+//                return nil
+//        }
+//        return HomeViewData(temperature: Temperature(value: Float(temperature)), programme: programme)
     }
     
 

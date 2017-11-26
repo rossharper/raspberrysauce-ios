@@ -42,7 +42,7 @@ class MainViewController: UIViewController {
     }
     
     private func updateDisplay(_ homeViewData: HomeViewData) {
-        DispatchQueue.main.async {
+        DispatchQueue.main.async { 
             self.setModeSelector(homeViewData.programme)
             self.setModeIcon(homeViewData.programme)
             self.temperatureLabel.text = TemperatureFormatter.asString(homeViewData.temperature)
