@@ -13,7 +13,6 @@ struct AuthConfig {
 }
 
 class TokenAuthManager : AuthManager {
-    
     let config : AuthConfig
     let networking : Networking
     let tokenStore : TokenStore
@@ -38,7 +37,7 @@ class TokenAuthManager : AuthManager {
     }
     
     func signIn(username: String, password: String) {
-        // TODO: extract to SauceAPIClient
+        // TODO: extract to SauceAPIClient??
         networking.post(url: config.tokenRequestEndpoint, body: "username=\(username)&password=\(password)",
             onSuccess: {responseBody in
                 guard let tokenValue = String(data: responseBody, encoding: .utf8) else {
@@ -54,6 +53,7 @@ class TokenAuthManager : AuthManager {
     
     func signOut() {
         deleteAccessToken()
+        broadcastSignedOut()
     }
     
     func setAuthObserver(observer: AuthObserver?) {
@@ -66,7 +66,6 @@ class TokenAuthManager : AuthManager {
     
     func deleteAccessToken() {
         tokenStore.remove()
-        broadcastSignedOut()
     }
     
     private func broadcastSignIn() {
