@@ -95,19 +95,19 @@ class InterfaceController: WKInterfaceController {
         label.setText("Not Signed In")
     }
     
-    func onAutoSelected() {
+    @objc func onAutoSelected() {
         (WKExtension.shared().delegate as! ExtensionDelegate).setHeatingMode(.Auto)
     }
     
-    func onComfortSelected() {
+    @objc func onComfortSelected() {
         (WKExtension.shared().delegate as! ExtensionDelegate).setHeatingMode(.Comfort)
     }
     
-    func onSetbackSelected() {
+    @objc func onSetbackSelected() {
         (WKExtension.shared().delegate as! ExtensionDelegate).setHeatingMode(.Setback)
     }
     
-    func onOffSelected() {
+    @objc func onOffSelected() {
         (WKExtension.shared().delegate as! ExtensionDelegate).setHeatingMode(.Off)
     }
 }

@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -242,6 +242,7 @@
                         <color key="backgroundColor" red="0.75686274509999996" green="0.08235294118" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="i9M-FU-vAm" firstAttribute="leading" secondItem="keh-Gp-VY8" secondAttribute="leading" id="0Wy-EL-cUo"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="uOb-ax-Bcf" secondAttribute="trailing" constant="20" symbolic="YES" id="52Z-2r-Uml"/>
                             <constraint firstItem="i9M-FU-vAm" firstAttribute="top" secondItem="Bam-9W-UOi" secondAttribute="bottom" id="6Mz-k7-1uW"/>
                             <constraint firstItem="iLG-a8-UKL" firstAttribute="top" secondItem="fLb-gu-n1V" secondAttribute="bottom" constant="15" id="GMi-3m-vMW"/>
                             <constraint firstItem="keh-Gp-VY8" firstAttribute="top" secondItem="iLG-a8-UKL" secondAttribute="bottom" constant="10" id="I5o-rZ-cUJ"/>
@@ -253,6 +254,7 @@
                             <constraint firstItem="i9M-FU-vAm" firstAttribute="leading" secondItem="fLb-gu-n1V" secondAttribute="leading" id="YwU-cQ-en3"/>
                             <constraint firstItem="i9M-FU-vAm" firstAttribute="leading" secondItem="iLG-a8-UKL" secondAttribute="leading" id="aiv-m4-HNk"/>
                             <constraint firstItem="uOb-ax-Bcf" firstAttribute="top" secondItem="keh-Gp-VY8" secondAttribute="bottom" constant="20" id="dGy-G5-9B7"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="iLG-a8-UKL" secondAttribute="trailing" constant="20" symbolic="YES" id="gai-jg-4aL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="keh-Gp-VY8" secondAttribute="trailing" id="l36-z8-9u9"/>
                             <constraint firstAttribute="leadingMargin" secondItem="OlC-i6-m5X" secondAttribute="leading" id="mqx-j5-sbX"/>
                             <constraint firstItem="i9M-FU-vAm" firstAttribute="trailing" secondItem="keh-Gp-VY8" secondAttribute="trailing" id="n7K-dz-bwd"/>
@@ -296,7 +298,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Signing in..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rFZ-Qz-JwJ">
-                                <rect key="frame" x="20" y="92" width="374" height="21"/>
+                                <rect key="frame" x="20" y="92" width="402" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -304,14 +306,14 @@
                         </subviews>
                         <color key="backgroundColor" red="0.75686274509999996" green="0.08235294118" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="8Xr-Sx-njv" firstAttribute="trailing" secondItem="rFZ-Qz-JwJ" secondAttribute="trailing" id="7EN-o1-HzH"/>
+                            <constraint firstItem="eO4-JQ-wAh" firstAttribute="centerX" secondItem="Zdy-1i-9Ci" secondAttribute="centerX" id="0tG-9R-RQn"/>
                             <constraint firstItem="rFZ-Qz-JwJ" firstAttribute="top" secondItem="8Xr-Sx-njv" secondAttribute="bottom" constant="8" id="F1e-Kx-jXY"/>
                             <constraint firstItem="8Xr-Sx-njv" firstAttribute="trailing" secondItem="Zdy-1i-9Ci" secondAttribute="trailingMargin" id="Msg-eO-HQG"/>
-                            <constraint firstItem="8Xr-Sx-njv" firstAttribute="leading" secondItem="rFZ-Qz-JwJ" secondAttribute="leading" id="adx-xP-Erv"/>
+                            <constraint firstItem="rFZ-Qz-JwJ" firstAttribute="leading" secondItem="Zdy-1i-9Ci" secondAttribute="leadingMargin" id="S8b-Iq-vj4"/>
+                            <constraint firstItem="8Xr-Sx-njv" firstAttribute="leading" secondItem="Zdy-1i-9Ci" secondAttribute="leadingMargin" id="adx-xP-Erv"/>
                             <constraint firstItem="8Xr-Sx-njv" firstAttribute="top" secondItem="SH5-zX-IRq" secondAttribute="bottom" id="dEf-2M-yyD"/>
-                            <constraint firstItem="8Xr-Sx-njv" firstAttribute="leading" secondItem="Zdy-1i-9Ci" secondAttribute="leadingMargin" id="loR-cZ-0wE"/>
-                            <constraint firstItem="rFZ-Qz-JwJ" firstAttribute="centerX" secondItem="eO4-JQ-wAh" secondAttribute="centerX" id="mpS-yY-BP0"/>
                             <constraint firstItem="eO4-JQ-wAh" firstAttribute="centerY" secondItem="Zdy-1i-9Ci" secondAttribute="centerY" id="oHY-ui-4es"/>
+                            <constraint firstAttribute="trailing" secondItem="rFZ-Qz-JwJ" secondAttribute="trailingMargin" id="ogC-3G-acJ"/>
                         </constraints>
                     </view>
                 </viewController>

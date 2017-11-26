@@ -18,7 +18,7 @@ class WatchSessionDelegate : NSObject, WCSessionDelegate, AuthObserver {
     override init() {
         super.init()
         if WCSession.isSupported() {
-            session = WCSession.default()
+            session = WCSession.default
             if session != nil {
                 session!.delegate = self
                 session!.activate()

@@ -37,7 +37,7 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
         print("delegate didFinishLaunching")
         
         if WCSession.isSupported() {
-            session = WCSession.default()
+            session = WCSession.default
         }
     }
 

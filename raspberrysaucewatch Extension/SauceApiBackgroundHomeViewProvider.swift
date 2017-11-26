@@ -34,11 +34,11 @@ class SauceApiBackgroundHomeViewProvider : NSObject, HomeViewDataProvider, URLSe
     }
     
     func urlSession(_ session: URLSession, didBecomeInvalidWithError error: Error?) {
-        print("didBecomeInvalidWithError \(error)")
+        print("didBecomeInvalidWithError \(String(describing: error))")
     }
     
     func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
-        print("didCompelteWithError \(error)")
+        print("didCompelteWithError \(String(describing: error))")
     }
     
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
