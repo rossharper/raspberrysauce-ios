@@ -25,10 +25,6 @@ class MainViewController: UIViewController {
         
         self.loadData()
     }
-
-    @IBAction func onSignOutPressed(_ sender: Any) {
-        AuthManagerFactory.create().signOut()
-    }
     
     private func loadData() {
         showLoadingScreen()
