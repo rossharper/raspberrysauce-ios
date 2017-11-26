@@ -195,7 +195,7 @@
                             <constraint firstItem="rRL-7d-wk6" firstAttribute="top" secondItem="MCx-fv-fJS" secondAttribute="bottom" constant="20" id="VoQ-BA-h7M"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" id="e3e-ah-8Qa"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="SettingsIcon" landscapeImage="SettingsIcon" largeContentSizeImage="SettingsIcon" selectedImage="SettingsIcon" id="e3e-ah-8Qa"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PtD-Wv-g1y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -366,5 +366,6 @@
     </scenes>
     <resources>
         <image name="HomeIcon" width="25" height="25"/>
+        <image name="SettingsIcon" width="25" height="25"/>
     </resources>
 </document>
