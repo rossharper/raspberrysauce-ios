@@ -82,7 +82,7 @@ extension ScheduleViewController : UITableViewDataSource {
             cell.imageView?.tintColor = ProgrammeModeColor.setbackColor
         }
 
-        cell.textLabel?.text = "\(period.startTime) — \(period.startTime)"
+        cell.textLabel?.text = "\(period.startTime) — \(period.endTime)"
         cell.backgroundColor = #colorLiteral(red: 0.9467939734, green: 0.9468161464, blue: 0.9468042254, alpha: 1)
         
         return cell
