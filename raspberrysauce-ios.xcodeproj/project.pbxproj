@@ -627,7 +627,7 @@
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = 4RK6572RH6;
 						LastSwiftMigration = 0910;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 0;
@@ -639,19 +639,23 @@
 					};
 					9111B2051E0946F700B309D5 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 4RK6572RH6;
 						LastSwiftMigration = 0910;
+						ProvisioningStyle = Manual;
 						TestTargetID = 9111B1F11E0946F700B309D5;
 					};
 					9111B2101E0946F700B309D5 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 4RK6572RH6;
 						LastSwiftMigration = 0910;
+						ProvisioningStyle = Manual;
 						TestTargetID = 9111B1F11E0946F700B309D5;
 					};
 					916A959D1E09C2D200C512D3 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 4RK6572RH6;
 						LastSwiftMigration = 0910;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 0;
@@ -665,7 +669,7 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 4RK6572RH6;
 						LastSwiftMigration = 0910;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 0;
@@ -1011,7 +1015,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 4RK6572RH6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1021,8 +1026,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.rossharper.raspberrysauce-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "0dc8470c-5200-4235-9773-bed77bb2d854";
+				PROVISIONING_PROFILE_SPECIFIER = "Ad Hoc";
 				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 			};
@@ -1032,7 +1037,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 4RK6572RH6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1042,8 +1048,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.rossharper.raspberrysauce-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "0dc8470c-5200-4235-9773-bed77bb2d854";
+				PROVISIONING_PROFILE_SPECIFIER = "Ad Hoc";
 				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 			};
@@ -1053,10 +1059,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 4RK6572RH6;
 				INFOPLIST_FILE = "raspberrysauce-iosTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.rossharper.raspberrysauce-iosTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/raspberrysauce-ios.app/raspberrysauce-ios";
 			};
@@ -1066,10 +1075,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 4RK6572RH6;
 				INFOPLIST_FILE = "raspberrysauce-iosTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.rossharper.raspberrysauce-iosTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/raspberrysauce-ios.app/raspberrysauce-ios";
 			};
@@ -1078,10 +1090,14 @@
 		9111B2211E0946F700B309D5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 4RK6572RH6;
 				INFOPLIST_FILE = "raspberrysauce-iosUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.rossharper.raspberrysauce-iosUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "e415fad4-faee-460d-b660-1dc0ffe02c3f";
+				PROVISIONING_PROFILE_SPECIFIER = "Bitrise Development";
 				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = "raspberrysauce-ios";
 				USES_XCTRUNNER = YES;
@@ -1091,10 +1107,14 @@
 		9111B2221E0946F700B309D5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 4RK6572RH6;
 				INFOPLIST_FILE = "raspberrysauce-iosUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.rossharper.raspberrysauce-iosUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "e415fad4-faee-460d-b660-1dc0ffe02c3f";
+				PROVISIONING_PROFILE_SPECIFIER = "Bitrise Development";
 				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = "raspberrysauce-ios";
 				USES_XCTRUNNER = YES;
@@ -1107,14 +1127,15 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 4RK6572RH6;
 				INFOPLIST_FILE = "raspberrysaucewatch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.rossharper.raspberrysauce-ios.watchkitapp.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "0dc8470c-5200-4235-9773-bed77bb2d854";
+				PROVISIONING_PROFILE_SPECIFIER = "Ad Hoc";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -1130,14 +1151,15 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 4RK6572RH6;
 				INFOPLIST_FILE = "raspberrysaucewatch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.rossharper.raspberrysauce-ios.watchkitapp.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "0dc8470c-5200-4235-9773-bed77bb2d854";
+				PROVISIONING_PROFILE_SPECIFIER = "Ad Hoc";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -1153,14 +1175,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 4RK6572RH6;
 				IBSC_MODULE = raspberrysaucewatch_Extension;
 				INFOPLIST_FILE = raspberrysaucewatch/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.rossharper.raspberrysauce-ios.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "0dc8470c-5200-4235-9773-bed77bb2d854";
+				PROVISIONING_PROFILE_SPECIFIER = "Ad Hoc";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -1177,13 +1200,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 4RK6572RH6;
 				IBSC_MODULE = raspberrysaucewatch_Extension;
 				INFOPLIST_FILE = raspberrysaucewatch/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.rossharper.raspberrysauce-ios.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "0dc8470c-5200-4235-9773-bed77bb2d854";
+				PROVISIONING_PROFILE_SPECIFIER = "Ad Hoc";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
