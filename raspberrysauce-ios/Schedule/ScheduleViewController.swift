@@ -73,7 +73,7 @@ extension ScheduleViewController : UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: scheduleCellReuseIdentifier) as! ScheduleCell
         
-        cell.render(period: period)
+        cell.render(period: period, isLast: indexPath.item == schedulePeriods.count - 1)
         
         return cell
     }

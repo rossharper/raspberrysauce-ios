@@ -12,12 +12,15 @@ class ScheduleCell : UITableViewCell {
 
     @IBOutlet weak var modeIcon: UIImageView!
     @IBOutlet weak var startTimeLabel: UILabel!
+    @IBOutlet weak var endTimeLabel: UILabel!
     
-    func render(period: ProgrammePeriod) {
+    
+    func render(period: ProgrammePeriod, isLast: Bool) {
         startTimeLabel.text = period.startTime
         modeIcon.image = imageForPeriod(period).withRenderingMode(.alwaysTemplate)
         // TODO: get the color from a factory or something instead of magic statics?
         modeIcon.tintColor = colorForPeriod(period)
+        endTimeLabel.isHidden = !isLast
     }
     
     // TODO: make me a factory

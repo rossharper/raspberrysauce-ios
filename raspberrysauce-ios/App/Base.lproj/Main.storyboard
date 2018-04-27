@@ -245,11 +245,20 @@
                                                         <constraint firstAttribute="width" secondItem="F3Q-O6-XFh" secondAttribute="height" multiplier="1:1" id="Q5f-Fp-wni"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKN-i1-X7t">
+                                                    <rect key="frame" x="15" y="65" width="46" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="yF8-4L-LFN" firstAttribute="top" secondItem="Gq9-sS-0zI" secondAttribute="top" constant="11" id="2Nc-53-ytQ"/>
+                                                <constraint firstAttribute="bottom" secondItem="aKN-i1-X7t" secondAttribute="bottom" constant="11" id="9mk-tk-Mgk"/>
                                                 <constraint firstAttribute="bottom" secondItem="F3Q-O6-XFh" secondAttribute="bottom" constant="11" id="L3F-7q-anS"/>
                                                 <constraint firstItem="yF8-4L-LFN" firstAttribute="leading" secondItem="Gq9-sS-0zI" secondAttribute="leading" constant="15" id="LVI-qC-y9K"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="aKN-i1-X7t" secondAttribute="trailing" constant="20" symbolic="YES" id="VQU-IY-b6S"/>
+                                                <constraint firstItem="aKN-i1-X7t" firstAttribute="leading" secondItem="Gq9-sS-0zI" secondAttribute="leading" constant="15" id="b10-37-Lcj"/>
                                                 <constraint firstItem="F3Q-O6-XFh" firstAttribute="centerX" secondItem="Gq9-sS-0zI" secondAttribute="centerX" id="lL7-wE-LK9"/>
                                                 <constraint firstItem="F3Q-O6-XFh" firstAttribute="top" secondItem="Gq9-sS-0zI" secondAttribute="top" constant="11" id="sju-uv-OE1"/>
                                                 <constraint firstItem="F3Q-O6-XFh" firstAttribute="centerY" secondItem="Gq9-sS-0zI" secondAttribute="centerY" id="vqW-gX-XXn"/>
@@ -257,6 +266,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="endTimeLabel" destination="aKN-i1-X7t" id="u3B-Ph-LGf"/>
                                             <outlet property="modeIcon" destination="F3Q-O6-XFh" id="0dM-IY-fLv"/>
                                             <outlet property="startTimeLabel" destination="yF8-4L-LFN" id="RvQ-VN-ZcK"/>
                                         </connections>
