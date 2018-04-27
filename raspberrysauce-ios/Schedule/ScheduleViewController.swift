@@ -16,9 +16,12 @@ class ScheduleViewController: UIViewController {
     
     var schedulePeriods : [ProgrammePeriod] = []
     
+    private let comfortCellReuseIdentifier = "comfortCell"
+    private let setbackCellReuseIdentifier = "setbackCell"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -66,29 +69,37 @@ extension ScheduleViewController : UITableViewDelegate {
 extension ScheduleViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let reuseIdentifier = "cell"
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier)
-            ?? UITableViewCell(style: .default, reuseIdentifier: reuseIdentifier)
         
         let period = schedulePeriods[indexPath.item]
         
-        if(period.isComfort) {
-            let image = #imageLiteral(resourceName: "ComfortModeIcon").withRenderingMode(.alwaysTemplate)
-            cell.imageView?.image = image
-            cell.imageView?.tintColor = ProgrammeModeColor.comfortColor
-        } else {
-            let image = #imageLiteral(resourceName: "SetbackModeIcon").withRenderingMode(.alwaysTemplate)
-            cell.imageView?.image = image
-            cell.imageView?.tintColor = ProgrammeModeColor.setbackColor
-        }
-
-        cell.textLabel?.text = "\(period.startTime) — \(period.endTime)"
-        cell.backgroundColor = #colorLiteral(red: 0.9467939734, green: 0.9468161464, blue: 0.9468042254, alpha: 1)
-        
-        return cell
+        return dequeueCellForPeriod(period)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.schedulePeriods.count
+    }
+    
+    private func dequeueCellForPeriod(_ period: ProgrammePeriod) -> UITableViewCell {
+        if(period.isComfort) {
+            return dequeueComfortCell(period)
+        } else {
+            return dequeueSetbackCell(period)
+        }
+    }
+    
+    private func dequeueComfortCell(_ period: ProgrammePeriod) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: comfortCellReuseIdentifier) as! ComfortCell
+        
+        cell.render(startTime: period.startTime)
+        
+        return cell
+    }
+    
+    private func dequeueSetbackCell(_ period: ProgrammePeriod) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: setbackCellReuseIdentifier) as! SetbackCell
+        
+        cell.render(startTime: period.startTime)
+        
+        return cell
     }
 }
