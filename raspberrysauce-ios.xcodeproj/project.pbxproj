@@ -93,8 +93,6 @@
 		91DB8BBD1E1400750006AF0C /* HeatingMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DB8BBB1E1400750006AF0C /* HeatingMode.swift */; };
 		91DB8BBE1E14155B0006AF0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 916A95A31E09C2D300C512D3 /* Assets.xcassets */; };
 		CC349B0C26AA5AA66F682797 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 236320A2BBF218EE1F427E97 /* AssetsLibrary.framework */; };
-		F0FB6706209365BF0086A95B /* SetbackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FB6705209365BF0086A95B /* SetbackCell.swift */; };
-		F0FB6708209373CC0086A95B /* ComfortCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FB6707209373CC0086A95B /* ComfortCell.swift */; };
 		F0FB670A209377980086A95B /* ScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FB6709209377980086A95B /* ScheduleCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -223,8 +221,6 @@
 		91DB8BB31E130A580006AF0C /* SauceApiBackgroundHomeViewProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SauceApiBackgroundHomeViewProvider.swift; sourceTree = "<group>"; };
 		91DB8BB71E13E4C30006AF0C /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoadingViewController.swift; path = ../App/LoadingViewController.swift; sourceTree = "<group>"; };
 		91DB8BBB1E1400750006AF0C /* HeatingMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeatingMode.swift; sourceTree = "<group>"; };
-		F0FB6705209365BF0086A95B /* SetbackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetbackCell.swift; sourceTree = "<group>"; };
-		F0FB6707209373CC0086A95B /* ComfortCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComfortCell.swift; sourceTree = "<group>"; };
 		F0FB6709209377980086A95B /* ScheduleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -380,8 +376,6 @@
 			isa = PBXGroup;
 			children = (
 				917141D31FCB0B3D00E9CD6F /* ScheduleViewController.swift */,
-				F0FB6705209365BF0086A95B /* SetbackCell.swift */,
-				F0FB6707209373CC0086A95B /* ComfortCell.swift */,
 				F0FB6709209377980086A95B /* ScheduleCell.swift */,
 			);
 			path = Schedule;
@@ -780,14 +774,12 @@
 				91BF44CD1E096667004EAE03 /* AuthManagerFactory.swift in Sources */,
 				91DB8BA11E0C8E910006AF0C /* TemperatureColor.swift in Sources */,
 				9124FC121E0BF6B8009D0699 /* HomeViewDataProvider.swift in Sources */,
-				F0FB6706209365BF0086A95B /* SetbackCell.swift in Sources */,
 				9124FC241E0C3C6F009D0699 /* HeatingModeChanger.swift in Sources */,
 				9124FC181E0BF749009D0699 /* SauceApiHomeViewDataProvider.swift in Sources */,
 				9124FC2A1E0C42EA009D0699 /* ProgrammeParser.swift in Sources */,
 				9124FC2D1E0C43D9009D0699 /* HeatingModeChangerFactory.swift in Sources */,
 				9124FC151E0BF6F3009D0699 /* HomeViewData.swift in Sources */,
 				9111B1F81E0946F700B309D5 /* ViewController.swift in Sources */,
-				F0FB6708209373CC0086A95B /* ComfortCell.swift in Sources */,
 				9124FC1E1E0C2655009D0699 /* Programme.swift in Sources */,
 				91BF44CB1E09661B004EAE03 /* AuthManager.swift in Sources */,
 				91DB8BB81E13E4C30006AF0C /* LoadingViewController.swift in Sources */,
