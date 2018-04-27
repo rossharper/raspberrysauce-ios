@@ -16,8 +16,7 @@ class ScheduleViewController: UIViewController {
     
     var schedulePeriods : [ProgrammePeriod] = []
     
-    private let comfortCellReuseIdentifier = "comfortCell"
-    private let setbackCellReuseIdentifier = "setbackCell"
+    private let scheduleCellReuseIdentifier = "scheduleCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,34 +71,13 @@ extension ScheduleViewController : UITableViewDataSource {
         
         let period = schedulePeriods[indexPath.item]
         
-        return dequeueCellForPeriod(period)
+        let cell = tableView.dequeueReusableCell(withIdentifier: scheduleCellReuseIdentifier) as! ScheduleCell
+        
+        cell.render(period: period)
+        
+        return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.schedulePeriods.count
-    }
-    
-    private func dequeueCellForPeriod(_ period: ProgrammePeriod) -> UITableViewCell {
-        if(period.isComfort) {
-            return dequeueComfortCell(period)
-        } else {
-            return dequeueSetbackCell(period)
-        }
-    }
-    
-    private func dequeueComfortCell(_ period: ProgrammePeriod) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: comfortCellReuseIdentifier) as! ComfortCell
-        
-        cell.render(startTime: period.startTime)
-        
-        return cell
-    }
-    
-    private func dequeueSetbackCell(_ period: ProgrammePeriod) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: setbackCellReuseIdentifier) as! SetbackCell
-        
-        cell.render(startTime: period.startTime)
-        
-        return cell
-    }
-}
+    }}

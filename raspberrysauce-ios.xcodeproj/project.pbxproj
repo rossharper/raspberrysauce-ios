@@ -95,6 +95,7 @@
 		CC349B0C26AA5AA66F682797 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 236320A2BBF218EE1F427E97 /* AssetsLibrary.framework */; };
 		F0FB6706209365BF0086A95B /* SetbackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FB6705209365BF0086A95B /* SetbackCell.swift */; };
 		F0FB6708209373CC0086A95B /* ComfortCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FB6707209373CC0086A95B /* ComfortCell.swift */; };
+		F0FB670A209377980086A95B /* ScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FB6709209377980086A95B /* ScheduleCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -224,6 +225,7 @@
 		91DB8BBB1E1400750006AF0C /* HeatingMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeatingMode.swift; sourceTree = "<group>"; };
 		F0FB6705209365BF0086A95B /* SetbackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetbackCell.swift; sourceTree = "<group>"; };
 		F0FB6707209373CC0086A95B /* ComfortCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComfortCell.swift; sourceTree = "<group>"; };
+		F0FB6709209377980086A95B /* ScheduleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -380,6 +382,7 @@
 				917141D31FCB0B3D00E9CD6F /* ScheduleViewController.swift */,
 				F0FB6705209365BF0086A95B /* SetbackCell.swift */,
 				F0FB6707209373CC0086A95B /* ComfortCell.swift */,
+				F0FB6709209377980086A95B /* ScheduleCell.swift */,
 			);
 			path = Schedule;
 			sourceTree = "<group>";
@@ -769,6 +772,7 @@
 				918F56691E09D33500FF4CEF /* TemperatureFormatter.swift in Sources */,
 				91DB8B9E1E0C8BD90006AF0C /* ProgrammeModeColor.swift in Sources */,
 				912E89671E0AE6DD0074A8A4 /* WatchSessionDelegate.swift in Sources */,
+				F0FB670A209377980086A95B /* ScheduleCell.swift in Sources */,
 				916A958F1E09A32300C512D3 /* MainViewController.swift in Sources */,
 				91BF44D51E097818004EAE03 /* Token.swift in Sources */,
 				916A958D1E09991700C512D3 /* SigningInProgressViewController.swift in Sources */,

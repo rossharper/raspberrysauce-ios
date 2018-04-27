@@ -226,7 +226,7 @@
                                 <color key="separatorColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="setbackCell" rowHeight="97" id="5OB-wu-4VZ" customClass="SetbackCell" customModule="raspberrysauce_ios">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="scheduleCell" rowHeight="97" id="5OB-wu-4VZ" customClass="ScheduleCell" customModule="raspberrysauce_ios">
                                         <rect key="frame" x="0.0" y="28" width="374" height="97"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5OB-wu-4VZ" id="Gq9-sS-0zI">
@@ -257,43 +257,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="modeIcon" destination="F3Q-O6-XFh" id="kvw-7Q-Rdq"/>
-                                            <outlet property="startTimeLabel" destination="yF8-4L-LFN" id="pQl-xG-caF"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="comfortCell" rowHeight="97" id="WXu-Ed-Y4j" customClass="ComfortCell" customModule="raspberrysauce_ios" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="125" width="374" height="97"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WXu-Ed-Y4j" id="4lm-uB-fgd">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="97"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhu-0P-Qhp">
-                                                    <rect key="frame" x="15" y="11" width="46" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ComfortModeIcon" translatesAutoresizingMaskIntoConstraints="NO" id="5uY-rA-Xrv">
-                                                    <rect key="frame" x="150" y="11" width="75.333333333333314" height="75.333333333333329"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="5uY-rA-Xrv" secondAttribute="height" multiplier="1:1" id="ceI-2m-b1T"/>
-                                                    </constraints>
-                                                </imageView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="5uY-rA-Xrv" firstAttribute="top" secondItem="4lm-uB-fgd" secondAttribute="top" constant="11" id="1s6-o2-Jqx"/>
-                                                <constraint firstItem="fhu-0P-Qhp" firstAttribute="top" secondItem="4lm-uB-fgd" secondAttribute="top" constant="11" id="5ao-tt-RJy"/>
-                                                <constraint firstItem="5uY-rA-Xrv" firstAttribute="centerX" secondItem="4lm-uB-fgd" secondAttribute="centerX" id="7s1-oo-IDS"/>
-                                                <constraint firstItem="fhu-0P-Qhp" firstAttribute="leading" secondItem="4lm-uB-fgd" secondAttribute="leading" constant="15" id="Pt0-6U-tYL"/>
-                                                <constraint firstAttribute="bottom" secondItem="5uY-rA-Xrv" secondAttribute="bottom" constant="11" id="XmL-Dz-eoT"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fhu-0P-Qhp" secondAttribute="trailing" constant="20" symbolic="YES" id="jUS-0W-nH0"/>
-                                                <constraint firstItem="5uY-rA-Xrv" firstAttribute="centerY" secondItem="4lm-uB-fgd" secondAttribute="centerY" id="qBg-1c-XKa"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="modeIcon" destination="5uY-rA-Xrv" id="D4C-wf-e0A"/>
-                                            <outlet property="startTimeLabel" destination="fhu-0P-Qhp" id="TeA-8J-smx"/>
+                                            <outlet property="modeIcon" destination="F3Q-O6-XFh" id="0dM-IY-fLv"/>
+                                            <outlet property="startTimeLabel" destination="yF8-4L-LFN" id="RvQ-VN-ZcK"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -485,7 +450,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ComfortModeIcon" width="80" height="80"/>
         <image name="HomeIcon" width="25" height="25"/>
         <image name="ScheduleIcon" width="25" height="25"/>
         <image name="SetbackModeIcon" width="80" height="80"/>
