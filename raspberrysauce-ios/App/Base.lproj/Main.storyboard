@@ -219,7 +219,7 @@
                                 <color key="textColor" red="0.75686274509999996" green="0.08235294118" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8uR-rG-MCK">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="31" translatesAutoresizingMaskIntoConstraints="NO" id="8uR-rG-MCK">
                                 <rect key="frame" x="20" y="98" width="374" height="589"/>
                                 <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="separatorColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -280,6 +280,39 @@
                                             <outlet property="modeIcon" destination="F3Q-O6-XFh" id="0dM-IY-fLv"/>
                                             <outlet property="startTimeLabel" destination="yF8-4L-LFN" id="RvQ-VN-ZcK"/>
                                         </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="footerCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="footerCell" rowHeight="31" id="DhQ-jh-h7I">
+                                        <rect key="frame" x="0.0" y="173" width="374" height="31"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DhQ-jh-h7I" id="6xt-px-RrN" customClass="ScheduleFooterCell" customModule="raspberrysauce_ios">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="31"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IhH-HE-Ynn">
+                                                    <rect key="frame" x="15" y="5.6666666666666679" width="46" height="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KNk-4X-oZY" userLabel="Separator">
+                                                    <rect key="frame" x="76" y="15" width="283" height="1"/>
+                                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" id="LAQ-be-v73"/>
+                                                        <constraint firstAttribute="height" constant="1" id="hpv-WL-xyE"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="KNk-4X-oZY" firstAttribute="centerY" secondItem="IhH-HE-Ynn" secondAttribute="centerY" id="Fi2-tS-qaG"/>
+                                                <constraint firstItem="IhH-HE-Ynn" firstAttribute="leading" secondItem="6xt-px-RrN" secondAttribute="leading" constant="15" id="Wm8-WB-OSO"/>
+                                                <constraint firstItem="KNk-4X-oZY" firstAttribute="top" secondItem="6xt-px-RrN" secondAttribute="top" constant="15" id="XDQ-PF-sMq"/>
+                                                <constraint firstItem="KNk-4X-oZY" firstAttribute="leading" secondItem="IhH-HE-Ynn" secondAttribute="trailing" constant="15" id="bng-5U-VVe"/>
+                                                <constraint firstAttribute="trailing" secondItem="KNk-4X-oZY" secondAttribute="trailing" constant="15" id="iRb-5g-02b"/>
+                                                <constraint firstAttribute="bottom" secondItem="KNk-4X-oZY" secondAttribute="bottom" constant="15" id="tuB-XF-Nhl"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

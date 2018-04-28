@@ -17,6 +17,7 @@ class ScheduleViewController: UIViewController {
     var schedulePeriods : [ProgrammePeriod] = []
     
     private let scheduleCellReuseIdentifier = "scheduleCell"
+    private let footerCellReuseIdentifier = "footerCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,10 +63,14 @@ class ScheduleViewController: UIViewController {
 }
 
 extension ScheduleViewController : UITableViewDelegate {
-    
+
 }
 
 extension ScheduleViewController : UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return tableView.dequeueReusableCell(withIdentifier: footerCellReuseIdentifier)
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         

@@ -13,7 +13,6 @@ class ScheduleCell : UITableViewCell {
     @IBOutlet weak var modeIcon: UIImageView!
     @IBOutlet weak var startTimeLabel: UILabel!
     
-    
     func render(period: ProgrammePeriod, isLast: Bool) {
         startTimeLabel.text = period.startTime
         modeIcon.image = imageForPeriod(period).withRenderingMode(.alwaysTemplate)
