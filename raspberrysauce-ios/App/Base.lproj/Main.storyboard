@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -234,7 +233,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yF8-4L-LFN">
-                                                    <rect key="frame" x="15" y="11" width="46" height="21"/>
+                                                    <rect key="frame" x="15" y="5" width="46" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -245,28 +244,28 @@
                                                         <constraint firstAttribute="width" secondItem="F3Q-O6-XFh" secondAttribute="height" multiplier="1:1" id="Q5f-Fp-wni"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKN-i1-X7t">
-                                                    <rect key="frame" x="15" y="65" width="46" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gvk-2x-8Q5" userLabel="Timeline">
+                                                    <rect key="frame" x="37.666666666666664" y="31" width="1" height="66"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="1" id="lnZ-R9-wV9"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="yF8-4L-LFN" firstAttribute="top" secondItem="Gq9-sS-0zI" secondAttribute="top" constant="11" id="2Nc-53-ytQ"/>
-                                                <constraint firstAttribute="bottom" secondItem="aKN-i1-X7t" secondAttribute="bottom" constant="11" id="9mk-tk-Mgk"/>
+                                                <constraint firstItem="yF8-4L-LFN" firstAttribute="top" secondItem="Gq9-sS-0zI" secondAttribute="top" constant="5" id="2Nc-53-ytQ"/>
                                                 <constraint firstAttribute="bottom" secondItem="F3Q-O6-XFh" secondAttribute="bottom" constant="11" id="L3F-7q-anS"/>
                                                 <constraint firstItem="yF8-4L-LFN" firstAttribute="leading" secondItem="Gq9-sS-0zI" secondAttribute="leading" constant="15" id="LVI-qC-y9K"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="aKN-i1-X7t" secondAttribute="trailing" constant="20" symbolic="YES" id="VQU-IY-b6S"/>
-                                                <constraint firstItem="aKN-i1-X7t" firstAttribute="leading" secondItem="Gq9-sS-0zI" secondAttribute="leading" constant="15" id="b10-37-Lcj"/>
+                                                <constraint firstItem="Gvk-2x-8Q5" firstAttribute="top" secondItem="yF8-4L-LFN" secondAttribute="bottom" constant="5" id="W3R-I1-6fa"/>
+                                                <constraint firstAttribute="bottom" secondItem="Gvk-2x-8Q5" secondAttribute="bottom" id="gXo-lT-Vqk"/>
                                                 <constraint firstItem="F3Q-O6-XFh" firstAttribute="centerX" secondItem="Gq9-sS-0zI" secondAttribute="centerX" id="lL7-wE-LK9"/>
+                                                <constraint firstItem="Gvk-2x-8Q5" firstAttribute="centerX" secondItem="yF8-4L-LFN" secondAttribute="centerX" id="sRw-kT-X05"/>
                                                 <constraint firstItem="F3Q-O6-XFh" firstAttribute="top" secondItem="Gq9-sS-0zI" secondAttribute="top" constant="11" id="sju-uv-OE1"/>
                                                 <constraint firstItem="F3Q-O6-XFh" firstAttribute="centerY" secondItem="Gq9-sS-0zI" secondAttribute="centerY" id="vqW-gX-XXn"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="yF8-4L-LFN" secondAttribute="trailing" constant="20" symbolic="YES" id="wwN-LB-3Cj"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="endTimeLabel" destination="aKN-i1-X7t" id="u3B-Ph-LGf"/>
                                             <outlet property="modeIcon" destination="F3Q-O6-XFh" id="0dM-IY-fLv"/>
                                             <outlet property="startTimeLabel" destination="yF8-4L-LFN" id="RvQ-VN-ZcK"/>
                                         </connections>
@@ -372,7 +371,7 @@
                                 </state>
                                 <connections>
                                     <action selector="onSignIn:" destination="vaH-NM-55W" eventType="touchUpInside" id="sqS-tJ-1n8"/>
-                                    <segue destination="gKg-Wp-OCo" kind="showDetail" animates="NO" action="showViewController:sender:" id="Zfm-Ce-8dJ"/>
+                                    <segue destination="gKg-Wp-OCo" kind="showDetail" animates="NO" id="Zfm-Ce-8dJ"/>
                                 </connections>
                             </button>
                         </subviews>
