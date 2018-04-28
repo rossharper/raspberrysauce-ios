@@ -68,6 +68,10 @@ extension ScheduleViewController : UITableViewDelegate {
 
 extension ScheduleViewController : UITableViewDataSource {
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return CGFloat.leastNormalMagnitude
+    }
+    
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return tableView.dequeueReusableCell(withIdentifier: footerCellReuseIdentifier)
     }
