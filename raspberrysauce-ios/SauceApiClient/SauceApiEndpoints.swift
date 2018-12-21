@@ -13,4 +13,5 @@ struct SauceApiEndpoints {
     static let homeViewEndpoint = "\(AppConfig.ApiBaseUrl)/api/views/ios/home"
     static let temperatureEndpoint = "\(AppConfig.ApiBaseUrl)/api/temperature"
     static let setModeEndpoint = "\(AppConfig.ApiBaseUrl)/api/programme/setMode/"
+    static let setPointEndpoint = "\(AppConfig.ApiBaseUrl)/api/programme/comfortSetPoint"
 }

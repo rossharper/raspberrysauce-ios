@@ -19,6 +19,9 @@ class MainViewController: UIViewController {
     let authManager = AuthManagerFactory.create()
     let homeViewDataProvider = HomeViewDataProviderFactory.create()
     let heatingModeChanger = HeatingModeChangerFactory.create()
+    let setPointChanger = SetPointChangerFactory.create()
+    
+    var stepperInteractionTask: DispatchWorkItem? = nil
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -94,6 +97,33 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func onComfortSetpointStepperChanged(_ sender: Any) {
+        
+        if let stepperInteractionTask = stepperInteractionTask {
+            stepperInteractionTask.cancel()
+        }
+        
+        let temperature = Temperature(value: self.comfortSetpointStepper.value)
+        comfortSetpointValue.text = temperature.description
+        
+        stepperInteractionTask = DispatchWorkItem {
+            self.comfortSetpointValue.isEnabled = false
+            self.comfortSetpointStepper.isEnabled = false
+            self.setComfortSetPoint(temperature: temperature)
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: stepperInteractionTask!)
+    }
+    
+    func setComfortSetPoint(temperature: Temperature) {
+        setPointChanger.setComfortSetPoint(temperature: temperature, onSuccess: { (temperature) in
+            DispatchQueue.main.async {
+                self.comfortSetpointValue.text = temperature.description
+            }
+        }) {
+            print("error setting setpoint")
+        }
+        self.comfortSetpointValue.isEnabled = true
+        self.comfortSetpointStepper.isEnabled = true
     }
     
     // TODO: duplication between this and watch extension delegate
