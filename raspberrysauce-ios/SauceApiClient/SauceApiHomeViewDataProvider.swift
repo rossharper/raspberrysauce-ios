@@ -9,7 +9,7 @@
 import Foundation
 
 struct ApiHomeViewData : Decodable {
-    let temperature : Float
+    let temperature : Double
     let programme : ApiProgramme
 }
 
@@ -55,14 +55,6 @@ class SauceApiHomeViewDataProvider : HomeViewDataProvider {
         let homeData = HomeViewData(temperature: Temperature(value: apiHomeViewData.temperature), programme: programme)
         
         return homeData
-//
-//        guard let homeViewData = try? JSONSerialization.jsonObject(with: body, options: .allowFragments) as! [String: Any],
-//                    let temperature = homeViewData["temperature"] as? Float,
-//                    let programmeData = homeViewData["programme"] as? [String : Any],
-//                    let programme = ProgrammeParser().parse(programmeData) else {
-//                return nil
-//        }
-//        return HomeViewData(temperature: Temperature(value: Float(temperature)), programme: programme)
     }
     
 

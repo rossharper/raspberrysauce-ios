@@ -9,5 +9,9 @@
 import Foundation
 
 struct Temperature {
-    let value : Float
+    let value : Double
+    
+    var description: String {
+        return value.description
+    }
 }

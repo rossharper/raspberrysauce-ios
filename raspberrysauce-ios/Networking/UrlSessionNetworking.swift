@@ -52,6 +52,9 @@ class UrlSessionNetworking : Networking {
             }
             
             if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
+                if let data = String(data: data, encoding: String.Encoding.utf8) {
+                    print(data)
+                }
                 onError(httpStatus.statusCode)
             }
             else {

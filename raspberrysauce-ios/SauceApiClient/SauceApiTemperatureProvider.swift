@@ -33,10 +33,10 @@ class SauceApiTemperatureProvider : TemperatureProvider {
         }
     }
     
-    private func parse(_ body: Data) -> Float? {
+    private func parse(_ body: Data) -> Double? {
         if let deviceTemperature = try? JSONSerialization.jsonObject(with: body, options: .allowFragments) as? [String: Any],
-            let temperature = deviceTemperature?["temperature"] as? Float {
-                return Float(temperature)
+            let temperature = deviceTemperature?["temperature"] as? Double {
+                return Double(temperature)
         }
         return nil
     }
