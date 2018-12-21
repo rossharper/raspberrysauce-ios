@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -109,25 +109,74 @@
                                     <constraint firstAttribute="height" constant="80" id="xbn-d1-DQn"/>
                                 </constraints>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2h1-FP-2lW" userLabel="Separator">
+                                <rect key="frame" x="10" y="397" width="394" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="Zmf-om-APv"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ncE-ps-Kai" userLabel="SetpointView">
+                                <rect key="frame" x="10" y="418" width="394" height="84"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comfort Setpoint" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N0x-h1-I5S">
+                                        <rect key="frame" x="0.0" y="8" width="394" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.75686274509999996" green="0.08235294118" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yB3-Vz-XGp">
+                                        <rect key="frame" x="0.0" y="34" width="292" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="30" stepValue="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="i3S-Y6-Lya">
+                                        <rect key="frame" x="300" y="34" width="94" height="29"/>
+                                        <connections>
+                                            <action selector="onComfortSetpointStepperChanged:" destination="Ssu-sD-gKT" eventType="valueChanged" id="zl0-ke-SeD"/>
+                                        </connections>
+                                    </stepper>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="N0x-h1-I5S" firstAttribute="top" secondItem="ncE-ps-Kai" secondAttribute="top" constant="8" id="0DQ-b7-7c9"/>
+                                    <constraint firstItem="yB3-Vz-XGp" firstAttribute="leading" secondItem="N0x-h1-I5S" secondAttribute="leading" id="BJ7-Ko-7JL"/>
+                                    <constraint firstAttribute="bottom" secondItem="yB3-Vz-XGp" secondAttribute="bottom" constant="20" id="ELb-GQ-aRn"/>
+                                    <constraint firstAttribute="trailing" secondItem="i3S-Y6-Lya" secondAttribute="trailing" id="VZg-0D-jGI"/>
+                                    <constraint firstItem="i3S-Y6-Lya" firstAttribute="leading" secondItem="yB3-Vz-XGp" secondAttribute="trailing" constant="8" id="cER-As-bXz"/>
+                                    <constraint firstItem="i3S-Y6-Lya" firstAttribute="top" secondItem="yB3-Vz-XGp" secondAttribute="bottom" constant="-30" id="gNS-cH-K35"/>
+                                    <constraint firstItem="yB3-Vz-XGp" firstAttribute="top" secondItem="N0x-h1-I5S" secondAttribute="bottom" constant="5" id="iie-x9-f1o"/>
+                                    <constraint firstAttribute="trailing" secondItem="N0x-h1-I5S" secondAttribute="trailing" id="skl-pB-paI"/>
+                                    <constraint firstItem="N0x-h1-I5S" firstAttribute="leading" secondItem="ncE-ps-Kai" secondAttribute="leading" id="vXI-Ej-28J"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="uVN-ha-8wc" firstAttribute="leading" secondItem="DoL-rs-gPK" secondAttribute="leading" id="00M-g0-JZl"/>
                             <constraint firstAttribute="leadingMargin" secondItem="8eK-ik-KUO" secondAttribute="leading" id="07s-o3-7Of"/>
+                            <constraint firstItem="ncE-ps-Kai" firstAttribute="trailing" secondItem="2h1-FP-2lW" secondAttribute="trailing" id="41e-lk-g6j"/>
                             <constraint firstItem="22N-C5-RsJ" firstAttribute="top" secondItem="h8q-lX-iza" secondAttribute="bottom" constant="10" id="4JE-UF-VCa"/>
+                            <constraint firstItem="ncE-ps-Kai" firstAttribute="top" secondItem="2h1-FP-2lW" secondAttribute="bottom" constant="20" id="9mG-qH-9XX"/>
+                            <constraint firstItem="2h1-FP-2lW" firstAttribute="top" secondItem="22N-C5-RsJ" secondAttribute="bottom" constant="40" id="C8R-WV-yOd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8eK-ik-KUO" secondAttribute="trailing" id="CPP-SZ-yWn"/>
                             <constraint firstAttribute="trailing" secondItem="uVN-ha-8wc" secondAttribute="trailing" id="P0y-aH-p6E"/>
                             <constraint firstItem="8eK-ik-KUO" firstAttribute="top" secondItem="uVN-ha-8wc" secondAttribute="bottom" constant="10" id="S7U-7d-3dI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="22N-C5-RsJ" secondAttribute="trailing" id="aWf-aT-plr"/>
+                            <constraint firstAttribute="trailing" secondItem="2h1-FP-2lW" secondAttribute="trailing" constant="10" id="ae9-7t-vcS"/>
                             <constraint firstItem="h8q-lX-iza" firstAttribute="top" secondItem="8eK-ik-KUO" secondAttribute="bottom" constant="20" id="evy-cp-kos"/>
                             <constraint firstAttribute="leadingMargin" secondItem="22N-C5-RsJ" secondAttribute="leading" id="lD0-kT-fvz"/>
+                            <constraint firstItem="ncE-ps-Kai" firstAttribute="leading" secondItem="2h1-FP-2lW" secondAttribute="leading" id="o2M-jf-FF6"/>
                             <constraint firstItem="h8q-lX-iza" firstAttribute="centerX" secondItem="DoL-rs-gPK" secondAttribute="centerX" id="r1U-6D-lzw"/>
                             <constraint firstItem="uVN-ha-8wc" firstAttribute="top" secondItem="DoL-rs-gPK" secondAttribute="top" id="tfV-M9-FBg"/>
+                            <constraint firstItem="2h1-FP-2lW" firstAttribute="leading" secondItem="DoL-rs-gPK" secondAttribute="leading" constant="10" id="vvw-tM-8ef"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="HomeIcon" landscapeImage="HomeIcon" largeContentSizeImage="HomeIcon" selectedImage="HomeIcon" id="Gs0-Uu-Oa0"/>
                     <connections>
                         <outlet property="activityIndicator" destination="KnJ-3F-OO6" id="gOD-em-385"/>
+                        <outlet property="comfortSetpointStepper" destination="i3S-Y6-Lya" id="CgW-EG-knV"/>
+                        <outlet property="comfortSetpointValue" destination="yB3-Vz-XGp" id="JIn-WF-otR"/>
                         <outlet property="modeIcon" destination="h8q-lX-iza" id="pyb-7B-OCs"/>
                         <outlet property="modeSelector" destination="8eK-ik-KUO" id="Z8a-uJ-URN"/>
                         <outlet property="temperatureLabel" destination="22N-C5-RsJ" id="Qrg-Rj-lZ1"/>
@@ -136,7 +185,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="73k-8p-b21" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1828" y="532"/>
+            <point key="canvasLocation" x="1827.5362318840582" y="531.52173913043487"/>
         </scene>
         <!--Loading View Controller-->
         <scene sceneID="JmP-ut-r8n">
@@ -226,7 +275,7 @@
                                 <color key="sectionIndexBackgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="scheduleCell" rowHeight="145" id="5OB-wu-4VZ" customClass="ScheduleCell" customModule="raspberrysauce_ios">
-                                        <rect key="frame" x="0.0" y="55.333333333333343" width="374" height="145"/>
+                                        <rect key="frame" x="0.0" y="55.333333333333336" width="374" height="145"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5OB-wu-4VZ" id="Gq9-sS-0zI">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="145"/>
@@ -509,6 +558,6 @@
         <image name="SettingsIcon" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="b9C-cl-MnF"/>
+        <segue reference="tX7-xz-mUY"/>
     </inferredMetricsTieBreakers>
 </document>

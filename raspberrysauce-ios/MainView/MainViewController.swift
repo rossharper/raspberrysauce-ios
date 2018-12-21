@@ -13,6 +13,8 @@ class MainViewController: UIViewController {
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var modeSelector: UISegmentedControl!
     @IBOutlet weak var modeIcon: UIImageView!
+    @IBOutlet weak var comfortSetpointValue: UITextField!
+    @IBOutlet weak var comfortSetpointStepper: UIStepper!
     
     let authManager = AuthManagerFactory.create()
     let homeViewDataProvider = HomeViewDataProviderFactory.create()
@@ -46,6 +48,8 @@ class MainViewController: UIViewController {
             self.setModeSelector(homeViewData.programme)
             self.setModeIcon(homeViewData.programme)
             self.temperatureLabel.text = TemperatureFormatter.asString(homeViewData.temperature)
+            self.comfortSetpointStepper.value = 20.0
+            self.comfortSetpointValue.text = "20.0"
             self.hideLoadingScreen()
         }
     }
@@ -87,6 +91,9 @@ class MainViewController: UIViewController {
         default:
             setHeatingMode(.Auto)
         }
+    }
+    
+    @IBAction func onComfortSetpointStepperChanged(_ sender: Any) {
     }
     
     // TODO: duplication between this and watch extension delegate
