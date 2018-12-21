@@ -51,12 +51,19 @@ class SauceApiBackgroundHomeViewProvider : NSObject, HomeViewDataProvider, URLSe
     }
     
     private func parse(_ body: Data) -> HomeViewData? {
-        guard let homeViewData = try? JSONSerialization.jsonObject(with: body, options: .allowFragments) as! [String: Any],
-            let temperature = homeViewData["temperature"] as? Float,
-            let programmeData = homeViewData["programme"] as? [String : Any],
-            let programme = ProgrammeParser().parse(programmeData) else {
-                return nil
+        guard let apiHomeViewData = try? JSONDecoder().decode(ApiHomeViewData.self, from: body) else {
+            return nil
         }
-        return HomeViewData(temperature: Temperature(value: Float(temperature)), programme: programme)
+        
+        let periods = apiHomeViewData.programme.todaysPeriods.map {
+            apiPeriod in
+            return ProgrammePeriod(isComfort: apiPeriod.isComfort, startTime: apiPeriod.startTime, endTime: apiPeriod.endTime)
+        }
+        
+        let programme = Programme(heatingEnabled: apiHomeViewData.programme.heatingEnabled, comfortLevelEnabled: apiHomeViewData.programme.comfortLevelEnabled, inOverride: apiHomeViewData.programme.inOverride, periods: periods, comfortSetPoint: apiHomeViewData.programme.comfortSetPoint)
+        
+        let homeData = HomeViewData(temperature: Temperature(value: apiHomeViewData.temperature), programme: programme)
+        
+        return homeData
     }
 }

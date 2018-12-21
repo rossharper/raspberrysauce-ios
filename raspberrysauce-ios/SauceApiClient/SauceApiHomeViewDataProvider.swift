@@ -8,19 +8,6 @@
 
 import Foundation
 
-struct ApiPeriod : Decodable {
-    let isComfort : Bool
-    let startTime : String
-    let endTime : String
-}
-
-struct ApiProgramme : Decodable {
-    let heatingEnabled : Bool
-    let comfortLevelEnabled : Bool
-    let inOverride : Bool
-    let todaysPeriods : [ApiPeriod]
-}
-
 struct ApiHomeViewData : Decodable {
     let temperature : Float
     let programme : ApiProgramme
@@ -63,7 +50,7 @@ class SauceApiHomeViewDataProvider : HomeViewDataProvider {
             return ProgrammePeriod(isComfort: apiPeriod.isComfort, startTime: apiPeriod.startTime, endTime: apiPeriod.endTime)
         }
         
-        let programme = Programme(heatingEnabled: apiHomeViewData.programme.heatingEnabled, comfortLevelEnabled: apiHomeViewData.programme.comfortLevelEnabled, inOverride: apiHomeViewData.programme.inOverride, periods: periods)
+        let programme = Programme(heatingEnabled: apiHomeViewData.programme.heatingEnabled, comfortLevelEnabled: apiHomeViewData.programme.comfortLevelEnabled, inOverride: apiHomeViewData.programme.inOverride, periods: periods, comfortSetPoint: apiHomeViewData.programme.comfortSetPoint)
         
         let homeData = HomeViewData(temperature: Temperature(value: apiHomeViewData.temperature), programme: programme)
         

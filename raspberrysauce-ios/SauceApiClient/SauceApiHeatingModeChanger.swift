@@ -50,9 +50,6 @@ class SauceApiHeatingModeChanger : HeatingModeChanger {
     }
     
     func parse(_ body: Data) -> Programme? {
-        guard let programmeData = try? JSONSerialization.jsonObject(with: body, options: .allowFragments) as! [String: Any] else {
-            return nil
-        }
-        return ProgrammeParser().parse(programmeData)
+        return ProgrammeParser().parse(body)
     }
 }

@@ -48,8 +48,8 @@ class MainViewController: UIViewController {
             self.setModeSelector(homeViewData.programme)
             self.setModeIcon(homeViewData.programme)
             self.temperatureLabel.text = TemperatureFormatter.asString(homeViewData.temperature)
-            self.comfortSetpointStepper.value = 20.0
-            self.comfortSetpointValue.text = "20.0"
+            self.comfortSetpointStepper.value = homeViewData.programme.comfortSetPoint
+            self.comfortSetpointValue.text = homeViewData.programme.comfortSetPoint.description
             self.hideLoadingScreen()
         }
     }

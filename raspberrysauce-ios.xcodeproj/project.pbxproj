@@ -93,6 +93,8 @@
 		91DB8BBD1E1400750006AF0C /* HeatingMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DB8BBB1E1400750006AF0C /* HeatingMode.swift */; };
 		91DB8BBE1E14155B0006AF0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 916A95A31E09C2D300C512D3 /* Assets.xcassets */; };
 		CC349B0C26AA5AA66F682797 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 236320A2BBF218EE1F427E97 /* AssetsLibrary.framework */; };
+		F06FFE7D21CD2A1100FA6748 /* ApiModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06FFE7C21CD2A1100FA6748 /* ApiModels.swift */; };
+		F06FFE7E21CD2A2600FA6748 /* ApiModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06FFE7C21CD2A1100FA6748 /* ApiModels.swift */; };
 		F0FB670A209377980086A95B /* ScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FB6709209377980086A95B /* ScheduleCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -221,6 +223,7 @@
 		91DB8BB31E130A580006AF0C /* SauceApiBackgroundHomeViewProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SauceApiBackgroundHomeViewProvider.swift; sourceTree = "<group>"; };
 		91DB8BB71E13E4C30006AF0C /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoadingViewController.swift; path = ../App/LoadingViewController.swift; sourceTree = "<group>"; };
 		91DB8BBB1E1400750006AF0C /* HeatingMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeatingMode.swift; sourceTree = "<group>"; };
+		F06FFE7C21CD2A1100FA6748 /* ApiModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiModels.swift; sourceTree = "<group>"; };
 		F0FB6709209377980086A95B /* ScheduleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -465,6 +468,7 @@
 				9124FC171E0BF749009D0699 /* SauceApiHomeViewDataProvider.swift */,
 				916A95941E09A66900C512D3 /* SauceApiTemperatureProvider.swift */,
 				916A95961E09A70900C512D3 /* TemperatureProviderFactory.swift */,
+				F06FFE7C21CD2A1100FA6748 /* ApiModels.swift */,
 			);
 			path = SauceApiClient;
 			sourceTree = "<group>";
@@ -771,6 +775,7 @@
 				91BF44D51E097818004EAE03 /* Token.swift in Sources */,
 				916A958D1E09991700C512D3 /* SigningInProgressViewController.swift in Sources */,
 				9124FC1B1E0BF92E009D0699 /* HomeViewDataProviderFactory.swift in Sources */,
+				F06FFE7D21CD2A1100FA6748 /* ApiModels.swift in Sources */,
 				91BF44CD1E096667004EAE03 /* AuthManagerFactory.swift in Sources */,
 				91DB8BA11E0C8E910006AF0C /* TemperatureColor.swift in Sources */,
 				9124FC121E0BF6B8009D0699 /* HomeViewDataProvider.swift in Sources */,
@@ -831,6 +836,7 @@
 				912E897A1E0B309C0074A8A4 /* TemperatureProvider.swift in Sources */,
 				9124FC1C1E0BF92E009D0699 /* HomeViewDataProviderFactory.swift in Sources */,
 				91DB8BBD1E1400750006AF0C /* HeatingMode.swift in Sources */,
+				F06FFE7E21CD2A2600FA6748 /* ApiModels.swift in Sources */,
 				912E89691E0AEEBC0074A8A4 /* AuthManagerFactory.swift in Sources */,
 				912E89741E0AF7930074A8A4 /* TemperatureFormatter.swift in Sources */,
 				9124FC161E0BF6F3009D0699 /* HomeViewData.swift in Sources */,

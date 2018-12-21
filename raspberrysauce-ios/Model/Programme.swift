@@ -19,11 +19,13 @@ class Programme {
     let comfortLevelEnabled : Bool
     let inOverride : Bool
     let periods : [ProgrammePeriod]
+    let comfortSetPoint : Double
     
-    init(heatingEnabled: Bool, comfortLevelEnabled: Bool, inOverride: Bool, periods: [ProgrammePeriod]) {
+    init(heatingEnabled: Bool, comfortLevelEnabled: Bool, inOverride: Bool, periods: [ProgrammePeriod], comfortSetPoint: Double) {
         self.heatingEnabled = heatingEnabled
         self.comfortLevelEnabled = comfortLevelEnabled
         self.inOverride = inOverride
         self.periods = periods
+        self.comfortSetPoint = comfortSetPoint
     }
 }
