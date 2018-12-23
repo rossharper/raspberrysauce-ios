@@ -62,7 +62,10 @@ class SauceApiBackgroundHomeViewProvider : NSObject, HomeViewDataProvider, URLSe
         
         let programme = Programme(heatingEnabled: apiHomeViewData.programme.heatingEnabled, comfortLevelEnabled: apiHomeViewData.programme.comfortLevelEnabled, inOverride: apiHomeViewData.programme.inOverride, periods: periods, comfortSetPoint: apiHomeViewData.programme.comfortSetPoint)
         
-        let homeData = HomeViewData(temperature: Temperature(value: apiHomeViewData.temperature), programme: programme)
+        let homeData = HomeViewData(
+            temperature: Temperature(value: apiHomeViewData.temperature),
+            programme: programme,
+            callingForHeat: apiHomeViewData.callingForHeat)
         
         return homeData
     }

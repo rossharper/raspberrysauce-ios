@@ -154,7 +154,10 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
                 guard let model = self.model else {
                     return
                 }
-                self.model = HomeViewData(temperature: model.temperature, programme: programme)
+                self.model = HomeViewData(
+                    temperature: model.temperature,
+                    programme: programme,
+                    callingForHeat: model.callingForHeat)
                 self.updateInterface()
                 self.updateComplications()
             }) {
