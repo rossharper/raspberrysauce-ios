@@ -149,15 +149,15 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
     func setHeatingMode(_ mode: HeatingMode) {
         print("set heating mode" + mode.description)
         if(authManager.isSignedIn()) {
-            heatingModeChanger.setHeatingMode(mode: mode, onSuccess: { (programme) in
+            heatingModeChanger.setHeatingMode(mode: mode, onSuccess: { (heatingModeChanged) in
                 print("mode set")
                 guard let model = self.model else {
                     return
                 }
                 self.model = HomeViewData(
                     temperature: model.temperature,
-                    programme: programme,
-                    callingForHeat: model.callingForHeat)
+                    programme: heatingModeChanged.programme,
+                    callingForHeat: heatingModeChanged.callingForHeat)
                 self.updateInterface()
                 self.updateComplications()
             }) {

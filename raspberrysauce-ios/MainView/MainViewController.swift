@@ -142,11 +142,12 @@ class MainViewController: UIViewController {
     func setHeatingMode(_ mode: HeatingMode) {
         print("set heating mode" + mode.description)
         if(authManager.isSignedIn()) {
-            heatingModeChanger.setHeatingMode(mode: mode, onSuccess: { (programme) in
+            heatingModeChanger.setHeatingMode(mode: mode, onSuccess: { (heatingModeChanged) in
                 print("mode set")
                 DispatchQueue.main.async {
-                    self.setModeSelector(programme)
-                    self.setModeIcon(programme)
+                    self.setModeSelector(heatingModeChanged.programme)
+                    self.setModeIcon(heatingModeChanged.programme)
+                    self.setHeatIcon(heatingModeChanged.callingForHeat)
                 }
             }) {
                 print("error setting heating mode")

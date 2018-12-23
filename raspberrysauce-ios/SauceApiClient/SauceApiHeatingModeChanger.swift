@@ -19,6 +19,11 @@ extension HeatingMode : CustomStringConvertible {
     }
 }
 
+struct ApiHeatingModeChangedData : Decodable {
+    let programme : ApiProgramme
+    let callingForHeat : Bool
+}
+
 class SauceApiHeatingModeChanger : HeatingModeChanger {
     let networking : Networking
     let config : Config
@@ -32,14 +37,14 @@ class SauceApiHeatingModeChanger : HeatingModeChanger {
         self.networking = networking
     }
     
-    func setHeatingMode(mode: HeatingMode, onSuccess: @escaping (Programme) -> Void, onError: @escaping () -> Void) {
+    func setHeatingMode(mode: HeatingMode, onSuccess: @escaping (HeatingModeChangedData) -> Void, onError: @escaping () -> Void) {
         let url = buildUrl(mode)
         networking.post(url: url, body: "", onSuccess: { (data) in
-            guard let programme = self.parse(data) else {
+            guard let heatingModeChangedData = self.parse(data) else {
                 onError()
                 return
             }
-            onSuccess(programme)
+            onSuccess(heatingModeChangedData)
         }) { _ in 
             onError()
         }
@@ -49,7 +54,30 @@ class SauceApiHeatingModeChanger : HeatingModeChanger {
         return config.endpoint.appendingPathComponent(mode.description)
     }
     
-    func parse(_ body: Data) -> Programme? {
-        return ProgrammeParser().parse(body)
+    func parse(_ body: Data) -> HeatingModeChangedData? {
+        guard let apiHeatingModeChangedData = try? JSONDecoder().decode(ApiHeatingModeChangedData.self, from: body) else {
+            return nil
+        }
+        
+        let periods = apiHeatingModeChangedData.programme.todaysPeriods.map {
+            apiPeriod in
+            return ProgrammePeriod(
+                isComfort: apiPeriod.isComfort,
+                startTime: apiPeriod.startTime,
+                endTime: apiPeriod.endTime)
+        }
+        
+        let programme = Programme(
+            heatingEnabled: apiHeatingModeChangedData.programme.heatingEnabled,
+            comfortLevelEnabled: apiHeatingModeChangedData.programme.comfortLevelEnabled,
+            inOverride: apiHeatingModeChangedData.programme.inOverride,
+            periods: periods,
+            comfortSetPoint: apiHeatingModeChangedData.programme.comfortSetPoint)
+        
+        let modeChangedData = HeatingModeChangedData(
+            programme: programme,
+            callingForHeat: apiHeatingModeChangedData.callingForHeat)
+        
+        return modeChangedData
     }
 }

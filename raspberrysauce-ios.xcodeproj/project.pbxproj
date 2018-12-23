@@ -30,8 +30,6 @@
 		9124FC251E0C3C6F009D0699 /* HeatingModeChanger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9124FC231E0C3C6F009D0699 /* HeatingModeChanger.swift */; };
 		9124FC271E0C3D11009D0699 /* SauceApiHeatingModeChanger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9124FC261E0C3D11009D0699 /* SauceApiHeatingModeChanger.swift */; };
 		9124FC281E0C3D11009D0699 /* SauceApiHeatingModeChanger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9124FC261E0C3D11009D0699 /* SauceApiHeatingModeChanger.swift */; };
-		9124FC2A1E0C42EA009D0699 /* ProgrammeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9124FC291E0C42EA009D0699 /* ProgrammeParser.swift */; };
-		9124FC2B1E0C42EA009D0699 /* ProgrammeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9124FC291E0C42EA009D0699 /* ProgrammeParser.swift */; };
 		9124FC2D1E0C43D9009D0699 /* HeatingModeChangerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9124FC2C1E0C43D9009D0699 /* HeatingModeChangerFactory.swift */; };
 		9124FC2E1E0C43D9009D0699 /* HeatingModeChangerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9124FC2C1E0C43D9009D0699 /* HeatingModeChangerFactory.swift */; };
 		912E89641E09E7420074A8A4 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912E89631E09E7420074A8A4 /* AppConfig.swift */; };
@@ -101,6 +99,8 @@
 		F06FFE8421CD768C00FA6748 /* SetPointChanger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06FFE8221CD768C00FA6748 /* SetPointChanger.swift */; };
 		F06FFE8621CD773800FA6748 /* SauceApiSetPointChanger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06FFE8521CD773800FA6748 /* SauceApiSetPointChanger.swift */; };
 		F06FFE8721CD773800FA6748 /* SauceApiSetPointChanger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06FFE8521CD773800FA6748 /* SauceApiSetPointChanger.swift */; };
+		F06FFE8921D030F300FA6748 /* HeatingModeChangedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06FFE8821D030F300FA6748 /* HeatingModeChangedData.swift */; };
+		F06FFE8A21D030F300FA6748 /* HeatingModeChangedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06FFE8821D030F300FA6748 /* HeatingModeChangedData.swift */; };
 		F0FB670A209377980086A95B /* ScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FB6709209377980086A95B /* ScheduleCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -184,7 +184,6 @@
 		9124FC201E0C2E4E009D0699 /* ProgrammeModeFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgrammeModeFormatter.swift; sourceTree = "<group>"; };
 		9124FC231E0C3C6F009D0699 /* HeatingModeChanger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeatingModeChanger.swift; sourceTree = "<group>"; };
 		9124FC261E0C3D11009D0699 /* SauceApiHeatingModeChanger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SauceApiHeatingModeChanger.swift; sourceTree = "<group>"; };
-		9124FC291E0C42EA009D0699 /* ProgrammeParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgrammeParser.swift; sourceTree = "<group>"; };
 		9124FC2C1E0C43D9009D0699 /* HeatingModeChangerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeatingModeChangerFactory.swift; sourceTree = "<group>"; };
 		912E89631E09E7420074A8A4 /* AppConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		912E89661E0AE6DD0074A8A4 /* WatchSessionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchSessionDelegate.swift; sourceTree = "<group>"; };
@@ -233,6 +232,7 @@
 		F06FFE7F21CD766F00FA6748 /* SetPointChangerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPointChangerFactory.swift; sourceTree = "<group>"; };
 		F06FFE8221CD768C00FA6748 /* SetPointChanger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPointChanger.swift; sourceTree = "<group>"; };
 		F06FFE8521CD773800FA6748 /* SauceApiSetPointChanger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SauceApiSetPointChanger.swift; sourceTree = "<group>"; };
+		F06FFE8821D030F300FA6748 /* HeatingModeChangedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeatingModeChangedData.swift; sourceTree = "<group>"; };
 		F0FB6709209377980086A95B /* ScheduleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -444,6 +444,7 @@
 				91DB8BAB1E12EA3E0006AF0C /* Temperature */,
 				9124FC1D1E0C2655009D0699 /* Programme.swift */,
 				91DB8BBB1E1400750006AF0C /* HeatingMode.swift */,
+				F06FFE8821D030F300FA6748 /* HeatingModeChangedData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -471,7 +472,6 @@
 			children = (
 				9124FC2C1E0C43D9009D0699 /* HeatingModeChangerFactory.swift */,
 				9124FC1A1E0BF92E009D0699 /* HomeViewDataProviderFactory.swift */,
-				9124FC291E0C42EA009D0699 /* ProgrammeParser.swift */,
 				91DB8BA31E12E7EB0006AF0C /* SauceApiEndpoints.swift */,
 				9124FC261E0C3D11009D0699 /* SauceApiHeatingModeChanger.swift */,
 				9124FC171E0BF749009D0699 /* SauceApiHomeViewDataProvider.swift */,
@@ -795,8 +795,8 @@
 				9124FC121E0BF6B8009D0699 /* HomeViewDataProvider.swift in Sources */,
 				9124FC241E0C3C6F009D0699 /* HeatingModeChanger.swift in Sources */,
 				9124FC181E0BF749009D0699 /* SauceApiHomeViewDataProvider.swift in Sources */,
-				9124FC2A1E0C42EA009D0699 /* ProgrammeParser.swift in Sources */,
 				9124FC2D1E0C43D9009D0699 /* HeatingModeChangerFactory.swift in Sources */,
+				F06FFE8921D030F300FA6748 /* HeatingModeChangedData.swift in Sources */,
 				9124FC151E0BF6F3009D0699 /* HomeViewData.swift in Sources */,
 				9111B1F81E0946F700B309D5 /* ViewController.swift in Sources */,
 				9124FC1E1E0C2655009D0699 /* Programme.swift in Sources */,
@@ -839,7 +839,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9124FC2B1E0C42EA009D0699 /* ProgrammeParser.swift in Sources */,
+				F06FFE8A21D030F300FA6748 /* HeatingModeChangedData.swift in Sources */,
 				912E896F1E0AEEBC0074A8A4 /* UserDefaultsTokenStore.swift in Sources */,
 				912E896A1E0AEEBC0074A8A4 /* TokenAuthManager.swift in Sources */,
 				91DB8B9F1E0C8D430006AF0C /* ProgrammeModeColor.swift in Sources */,

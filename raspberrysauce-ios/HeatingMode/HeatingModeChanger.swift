@@ -9,5 +9,5 @@
 import Foundation
 
 protocol HeatingModeChanger {
-    func setHeatingMode(mode: HeatingMode, onSuccess: @escaping (Programme) -> Void, onError: @escaping () -> Void)
+    func setHeatingMode(mode: HeatingMode, onSuccess: @escaping (HeatingModeChangedData) -> Void, onError: @escaping () -> Void)
 }
