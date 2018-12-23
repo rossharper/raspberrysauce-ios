@@ -150,6 +150,14 @@
                                     <constraint firstItem="N0x-h1-I5S" firstAttribute="leading" secondItem="ncE-ps-Kai" secondAttribute="leading" id="vXI-Ej-28J"/>
                                 </constraints>
                             </view>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FireIcon" translatesAutoresizingMaskIntoConstraints="NO" id="EiC-ps-Qnp" userLabel="Heat Icon">
+                                <rect key="frame" x="314" y="172" width="80" height="80"/>
+                                <color key="tintColor" red="0.75686274509999996" green="0.08235294118" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="I1Z-S6-UL4"/>
+                                    <constraint firstAttribute="width" constant="80" id="Xkw-W0-of7"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -161,9 +169,11 @@
                             <constraint firstItem="2h1-FP-2lW" firstAttribute="top" secondItem="22N-C5-RsJ" secondAttribute="bottom" constant="40" id="C8R-WV-yOd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8eK-ik-KUO" secondAttribute="trailing" id="CPP-SZ-yWn"/>
                             <constraint firstAttribute="trailing" secondItem="uVN-ha-8wc" secondAttribute="trailing" id="P0y-aH-p6E"/>
+                            <constraint firstItem="EiC-ps-Qnp" firstAttribute="top" secondItem="h8q-lX-iza" secondAttribute="top" id="QxL-9V-o2O"/>
                             <constraint firstItem="8eK-ik-KUO" firstAttribute="top" secondItem="uVN-ha-8wc" secondAttribute="bottom" constant="10" id="S7U-7d-3dI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="22N-C5-RsJ" secondAttribute="trailing" id="aWf-aT-plr"/>
                             <constraint firstAttribute="trailing" secondItem="2h1-FP-2lW" secondAttribute="trailing" constant="10" id="ae9-7t-vcS"/>
+                            <constraint firstItem="EiC-ps-Qnp" firstAttribute="trailing" secondItem="8eK-ik-KUO" secondAttribute="trailing" id="ddg-bt-1KQ"/>
                             <constraint firstItem="h8q-lX-iza" firstAttribute="top" secondItem="8eK-ik-KUO" secondAttribute="bottom" constant="20" id="evy-cp-kos"/>
                             <constraint firstAttribute="leadingMargin" secondItem="22N-C5-RsJ" secondAttribute="leading" id="lD0-kT-fvz"/>
                             <constraint firstItem="ncE-ps-Kai" firstAttribute="leading" secondItem="2h1-FP-2lW" secondAttribute="leading" id="o2M-jf-FF6"/>
@@ -177,6 +187,7 @@
                         <outlet property="activityIndicator" destination="KnJ-3F-OO6" id="gOD-em-385"/>
                         <outlet property="comfortSetpointStepper" destination="i3S-Y6-Lya" id="CgW-EG-knV"/>
                         <outlet property="comfortSetpointValue" destination="yB3-Vz-XGp" id="JIn-WF-otR"/>
+                        <outlet property="heatIcon" destination="EiC-ps-Qnp" id="wsR-re-1b4"/>
                         <outlet property="modeIcon" destination="h8q-lX-iza" id="pyb-7B-OCs"/>
                         <outlet property="modeSelector" destination="8eK-ik-KUO" id="Z8a-uJ-URN"/>
                         <outlet property="temperatureLabel" destination="22N-C5-RsJ" id="Qrg-Rj-lZ1"/>
@@ -552,6 +563,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="FireIcon" width="80" height="80"/>
         <image name="HomeIcon" width="25" height="25"/>
         <image name="ScheduleIcon" width="25" height="25"/>
         <image name="SetbackModeIcon" width="80" height="80"/>

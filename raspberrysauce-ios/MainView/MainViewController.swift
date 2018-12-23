@@ -13,6 +13,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var modeSelector: UISegmentedControl!
     @IBOutlet weak var modeIcon: UIImageView!
+    @IBOutlet weak var heatIcon: UIImageView!
     @IBOutlet weak var comfortSetpointValue: UITextField!
     @IBOutlet weak var comfortSetpointStepper: UIStepper!
     
@@ -50,6 +51,7 @@ class MainViewController: UIViewController {
         DispatchQueue.main.async { 
             self.setModeSelector(homeViewData.programme)
             self.setModeIcon(homeViewData.programme)
+            self.setHeatIcon(homeViewData.callingForHeat)
             self.temperatureLabel.text = TemperatureFormatter.asString(homeViewData.temperature)
             self.comfortSetpointStepper.value = homeViewData.programme.comfortSetPoint
             self.comfortSetpointValue.text = homeViewData.programme.comfortSetPoint.description
@@ -112,6 +114,16 @@ class MainViewController: UIViewController {
         }
         
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: stepperInteractionTask!)
+    }
+    
+    func setHeatIcon(_ callingForHeat: Bool) {
+        heatIcon.isHidden = !callingForHeat
+        heatIcon.image = #imageLiteral(resourceName: "FireIcon").withRenderingMode(.alwaysTemplate)
+        heatIcon.tintColor = UIColor(
+            red: CGFloat(0.767),
+            green: CGFloat(0.082),
+            blue: CGFloat(0.247),
+            alpha: CGFloat(1.0))
     }
     
     func setComfortSetPoint(temperature: Temperature) {

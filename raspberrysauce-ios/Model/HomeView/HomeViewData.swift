@@ -10,5 +10,6 @@ import Foundation
 
 struct HomeViewData {
     let temperature : Temperature
-    let programme: Programme
+    let programme : Programme
+    let callingForHeat : Bool
 }

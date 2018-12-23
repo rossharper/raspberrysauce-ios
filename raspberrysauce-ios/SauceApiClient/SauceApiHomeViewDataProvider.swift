@@ -11,6 +11,7 @@ import Foundation
 struct ApiHomeViewData : Decodable {
     let temperature : Double
     let programme : ApiProgramme
+    let callingForHeat : Bool
 }
 
 class SauceApiHomeViewDataProvider : HomeViewDataProvider {
@@ -47,12 +48,24 @@ class SauceApiHomeViewDataProvider : HomeViewDataProvider {
 
         let periods = apiHomeViewData.programme.todaysPeriods.map {
             apiPeriod in
-            return ProgrammePeriod(isComfort: apiPeriod.isComfort, startTime: apiPeriod.startTime, endTime: apiPeriod.endTime)
+            return ProgrammePeriod(
+                isComfort: apiPeriod.isComfort,
+                startTime: apiPeriod.startTime,
+                endTime: apiPeriod.endTime)
         }
         
-        let programme = Programme(heatingEnabled: apiHomeViewData.programme.heatingEnabled, comfortLevelEnabled: apiHomeViewData.programme.comfortLevelEnabled, inOverride: apiHomeViewData.programme.inOverride, periods: periods, comfortSetPoint: apiHomeViewData.programme.comfortSetPoint)
+        let programme = Programme(
+            heatingEnabled: apiHomeViewData.programme.heatingEnabled,
+            comfortLevelEnabled: apiHomeViewData.programme.comfortLevelEnabled,
+            inOverride: apiHomeViewData.programme.inOverride,
+            periods: periods,
+            comfortSetPoint:
+            apiHomeViewData.programme.comfortSetPoint)
         
-        let homeData = HomeViewData(temperature: Temperature(value: apiHomeViewData.temperature), programme: programme)
+        let homeData = HomeViewData(
+            temperature: Temperature(value: apiHomeViewData.temperature),
+            programme: programme,
+            callingForHeat: apiHomeViewData.callingForHeat)
         
         return homeData
     }
