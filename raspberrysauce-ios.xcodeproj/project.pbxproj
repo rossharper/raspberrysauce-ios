@@ -1057,7 +1057,7 @@
 				);
 				INFOPLIST_FILE = "raspberrysauce-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.6.2;
+				MARKETING_VERSION = 1.7.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.rossharper.raspberrysauce-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "8415a86b-d5ea-4c3f-8af3-3d0878d2de25";
@@ -1081,7 +1081,7 @@
 				);
 				INFOPLIST_FILE = "raspberrysauce-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.6.2;
+				MARKETING_VERSION = 1.7.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.rossharper.raspberrysauce-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "0dc8470c-5200-4235-9773-bed77bb2d854";
@@ -1169,7 +1169,7 @@
 				DEVELOPMENT_TEAM = 4RK6572RH6;
 				INFOPLIST_FILE = "raspberrysaucewatch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MARKETING_VERSION = 1.6.2;
+				MARKETING_VERSION = 1.7.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.rossharper.raspberrysauce-ios.watchkitapp.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "8415a86b-d5ea-4c3f-8af3-3d0878d2de25";
@@ -1194,7 +1194,7 @@
 				DEVELOPMENT_TEAM = 4RK6572RH6;
 				INFOPLIST_FILE = "raspberrysaucewatch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MARKETING_VERSION = 1.6.2;
+				MARKETING_VERSION = 1.7.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.rossharper.raspberrysauce-ios.watchkitapp.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "0dc8470c-5200-4235-9773-bed77bb2d854";
@@ -1219,7 +1219,7 @@
 				DEVELOPMENT_TEAM = 4RK6572RH6;
 				IBSC_MODULE = raspberrysaucewatch_Extension;
 				INFOPLIST_FILE = raspberrysaucewatch/Info.plist;
-				MARKETING_VERSION = 1.6.2;
+				MARKETING_VERSION = 1.7.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.rossharper.raspberrysauce-ios.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "8415a86b-d5ea-4c3f-8af3-3d0878d2de25";
@@ -1245,7 +1245,7 @@
 				DEVELOPMENT_TEAM = 4RK6572RH6;
 				IBSC_MODULE = raspberrysaucewatch_Extension;
 				INFOPLIST_FILE = raspberrysaucewatch/Info.plist;
-				MARKETING_VERSION = 1.6.2;
+				MARKETING_VERSION = 1.7.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.rossharper.raspberrysauce-ios.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "0dc8470c-5200-4235-9773-bed77bb2d854";
