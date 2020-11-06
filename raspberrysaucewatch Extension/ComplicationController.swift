@@ -48,6 +48,16 @@ class ComplicationController: NSObject, CLKComplicationDataSource {
             template = templateForUtiliratianLarge(with: model)
         case .extraLarge:
             template = templateForExtraLarge(with: model)
+        case .graphicCorner:
+            template = CLKComplicationTemplate()
+        case .graphicBezel:
+            template = CLKComplicationTemplate()
+        case .graphicCircular:
+            template = CLKComplicationTemplate()
+        case .graphicExtraLarge:
+            template = CLKComplicationTemplate()
+        case .graphicRectangular:
+            template = CLKComplicationTemplate()
         }
         
         let entry = CLKComplicationTimelineEntry(date: Date(), complicationTemplate: template)

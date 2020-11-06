@@ -41,8 +41,6 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
-      <Testables>
-      </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
@@ -52,8 +50,8 @@
             ReferencedContainer = "container:raspberrysauce-ios.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
+      <Testables>
+      </Testables>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -69,8 +67,8 @@
       notificationPayloadFile = "raspberrysaucewatch Extension/Supporting Files/PushNotificationPayload.apns">
       <RemoteRunnable
          runnableDebuggingMode = "2"
-         BundleIdentifier = "com.apple.carousel"
-         RemotePath = "/raspberrysauce-ios">
+         BundleIdentifier = "com.apple.Carousel"
+         RemotePath = "/Raspberry Sauce">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "916A959D1E09C2D200C512D3"
@@ -79,17 +77,6 @@
             ReferencedContainer = "container:raspberrysauce-ios.xcodeproj">
          </BuildableReference>
       </RemoteRunnable>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "916A959D1E09C2D200C512D3"
-            BuildableName = "raspberrysaucewatch.app"
-            BlueprintName = "raspberrysaucewatch"
-            ReferencedContainer = "container:raspberrysauce-ios.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -101,8 +88,8 @@
       notificationPayloadFile = "raspberrysaucewatch Extension/Supporting Files/PushNotificationPayload.apns">
       <RemoteRunnable
          runnableDebuggingMode = "2"
-         BundleIdentifier = "com.apple.carousel"
-         RemotePath = "/raspberrysauce-ios">
+         BundleIdentifier = "com.apple.Carousel"
+         RemotePath = "/Raspberry Sauce">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "916A959D1E09C2D200C512D3"

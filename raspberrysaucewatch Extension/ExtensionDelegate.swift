@@ -8,6 +8,7 @@
 
 import WatchKit
 import WatchConnectivity
+import ClockKit
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
 
