@@ -19,6 +19,13 @@ class SettingsViewModel: ObservableObject, Identifiable {
     
     init(settingsFetcher: SettingsFetchable) {
         self.settingsFetcher = settingsFetcher
+        
+        inputCancellable = inputSubject
+            .debounce(for: .seconds(1.0), scheduler: RunLoop.main)
+            .sink { temperature in
+                print ("Send update \(temperature.description)")
+            }
+        
         load()
     }
     
@@ -36,6 +43,14 @@ class SettingsViewModel: ObservableObject, Identifiable {
                 self.viewState = ViewState.Loaded(data)
             })
     }
+    
+    private let inputSubject = PassthroughSubject<Temperature, Never>()
+    private let inputCancellable: AnyCancellable?
+    
+    func onDefaultComfortTemperatureChanged(_ temperature: Temperature) {
+        inputSubject.send(temperature)
+    }
+
     
     func signOut() {
         AuthManagerFactory.create().signOut()

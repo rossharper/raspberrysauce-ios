@@ -9,9 +9,15 @@
 import SwiftUI
 
 struct TemperatureValueStepper: View {
-    var value: Temperature
-    var onIncrement: () -> Void = {}
-    var onDecrement: () -> Void = {}
+
+    private let onChanged: (Temperature) -> Void
+    
+    @State private var tempValue: Double
+    
+    init(value: Temperature, onChanged: @escaping ((Temperature) -> Void) = { _ in }) {
+        self.onChanged = onChanged
+        _tempValue = State(initialValue: value.value)
+    }
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -19,11 +25,26 @@ struct TemperatureValueStepper: View {
                 .foregroundColor(.accentColor)
             HStack() {
                 Stepper(
-                    onIncrement: onIncrement,
-                    onDecrement: onDecrement,
-                    label: {
-                        Text(value.description)
-                    })
+                    tempValue.description,
+                    value: $tempValue,
+                    in: 0...30,
+                    step: 0.5
+                ).onChange(of: tempValue) { _ in
+                    onChanged(Temperature(value: tempValue))
+                }
+                    
+                
+                
+//
+//                    onIncrement: {
+//                        onIncrement(value)
+//                    },
+//                    onDecrement: {
+//                        onDecrement(value)
+//                    },
+//                    label: {
+//                        Text(value.description)
+//                    })
             }
         }
         .padding()

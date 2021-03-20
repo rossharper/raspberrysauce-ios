@@ -26,8 +26,9 @@ struct SettingsView: View {
             VStack() {
                 TemperatureValueStepper(
                     value: data.defaultComfortTemperature,
-                    onIncrement: {},
-                    onDecrement: {}
+                    onChanged: { temperature in
+                        viewModel.onDefaultComfortTemperatureChanged( temperature)
+                    }
                 )
                 Spacer()
                 Button("Sign Out"){
