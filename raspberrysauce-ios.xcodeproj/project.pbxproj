@@ -645,7 +645,7 @@
 					9111B1F11E0946F700B309D5 = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = 4RK6572RH6;
-						LastSwiftMigration = 0910;
+						LastSwiftMigration = 1220;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -659,14 +659,14 @@
 					9111B2051E0946F700B309D5 = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = 4RK6572RH6;
-						LastSwiftMigration = 0910;
+						LastSwiftMigration = 1220;
 						ProvisioningStyle = Manual;
 						TestTargetID = 9111B1F11E0946F700B309D5;
 					};
 					9111B2101E0946F700B309D5 = {
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = 4RK6572RH6;
-						LastSwiftMigration = 0910;
+						LastSwiftMigration = 1220;
 						ProvisioningStyle = Manual;
 						TestTargetID = 9111B1F11E0946F700B309D5;
 					};
@@ -687,7 +687,7 @@
 					916A95A91E09C2D300C512D3 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 4RK6572RH6;
-						LastSwiftMigration = 0910;
+						LastSwiftMigration = 1220;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -1063,7 +1063,7 @@
 				PROVISIONING_PROFILE = "8415a86b-d5ea-4c3f-8af3-3d0878d2de25";
 				PROVISIONING_PROFILE_SPECIFIER = "Dev Profile";
 				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1087,7 +1087,7 @@
 				PROVISIONING_PROFILE = "0dc8470c-5200-4235-9773-bed77bb2d854";
 				PROVISIONING_PROFILE_SPECIFIER = "Ad Hoc";
 				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -1103,7 +1103,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "net.rossharper.raspberrysauce-iosTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/raspberrysauce-ios.app/raspberrysauce-ios";
 			};
 			name = Debug;
@@ -1119,7 +1119,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "net.rossharper.raspberrysauce-iosTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/raspberrysauce-ios.app/raspberrysauce-ios";
 			};
 			name = Release;
@@ -1135,7 +1135,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "8415a86b-d5ea-4c3f-8af3-3d0878d2de25";
 				PROVISIONING_PROFILE_SPECIFIER = "Dev Profile";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = "raspberrysauce-ios";
 				USES_XCTRUNNER = YES;
 			};
@@ -1152,7 +1152,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "8415a86b-d5ea-4c3f-8af3-3d0878d2de25";
 				PROVISIONING_PROFILE_SPECIFIER = "Dev Profile";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = "raspberrysauce-ios";
 				USES_XCTRUNNER = YES;
 			};
@@ -1177,7 +1177,7 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 3.1;
 			};
@@ -1201,7 +1201,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "Ad Hoc";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 3.1;
 			};
