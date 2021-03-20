@@ -3,6 +3,7 @@
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -220,10 +221,29 @@
             </objects>
             <point key="canvasLocation" x="2804" y="532"/>
         </scene>
+        <!--WrappedSettings-->
+        <scene sceneID="yW6-CY-win">
+            <objects>
+                <viewController id="unB-Zz-0TG" userLabel="WrappedSettings" customClass="WrappedSettingsViewController" customModule="raspberrysauce_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="x2t-7r-7kC"/>
+                        <viewControllerLayoutGuide type="bottom" id="wYm-Mj-ESw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="s2f-WI-aju">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" image="SettingsIcon" landscapeImage="SettingsIcon" largeContentSizeImage="SettingsIcon" selectedImage="SettingsIcon" id="GuW-Gc-cyG" userLabel="Settings"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NoW-nk-M02" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="830" y="2022"/>
+        </scene>
         <!--Settings-->
         <scene sceneID="LkB-bl-Zxq">
             <objects>
-                <viewController id="rwk-TV-tuM" customClass="SettingsViewController" customModule="raspberrysauce_ios" sceneMemberID="viewController">
+                <viewController id="rwk-TV-tuM" customClass="SettingsViewController" customModule="raspberrysauce_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MCx-fv-fJS"/>
                         <viewControllerLayoutGuide type="bottom" id="4fu-Cf-Hpd"/>
@@ -405,7 +425,7 @@
                     <connections>
                         <segue destination="Ssu-sD-gKT" kind="relationship" relationship="viewControllers" id="zr5-FY-JL8"/>
                         <segue destination="wok-PV-Vk6" kind="relationship" relationship="viewControllers" id="q15-z4-Wlz"/>
-                        <segue destination="rwk-TV-tuM" kind="relationship" relationship="viewControllers" id="rxf-NI-WkO"/>
+                        <segue destination="unB-Zz-0TG" kind="relationship" relationship="viewControllers" id="s3a-lo-eBy"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CoV-Nt-nqk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -558,7 +578,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="tX7-xz-mUY"/>
+        <segue reference="b9C-cl-MnF"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="FireIcon" width="80" height="80"/>
@@ -568,6 +588,9 @@
         <image name="SettingsIcon" width="25" height="25"/>
         <systemColor name="groupTableViewBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
