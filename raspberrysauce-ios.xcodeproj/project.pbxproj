@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9105EA4726066A8C00B40DC6 /* WrappedSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9105EA4626066A8C00B40DC6 /* WrappedSettingsViewController.swift */; };
+		9105EA5D2607ABE700B40DC6 /* SettingsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9105EA5C2607ABE700B40DC6 /* SettingsRepository.swift */; };
+		9105EA642607AC0A00B40DC6 /* SauceApiSettingsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9105EA632607AC0A00B40DC6 /* SauceApiSettingsRepository.swift */; };
 		910F5B9726064268007F1F43 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910F5B9626064268007F1F43 /* SettingsView.swift */; };
 		910F5B9E260642A3007F1F43 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910F5B9D260642A3007F1F43 /* Colors.swift */; };
 		910F5BD126064D93007F1F43 /* TemperatureValueStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910F5BD026064D93007F1F43 /* TemperatureValueStepper.swift */; };
@@ -171,6 +173,8 @@
 		236320A2BBF218EE1F427E97 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		7CE891D0CACABB896E0FA8E2 /* Bridging-Header.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		9105EA4626066A8C00B40DC6 /* WrappedSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrappedSettingsViewController.swift; sourceTree = "<group>"; };
+		9105EA5C2607ABE700B40DC6 /* SettingsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRepository.swift; sourceTree = "<group>"; };
+		9105EA632607AC0A00B40DC6 /* SauceApiSettingsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SauceApiSettingsRepository.swift; sourceTree = "<group>"; };
 		910F5B9626064268007F1F43 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		910F5B9D260642A3007F1F43 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		910F5BD026064D93007F1F43 /* TemperatureValueStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureValueStepper.swift; sourceTree = "<group>"; };
@@ -407,6 +411,8 @@
 				910F5B9626064268007F1F43 /* SettingsView.swift */,
 				910F5BDC2606507D007F1F43 /* SettingsViewModel.swift */,
 				9105EA4626066A8C00B40DC6 /* WrappedSettingsViewController.swift */,
+				9105EA5C2607ABE700B40DC6 /* SettingsRepository.swift */,
+				9105EA632607AC0A00B40DC6 /* SauceApiSettingsRepository.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -810,6 +816,7 @@
 				91DB8BA41E12E7EB0006AF0C /* SauceApiEndpoints.swift in Sources */,
 				917141CD1FCAEDF000E9CD6F /* SettingsViewController.swift in Sources */,
 				918F56691E09D33500FF4CEF /* TemperatureFormatter.swift in Sources */,
+				9105EA5D2607ABE700B40DC6 /* SettingsRepository.swift in Sources */,
 				91DB8B9E1E0C8BD90006AF0C /* ProgrammeModeColor.swift in Sources */,
 				912E89671E0AE6DD0074A8A4 /* WatchSessionDelegate.swift in Sources */,
 				F0FB670A209377980086A95B /* ScheduleCell.swift in Sources */,
@@ -824,6 +831,7 @@
 				91BF44CD1E096667004EAE03 /* AuthManagerFactory.swift in Sources */,
 				91DB8BA11E0C8E910006AF0C /* TemperatureColor.swift in Sources */,
 				F06FFE8321CD768C00FA6748 /* SetPointChanger.swift in Sources */,
+				9105EA642607AC0A00B40DC6 /* SauceApiSettingsRepository.swift in Sources */,
 				9124FC121E0BF6B8009D0699 /* HomeViewDataProvider.swift in Sources */,
 				910F5BD126064D93007F1F43 /* TemperatureValueStepper.swift in Sources */,
 				9124FC241E0C3C6F009D0699 /* HeatingModeChanger.swift in Sources */,
@@ -1097,7 +1105,7 @@
 				);
 				INFOPLIST_FILE = "raspberrysauce-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.7.0;
+				MARKETING_VERSION = 1.8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.rossharper.raspberrysauce-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "8415a86b-d5ea-4c3f-8af3-3d0878d2de25";
@@ -1121,7 +1129,7 @@
 				);
 				INFOPLIST_FILE = "raspberrysauce-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.7.0;
+				MARKETING_VERSION = 1.8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.rossharper.raspberrysauce-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "0dc8470c-5200-4235-9773-bed77bb2d854";
@@ -1209,7 +1217,7 @@
 				DEVELOPMENT_TEAM = 4RK6572RH6;
 				INFOPLIST_FILE = "raspberrysaucewatch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MARKETING_VERSION = 1.7.0;
+				MARKETING_VERSION = 1.8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.rossharper.raspberrysauce-ios.watchkitapp.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "8415a86b-d5ea-4c3f-8af3-3d0878d2de25";
@@ -1234,7 +1242,7 @@
 				DEVELOPMENT_TEAM = 4RK6572RH6;
 				INFOPLIST_FILE = "raspberrysaucewatch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MARKETING_VERSION = 1.7.0;
+				MARKETING_VERSION = 1.8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.rossharper.raspberrysauce-ios.watchkitapp.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "0dc8470c-5200-4235-9773-bed77bb2d854";
@@ -1259,7 +1267,7 @@
 				DEVELOPMENT_TEAM = 4RK6572RH6;
 				IBSC_MODULE = raspberrysaucewatch_Extension;
 				INFOPLIST_FILE = raspberrysaucewatch/Info.plist;
-				MARKETING_VERSION = 1.7.0;
+				MARKETING_VERSION = 1.8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.rossharper.raspberrysauce-ios.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "8415a86b-d5ea-4c3f-8af3-3d0878d2de25";
@@ -1285,7 +1293,7 @@
 				DEVELOPMENT_TEAM = 4RK6572RH6;
 				IBSC_MODULE = raspberrysaucewatch_Extension;
 				INFOPLIST_FILE = raspberrysaucewatch/Info.plist;
-				MARKETING_VERSION = 1.7.0;
+				MARKETING_VERSION = 1.8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.rossharper.raspberrysauce-ios.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "0dc8470c-5200-4235-9773-bed77bb2d854";

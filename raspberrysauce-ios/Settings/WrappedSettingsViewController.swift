@@ -13,7 +13,10 @@ class WrappedSettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let swiftUIView = SettingsView().accentColor(.raspberry)
+        let repository = SauceApiSettingsRepository(networking: NetworkingFactory.createAuthentiatedNetworking())
+        let viewModel = SettingsViewModel(settingsRepository: repository)
+    
+        let swiftUIView = SettingsView(viewModel).accentColor(.raspberry)
         let hostingController = UIHostingController(rootView: swiftUIView)
 
         /// Add as a child of the current view controller.

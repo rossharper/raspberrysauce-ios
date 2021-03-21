@@ -7,10 +7,15 @@
 //
 
 import SwiftUI
+import Combine
 
 struct SettingsView: View {
     
-    @ObservedObject var viewModel = SettingsViewModel(settingsFetcher: SauceApiSettingsFetcher())
+    @ObservedObject private var viewModel: SettingsViewModel
+    
+    init(_ settingsViewModel: SettingsViewModel) {
+        self.viewModel = settingsViewModel
+    }
     
     var body: some View {
         let viewState = viewModel.viewState
@@ -39,10 +44,22 @@ struct SettingsView: View {
     }
 }
 
+class FakeRepo : SettingsRepository {
+    func loadSettings() -> AnyPublisher<SettingsViewData, SettingsError> {
+        return Just(SettingsViewData(defaultComfortTemperature: Temperature(value: 20.0)))
+            .setFailureType(to: SettingsError.self)
+            .eraseToAnyPublisher()
+    }
+    func updateDefaultComfortTemperature(_ temperature: Temperature) -> AnyPublisher<Temperature, SettingsError> {
+        return Empty().setFailureType(to: SettingsError.self).eraseToAnyPublisher()
+    }
+}
+
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        let settingsView = SettingsView()
-        settingsView.viewModel.viewState = SettingsViewModel.ViewState.Loaded(SettingsViewData(defaultComfortTemperature: Temperature(value: 20.0)))
+        let viewModel = SettingsViewModel(settingsRepository: FakeRepo())
+        viewModel.viewState = SettingsViewModel.ViewState.Loaded(SettingsViewData(defaultComfortTemperature: Temperature(value: 20.0)))
+        let settingsView = SettingsView(viewModel)
         return settingsView.accentColor(.raspberry)
     }
 }
