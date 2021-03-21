@@ -221,10 +221,10 @@
             </objects>
             <point key="canvasLocation" x="2804" y="532"/>
         </scene>
-        <!--WrappedSettings-->
+        <!--Settings-->
         <scene sceneID="yW6-CY-win">
             <objects>
-                <viewController id="unB-Zz-0TG" userLabel="WrappedSettings" customClass="WrappedSettingsViewController" customModule="raspberrysauce_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="unB-Zz-0TG" customClass="SettingsViewController" customModule="raspberrysauce_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="x2t-7r-7kC"/>
                         <viewControllerLayoutGuide type="bottom" id="wYm-Mj-ESw"/>

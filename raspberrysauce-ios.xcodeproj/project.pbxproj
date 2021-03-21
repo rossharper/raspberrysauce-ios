@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9105EA4726066A8C00B40DC6 /* WrappedSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9105EA4626066A8C00B40DC6 /* WrappedSettingsViewController.swift */; };
+		9105EA4726066A8C00B40DC6 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9105EA4626066A8C00B40DC6 /* SettingsViewController.swift */; };
 		9105EA5D2607ABE700B40DC6 /* SettingsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9105EA5C2607ABE700B40DC6 /* SettingsRepository.swift */; };
 		9105EA642607AC0A00B40DC6 /* SauceApiSettingsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9105EA632607AC0A00B40DC6 /* SauceApiSettingsRepository.swift */; };
 		910F5B9726064268007F1F43 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910F5B9626064268007F1F43 /* SettingsView.swift */; };
@@ -171,7 +171,7 @@
 /* Begin PBXFileReference section */
 		236320A2BBF218EE1F427E97 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		7CE891D0CACABB896E0FA8E2 /* Bridging-Header.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
-		9105EA4626066A8C00B40DC6 /* WrappedSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrappedSettingsViewController.swift; sourceTree = "<group>"; };
+		9105EA4626066A8C00B40DC6 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		9105EA5C2607ABE700B40DC6 /* SettingsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRepository.swift; sourceTree = "<group>"; };
 		9105EA632607AC0A00B40DC6 /* SauceApiSettingsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SauceApiSettingsRepository.swift; sourceTree = "<group>"; };
 		910F5B9626064268007F1F43 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -407,7 +407,7 @@
 			children = (
 				910F5B9626064268007F1F43 /* SettingsView.swift */,
 				910F5BDC2606507D007F1F43 /* SettingsViewModel.swift */,
-				9105EA4626066A8C00B40DC6 /* WrappedSettingsViewController.swift */,
+				9105EA4626066A8C00B40DC6 /* SettingsViewController.swift */,
 				9105EA5C2607ABE700B40DC6 /* SettingsRepository.swift */,
 				9105EA632607AC0A00B40DC6 /* SauceApiSettingsRepository.swift */,
 			);
@@ -854,7 +854,7 @@
 				9111B1F61E0946F700B309D5 /* AppDelegate.swift in Sources */,
 				916A95911E09A58700C512D3 /* TemperatureProvider.swift in Sources */,
 				91BF44C91E096314004EAE03 /* SignInViewController.swift in Sources */,
-				9105EA4726066A8C00B40DC6 /* WrappedSettingsViewController.swift in Sources */,
+				9105EA4726066A8C00B40DC6 /* SettingsViewController.swift in Sources */,
 				91BF44D11E0969F4004EAE03 /* Networking.swift in Sources */,
 				910F5BDD2606507D007F1F43 /* SettingsViewModel.swift in Sources */,
 			);

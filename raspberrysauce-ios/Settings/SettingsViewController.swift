@@ -1,5 +1,5 @@
 //
-//  WrappedSettingsViewController.swift
+//  SettingsViewController.swift
 //  raspberrysauce-ios
 //
 //  Created by Ross Harper on 20/03/2021.
