@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9105EA4726066A8C00B40DC6 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9105EA4626066A8C00B40DC6 /* SettingsViewController.swift */; };
+		9105EA5D2607ABE700B40DC6 /* SettingsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9105EA5C2607ABE700B40DC6 /* SettingsRepository.swift */; };
+		9105EA642607AC0A00B40DC6 /* SauceApiSettingsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9105EA632607AC0A00B40DC6 /* SauceApiSettingsRepository.swift */; };
+		910F5B9726064268007F1F43 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910F5B9626064268007F1F43 /* SettingsView.swift */; };
+		910F5B9E260642A3007F1F43 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910F5B9D260642A3007F1F43 /* Colors.swift */; };
+		910F5BD126064D93007F1F43 /* TemperatureValueStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910F5BD026064D93007F1F43 /* TemperatureValueStepper.swift */; };
+		910F5BDD2606507D007F1F43 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910F5BDC2606507D007F1F43 /* SettingsViewModel.swift */; };
+		910F5BE52606639E007F1F43 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910F5BE42606639E007F1F43 /* LoadingView.swift */; };
+		910F5BF1260663E8007F1F43 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 910F5BF0260663E8007F1F43 /* ErrorView.swift */; };
 		9111B1F61E0946F700B309D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111B1F51E0946F700B309D5 /* AppDelegate.swift */; };
 		9111B1F81E0946F700B309D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9111B1F71E0946F700B309D5 /* ViewController.swift */; };
 		9111B1FB1E0946F700B309D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9111B1F91E0946F700B309D5 /* Main.storyboard */; };
@@ -67,7 +76,6 @@
 		916A95B81E09C2D300C512D3 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916A95B71E09C2D300C512D3 /* ComplicationController.swift */; };
 		916A95BA1E09C2D300C512D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 916A95B91E09C2D300C512D3 /* Assets.xcassets */; };
 		916A95BE1E09C2D300C512D3 /* raspberrysaucewatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 916A959E1E09C2D200C512D3 /* raspberrysaucewatch.app */; };
-		917141CD1FCAEDF000E9CD6F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917141CC1FCAEDF000E9CD6F /* SettingsViewController.swift */; };
 		917141D41FCB0B3D00E9CD6F /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917141D31FCB0B3D00E9CD6F /* ScheduleViewController.swift */; };
 		918F56691E09D33500FF4CEF /* TemperatureFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918F56681E09D33500FF4CEF /* TemperatureFormatter.swift */; };
 		91BF44C91E096314004EAE03 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91BF44C81E096314004EAE03 /* SignInViewController.swift */; };
@@ -163,6 +171,15 @@
 /* Begin PBXFileReference section */
 		236320A2BBF218EE1F427E97 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		7CE891D0CACABB896E0FA8E2 /* Bridging-Header.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		9105EA4626066A8C00B40DC6 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		9105EA5C2607ABE700B40DC6 /* SettingsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRepository.swift; sourceTree = "<group>"; };
+		9105EA632607AC0A00B40DC6 /* SauceApiSettingsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SauceApiSettingsRepository.swift; sourceTree = "<group>"; };
+		910F5B9626064268007F1F43 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		910F5B9D260642A3007F1F43 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		910F5BD026064D93007F1F43 /* TemperatureValueStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureValueStepper.swift; sourceTree = "<group>"; };
+		910F5BDC2606507D007F1F43 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		910F5BE42606639E007F1F43 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		910F5BF0260663E8007F1F43 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		9111B1F21E0946F700B309D5 /* raspberrysauce-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "raspberrysauce-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9111B1F51E0946F700B309D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9111B1F71E0946F700B309D5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -207,7 +224,6 @@
 		916A95B71E09C2D300C512D3 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		916A95B91E09C2D300C512D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		916A95BB1E09C2D300C512D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		917141CC1FCAEDF000E9CD6F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		917141D31FCB0B3D00E9CD6F /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		918F56641E09CD8C00FF4CEF /* raspberrysauce-ios.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "raspberrysauce-ios.entitlements"; sourceTree = "<group>"; };
 		918F56651E09CDC200FF4CEF /* raspberrysaucewatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = raspberrysaucewatch.entitlements; sourceTree = "<group>"; };
@@ -276,6 +292,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		910F5BCF26064D7E007F1F43 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				910F5BD026064D93007F1F43 /* TemperatureValueStepper.swift */,
+				910F5BE42606639E007F1F43 /* LoadingView.swift */,
+				910F5BF0260663E8007F1F43 /* ErrorView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		9111B1E91E0946F700B309D5 = {
 			isa = PBXGroup;
 			children = (
@@ -379,7 +405,11 @@
 		917141CB1FCAEDD100E9CD6F /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				917141CC1FCAEDF000E9CD6F /* SettingsViewController.swift */,
+				910F5B9626064268007F1F43 /* SettingsView.swift */,
+				910F5BDC2606507D007F1F43 /* SettingsViewModel.swift */,
+				9105EA4626066A8C00B40DC6 /* SettingsViewController.swift */,
+				9105EA5C2607ABE700B40DC6 /* SettingsRepository.swift */,
+				9105EA632607AC0A00B40DC6 /* SauceApiSettingsRepository.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -513,11 +543,13 @@
 		91DB8BB11E12EB160006AF0C /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				910F5BCF26064D7E007F1F43 /* Components */,
 				91DB8BB71E13E4C30006AF0C /* LoadingViewController.swift */,
 				91DB8B9D1E0C8BD90006AF0C /* ProgrammeModeColor.swift */,
 				9124FC201E0C2E4E009D0699 /* ProgrammeModeFormatter.swift */,
 				91DB8BA01E0C8E910006AF0C /* TemperatureColor.swift */,
 				918F56681E09D33500FF4CEF /* TemperatureFormatter.swift */,
+				910F5B9D260642A3007F1F43 /* Colors.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -779,13 +811,15 @@
 				91BF44D91E097951004EAE03 /* UserDefaultsTokenStore.swift in Sources */,
 				912E89641E09E7420074A8A4 /* AppConfig.swift in Sources */,
 				91DB8BA41E12E7EB0006AF0C /* SauceApiEndpoints.swift in Sources */,
-				917141CD1FCAEDF000E9CD6F /* SettingsViewController.swift in Sources */,
 				918F56691E09D33500FF4CEF /* TemperatureFormatter.swift in Sources */,
+				9105EA5D2607ABE700B40DC6 /* SettingsRepository.swift in Sources */,
 				91DB8B9E1E0C8BD90006AF0C /* ProgrammeModeColor.swift in Sources */,
 				912E89671E0AE6DD0074A8A4 /* WatchSessionDelegate.swift in Sources */,
 				F0FB670A209377980086A95B /* ScheduleCell.swift in Sources */,
 				916A958F1E09A32300C512D3 /* MainViewController.swift in Sources */,
+				910F5BE52606639E007F1F43 /* LoadingView.swift in Sources */,
 				91BF44D51E097818004EAE03 /* Token.swift in Sources */,
+				910F5B9E260642A3007F1F43 /* Colors.swift in Sources */,
 				F06FFE8621CD773800FA6748 /* SauceApiSetPointChanger.swift in Sources */,
 				916A958D1E09991700C512D3 /* SigningInProgressViewController.swift in Sources */,
 				9124FC1B1E0BF92E009D0699 /* HomeViewDataProviderFactory.swift in Sources */,
@@ -793,8 +827,11 @@
 				91BF44CD1E096667004EAE03 /* AuthManagerFactory.swift in Sources */,
 				91DB8BA11E0C8E910006AF0C /* TemperatureColor.swift in Sources */,
 				F06FFE8321CD768C00FA6748 /* SetPointChanger.swift in Sources */,
+				9105EA642607AC0A00B40DC6 /* SauceApiSettingsRepository.swift in Sources */,
 				9124FC121E0BF6B8009D0699 /* HomeViewDataProvider.swift in Sources */,
+				910F5BD126064D93007F1F43 /* TemperatureValueStepper.swift in Sources */,
 				9124FC241E0C3C6F009D0699 /* HeatingModeChanger.swift in Sources */,
+				910F5BF1260663E8007F1F43 /* ErrorView.swift in Sources */,
 				9124FC181E0BF749009D0699 /* SauceApiHomeViewDataProvider.swift in Sources */,
 				9124FC2D1E0C43D9009D0699 /* HeatingModeChangerFactory.swift in Sources */,
 				F06FFE8921D030F300FA6748 /* HeatingModeChangedData.swift in Sources */,
@@ -803,6 +840,7 @@
 				9124FC1E1E0C2655009D0699 /* Programme.swift in Sources */,
 				91BF44CB1E09661B004EAE03 /* AuthManager.swift in Sources */,
 				91DB8BB81E13E4C30006AF0C /* LoadingViewController.swift in Sources */,
+				910F5B9726064268007F1F43 /* SettingsView.swift in Sources */,
 				916A95971E09A70900C512D3 /* TemperatureProviderFactory.swift in Sources */,
 				F06FFE8021CD766F00FA6748 /* SetPointChangerFactory.swift in Sources */,
 				9124FC211E0C2E4E009D0699 /* ProgrammeModeFormatter.swift in Sources */,
@@ -816,7 +854,9 @@
 				9111B1F61E0946F700B309D5 /* AppDelegate.swift in Sources */,
 				916A95911E09A58700C512D3 /* TemperatureProvider.swift in Sources */,
 				91BF44C91E096314004EAE03 /* SignInViewController.swift in Sources */,
+				9105EA4726066A8C00B40DC6 /* SettingsViewController.swift in Sources */,
 				91BF44D11E0969F4004EAE03 /* Networking.swift in Sources */,
+				910F5BDD2606507D007F1F43 /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1061,7 +1101,7 @@
 				);
 				INFOPLIST_FILE = "raspberrysauce-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.7.0;
+				MARKETING_VERSION = 1.8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.rossharper.raspberrysauce-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "8415a86b-d5ea-4c3f-8af3-3d0878d2de25";
@@ -1085,7 +1125,7 @@
 				);
 				INFOPLIST_FILE = "raspberrysauce-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.7.0;
+				MARKETING_VERSION = 1.8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.rossharper.raspberrysauce-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "0dc8470c-5200-4235-9773-bed77bb2d854";
@@ -1173,7 +1213,7 @@
 				DEVELOPMENT_TEAM = 4RK6572RH6;
 				INFOPLIST_FILE = "raspberrysaucewatch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MARKETING_VERSION = 1.7.0;
+				MARKETING_VERSION = 1.8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.rossharper.raspberrysauce-ios.watchkitapp.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "8415a86b-d5ea-4c3f-8af3-3d0878d2de25";
@@ -1198,7 +1238,7 @@
 				DEVELOPMENT_TEAM = 4RK6572RH6;
 				INFOPLIST_FILE = "raspberrysaucewatch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				MARKETING_VERSION = 1.7.0;
+				MARKETING_VERSION = 1.8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.rossharper.raspberrysauce-ios.watchkitapp.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "0dc8470c-5200-4235-9773-bed77bb2d854";
@@ -1223,7 +1263,7 @@
 				DEVELOPMENT_TEAM = 4RK6572RH6;
 				IBSC_MODULE = raspberrysaucewatch_Extension;
 				INFOPLIST_FILE = raspberrysaucewatch/Info.plist;
-				MARKETING_VERSION = 1.7.0;
+				MARKETING_VERSION = 1.8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.rossharper.raspberrysauce-ios.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "8415a86b-d5ea-4c3f-8af3-3d0878d2de25";
@@ -1249,7 +1289,7 @@
 				DEVELOPMENT_TEAM = 4RK6572RH6;
 				IBSC_MODULE = raspberrysaucewatch_Extension;
 				INFOPLIST_FILE = raspberrysaucewatch/Info.plist;
-				MARKETING_VERSION = 1.7.0;
+				MARKETING_VERSION = 1.8.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.rossharper.raspberrysauce-ios.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "0dc8470c-5200-4235-9773-bed77bb2d854";

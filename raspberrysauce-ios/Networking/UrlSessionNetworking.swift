@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Combine
 
 class UrlSessionNetworking : Networking {
 
@@ -26,6 +27,19 @@ class UrlSessionNetworking : Networking {
 
         self.doRequest(request: &request, headers: headers, onSuccess: onSuccess, onError: onError)
     }
+    
+    @available(watchOSApplicationExtension 6.0, *)
+    func get(_ url: URL) -> AnyPublisher<Data, Error> {
+        return self.get(url, headers: nil)
+    }
+    
+    @available(watchOSApplicationExtension 6.0, *)
+    func get(_ url: URL, headers: [String : String]?) -> AnyPublisher<Data, Error> {
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+        return doRequest(&request, headers: headers)
+    }
 
     func post(url: URL, body: String, onSuccess: @escaping (_ responseBody: Data) -> Void, onError: @escaping (Int?) -> Void) {
         self.post(url: url, headers: nil, body: body, onSuccess: onSuccess, onError: onError)
@@ -37,6 +51,20 @@ class UrlSessionNetworking : Networking {
         request.httpBody = body.data(using: .utf8)
 
         self.doRequest(request: &request, headers: headers, onSuccess: onSuccess, onError: onError)
+    }
+    
+    @available(watchOSApplicationExtension 6.0, *)
+    func post(_ url: URL, body: String) -> AnyPublisher<Data, Error> {
+        return self.post(url, headers: nil, body: body)
+    }
+    
+    @available(watchOSApplicationExtension 6.0, *)
+    func post(_ url: URL, headers: [String : String]?, body: String) -> AnyPublisher<Data, Error> {
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.httpBody = body.data(using: .utf8)
+        
+        return self.doRequest(&request, headers: headers)
     }
 
     private func doRequest(request: inout URLRequest, headers: [String : String]?, onSuccess: @escaping (_ responseBody: Data) -> Void, onError: @escaping (Int?) -> Void) {
@@ -62,5 +90,30 @@ class UrlSessionNetworking : Networking {
             }
         }
         task.resume()
+    }
+    
+    @available(watchOSApplicationExtension 6.0, *)
+    func doRequest(_ request: inout URLRequest, headers: [String : String]?) -> AnyPublisher<Data, Error> {
+        if let headers = headers {
+            for key in headers.keys {
+                request.addValue(headers[key]!, forHTTPHeaderField: key)
+            }
+        }
+        return URLSession.shared.dataTaskPublisher(for: request)
+            .tryMap() { element -> Data in
+                guard let httpResponse = element.response as? HTTPURLResponse else {
+                    throw URLError(.badServerResponse)
+                }
+                
+                if httpResponse.statusCode != 200 {
+                    if let data = String(data: element.data, encoding: String.Encoding.utf8) {
+                        print(data)
+                    }
+                    throw URLError(.badServerResponse)
+                }
+                
+                return element.data
+            }
+            .eraseToAnyPublisher()
     }
  }
