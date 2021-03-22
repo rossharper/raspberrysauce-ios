@@ -18,17 +18,24 @@ struct SettingsView: View {
     }
     
     var body: some View {
+        createView()
+            .onAppear() {
+                viewModel.load()
+            }
+    }
+    
+    func createView() -> some View {
         let viewState = viewModel.viewState
         
         switch viewState {
         case .Loading:
-            LoadingView()
+            return AnyView(LoadingView())
         case .Error:
-            ErrorView(retry: {
+            return AnyView(ErrorView(retry: {
                 viewModel.load()
-            })
+            }))
         case let .Loaded(data):
-            VStack() {
+            return AnyView(VStack() {
                 TemperatureValueStepper(
                     value: data.defaultComfortTemperature,
                     onChanged: { temperature in
@@ -39,7 +46,7 @@ struct SettingsView: View {
                 Button("Sign Out"){
                     viewModel.signOut()
                 }
-            }.padding()
+            }.padding())
         }
     }
 }
