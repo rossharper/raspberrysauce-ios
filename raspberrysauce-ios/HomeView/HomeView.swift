@@ -29,7 +29,7 @@ struct HomeView: View {
             })
         case let .Loaded(data):
             VStack() {
-                HeatingModePicker(heatingMode: HeatingMode.Auto, onChange: viewModel.onModeChanged)
+                HeatingModePicker(heatingMode: data.heatingMode, onChange: viewModel.onModeChanged)
                 Spacer()
             }
             .padding()
@@ -38,19 +38,17 @@ struct HomeView: View {
 }
 
 fileprivate class FakeRepo: HomeViewRepository {
-    func load() -> AnyPublisher<HomeViewDataV2, Error> {
-        return Just(HomeViewDataV2())
-            .setFailureType(to: Error.self)
+    func load() -> AnyPublisher<HomeViewDataV2, SauceApiError> {
+        return Just(HomeViewDataV2(heatingMode: .Auto))
+            .setFailureType(to: SauceApiError.self)
             .eraseToAnyPublisher()
     }
-    
-    
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         let viewModel = HomeViewModel(repo: FakeRepo())
-        viewModel.viewState = HomeViewModel.ViewState.Loaded(HomeViewDataV2())
+        viewModel.viewState = HomeViewModel.ViewState.Loaded(HomeViewDataV2(heatingMode: HeatingMode.Auto))
         return HomeView(viewModel)
     }
 }

@@ -44,15 +44,3 @@ class HomeViewModel: ObservableObject, Identifiable {
         case Loading, Loaded(HomeViewDataV2), Error
     }
 }
-
-protocol HomeViewRepository {
-    func load() -> AnyPublisher<HomeViewDataV2, Error>
-}
-
-class SauceApiHomeViewRepository: HomeViewRepository {
-    func load() -> AnyPublisher<HomeViewDataV2, Error> {
-        return Just(HomeViewDataV2()).setFailureType(to: Error.self).eraseToAnyPublisher()
-    }
-}
-
-struct HomeViewDataV2 {}

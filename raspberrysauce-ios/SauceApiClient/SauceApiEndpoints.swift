@@ -16,6 +16,7 @@ struct SauceApiEndpoints {
     static let setPointEndpoint = "\(AppConfig.ApiBaseUrl)/api/programme/comfortSetPoint"
     
     struct Views {
+        static let Home = "\(AppConfig.ApiBaseUrl)/api/views/ios/homev2"
         static let Settings = "\(AppConfig.ApiBaseUrl)/api/views/ios/settings"
     }
 }

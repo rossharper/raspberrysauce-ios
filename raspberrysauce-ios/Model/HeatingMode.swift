@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum HeatingMode: String, Equatable, CaseIterable {
+enum HeatingMode: String, Equatable, CaseIterable, Codable {
     case Auto = "Auto"
     case Comfort = "Comfort"
     case Setback = "Setback"

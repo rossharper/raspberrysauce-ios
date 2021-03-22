@@ -65,10 +65,8 @@
       allowLocationSimulation = "YES"
       launchAutomaticallySubstyle = "8"
       notificationPayloadFile = "raspberrysaucewatch Extension/Supporting Files/PushNotificationPayload.apns">
-      <RemoteRunnable
-         runnableDebuggingMode = "2"
-         BundleIdentifier = "com.apple.Carousel"
-         RemotePath = "/Raspberry Sauce">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "916A959D1E09C2D200C512D3"
@@ -76,7 +74,7 @@
             BlueprintName = "raspberrysaucewatch"
             ReferencedContainer = "container:raspberrysauce-ios.xcodeproj">
          </BuildableReference>
-      </RemoteRunnable>
+      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -86,10 +84,8 @@
       debugDocumentVersioning = "YES"
       launchAutomaticallySubstyle = "8"
       notificationPayloadFile = "raspberrysaucewatch Extension/Supporting Files/PushNotificationPayload.apns">
-      <RemoteRunnable
-         runnableDebuggingMode = "2"
-         BundleIdentifier = "com.apple.Carousel"
-         RemotePath = "/Raspberry Sauce">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "916A959D1E09C2D200C512D3"
@@ -97,16 +93,7 @@
             BlueprintName = "raspberrysaucewatch"
             ReferencedContainer = "container:raspberrysauce-ios.xcodeproj">
          </BuildableReference>
-      </RemoteRunnable>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "916A959D1E09C2D200C512D3"
-            BuildableName = "raspberrysaucewatch.app"
-            BlueprintName = "raspberrysaucewatch"
-            ReferencedContainer = "container:raspberrysauce-ios.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

@@ -101,6 +101,10 @@
 		91F2A35F2609051A00A3E8A8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F2A35E2609051A00A3E8A8 /* HomeView.swift */; };
 		91F2A36626090B5800A3E8A8 /* HeatingModePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F2A36526090B5800A3E8A8 /* HeatingModePicker.swift */; };
 		91F2A36D26090C5200A3E8A8 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F2A36C26090C5200A3E8A8 /* HomeViewModel.swift */; };
+		91F2A38826091CA500A3E8A8 /* HomeViewRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F2A38726091CA500A3E8A8 /* HomeViewRepository.swift */; };
+		91F2A38F26091CBD00A3E8A8 /* SauceApiHomeViewRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F2A38E26091CBD00A3E8A8 /* SauceApiHomeViewRepository.swift */; };
+		91F2A39626091DFB00A3E8A8 /* SauceApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F2A39526091DFB00A3E8A8 /* SauceApiError.swift */; };
+		91F2A39D2609206C00A3E8A8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F2A39C2609206C00A3E8A8 /* HomeViewController.swift */; };
 		CC349B0C26AA5AA66F682797 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 236320A2BBF218EE1F427E97 /* AssetsLibrary.framework */; };
 		F06FFE7D21CD2A1100FA6748 /* ApiModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06FFE7C21CD2A1100FA6748 /* ApiModels.swift */; };
 		F06FFE7E21CD2A2600FA6748 /* ApiModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06FFE7C21CD2A1100FA6748 /* ApiModels.swift */; };
@@ -250,6 +254,10 @@
 		91F2A35E2609051A00A3E8A8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		91F2A36526090B5800A3E8A8 /* HeatingModePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeatingModePicker.swift; sourceTree = "<group>"; };
 		91F2A36C26090C5200A3E8A8 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		91F2A38726091CA500A3E8A8 /* HomeViewRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewRepository.swift; sourceTree = "<group>"; };
+		91F2A38E26091CBD00A3E8A8 /* SauceApiHomeViewRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SauceApiHomeViewRepository.swift; sourceTree = "<group>"; };
+		91F2A39526091DFB00A3E8A8 /* SauceApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SauceApiError.swift; sourceTree = "<group>"; };
+		91F2A39C2609206C00A3E8A8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F06FFE7C21CD2A1100FA6748 /* ApiModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiModels.swift; sourceTree = "<group>"; };
 		F06FFE7F21CD766F00FA6748 /* SetPointChangerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPointChangerFactory.swift; sourceTree = "<group>"; };
 		F06FFE8221CD768C00FA6748 /* SetPointChanger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPointChanger.swift; sourceTree = "<group>"; };
@@ -518,6 +526,7 @@
 				F06FFE7C21CD2A1100FA6748 /* ApiModels.swift */,
 				F06FFE7F21CD766F00FA6748 /* SetPointChangerFactory.swift */,
 				F06FFE8521CD773800FA6748 /* SauceApiSetPointChanger.swift */,
+				91F2A39526091DFB00A3E8A8 /* SauceApiError.swift */,
 			);
 			path = SauceApiClient;
 			sourceTree = "<group>";
@@ -576,6 +585,9 @@
 			children = (
 				91F2A35E2609051A00A3E8A8 /* HomeView.swift */,
 				91F2A36C26090C5200A3E8A8 /* HomeViewModel.swift */,
+				91F2A38726091CA500A3E8A8 /* HomeViewRepository.swift */,
+				91F2A38E26091CBD00A3E8A8 /* SauceApiHomeViewRepository.swift */,
+				91F2A39C2609206C00A3E8A8 /* HomeViewController.swift */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";
@@ -837,11 +849,14 @@
 				910F5BE52606639E007F1F43 /* LoadingView.swift in Sources */,
 				91BF44D51E097818004EAE03 /* Token.swift in Sources */,
 				910F5B9E260642A3007F1F43 /* Colors.swift in Sources */,
+				91F2A38826091CA500A3E8A8 /* HomeViewRepository.swift in Sources */,
 				F06FFE8621CD773800FA6748 /* SauceApiSetPointChanger.swift in Sources */,
 				916A958D1E09991700C512D3 /* SigningInProgressViewController.swift in Sources */,
 				9124FC1B1E0BF92E009D0699 /* HomeViewDataProviderFactory.swift in Sources */,
+				91F2A39626091DFB00A3E8A8 /* SauceApiError.swift in Sources */,
 				F06FFE7D21CD2A1100FA6748 /* ApiModels.swift in Sources */,
 				91BF44CD1E096667004EAE03 /* AuthManagerFactory.swift in Sources */,
+				91F2A38F26091CBD00A3E8A8 /* SauceApiHomeViewRepository.swift in Sources */,
 				91DB8BA11E0C8E910006AF0C /* TemperatureColor.swift in Sources */,
 				F06FFE8321CD768C00FA6748 /* SetPointChanger.swift in Sources */,
 				9105EA642607AC0A00B40DC6 /* SauceApiSettingsRepository.swift in Sources */,
@@ -874,6 +889,7 @@
 				916A95911E09A58700C512D3 /* TemperatureProvider.swift in Sources */,
 				91F2A35F2609051A00A3E8A8 /* HomeView.swift in Sources */,
 				91BF44C91E096314004EAE03 /* SignInViewController.swift in Sources */,
+				91F2A39D2609206C00A3E8A8 /* HomeViewController.swift in Sources */,
 				9105EA4726066A8C00B40DC6 /* SettingsViewController.swift in Sources */,
 				91BF44D11E0969F4004EAE03 /* Networking.swift in Sources */,
 				910F5BDD2606507D007F1F43 /* SettingsViewModel.swift in Sources */,
