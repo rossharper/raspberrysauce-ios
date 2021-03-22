@@ -18,10 +18,10 @@ class HomeViewModel: ObservableObject, Identifiable {
     
     init(repo: HomeViewRepository) {
         self.repo = repo
-        load()
     }
     
     func load() {
+        self.viewState = .Loading
         repo.load()
             .receive(on: DispatchQueue.main)
             .mapError( { error -> Error in

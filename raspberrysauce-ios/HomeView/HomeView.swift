@@ -18,21 +18,28 @@ struct HomeView: View {
     }
     
     var body: some View {
+        createView()
+            .onAppear() {
+                viewModel.load()
+            }
+    }
+    
+    private func createView() -> some View {
         let viewState = viewModel.viewState
         
         switch viewState {
         case .Loading:
-            LoadingView()
+            return AnyView(LoadingView())
         case .Error:
-            ErrorView(retry: {
+            return AnyView(ErrorView(retry: {
                 viewModel.load()
-            })
+            }))
         case let .Loaded(data):
-            VStack() {
+            return AnyView(VStack() {
                 HeatingModePicker(heatingMode: data.heatingMode, onChange: viewModel.onModeChanged)
                 Spacer()
             }
-            .padding()
+            .padding())
         }
     }
 }
