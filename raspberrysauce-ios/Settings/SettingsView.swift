@@ -44,7 +44,7 @@ struct SettingsView: View {
     }
 }
 
-class FakeRepo : SettingsRepository {
+fileprivate class FakeRepo : SettingsRepository {
     func loadSettings() -> AnyPublisher<SettingsViewData, SettingsError> {
         return Just(SettingsViewData(defaultComfortTemperature: Temperature(value: 20.0)))
             .setFailureType(to: SettingsError.self)

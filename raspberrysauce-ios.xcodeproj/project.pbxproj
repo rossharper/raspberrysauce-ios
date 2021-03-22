@@ -98,6 +98,9 @@
 		91DB8BBC1E1400750006AF0C /* HeatingMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DB8BBB1E1400750006AF0C /* HeatingMode.swift */; };
 		91DB8BBD1E1400750006AF0C /* HeatingMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91DB8BBB1E1400750006AF0C /* HeatingMode.swift */; };
 		91DB8BBE1E14155B0006AF0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 916A95A31E09C2D300C512D3 /* Assets.xcassets */; };
+		91F2A35F2609051A00A3E8A8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F2A35E2609051A00A3E8A8 /* HomeView.swift */; };
+		91F2A36626090B5800A3E8A8 /* HeatingModePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F2A36526090B5800A3E8A8 /* HeatingModePicker.swift */; };
+		91F2A36D26090C5200A3E8A8 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F2A36C26090C5200A3E8A8 /* HomeViewModel.swift */; };
 		CC349B0C26AA5AA66F682797 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 236320A2BBF218EE1F427E97 /* AssetsLibrary.framework */; };
 		F06FFE7D21CD2A1100FA6748 /* ApiModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06FFE7C21CD2A1100FA6748 /* ApiModels.swift */; };
 		F06FFE7E21CD2A2600FA6748 /* ApiModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06FFE7C21CD2A1100FA6748 /* ApiModels.swift */; };
@@ -244,6 +247,9 @@
 		91DB8BB31E130A580006AF0C /* SauceApiBackgroundHomeViewProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SauceApiBackgroundHomeViewProvider.swift; sourceTree = "<group>"; };
 		91DB8BB71E13E4C30006AF0C /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoadingViewController.swift; path = ../App/LoadingViewController.swift; sourceTree = "<group>"; };
 		91DB8BBB1E1400750006AF0C /* HeatingMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeatingMode.swift; sourceTree = "<group>"; };
+		91F2A35E2609051A00A3E8A8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		91F2A36526090B5800A3E8A8 /* HeatingModePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeatingModePicker.swift; sourceTree = "<group>"; };
+		91F2A36C26090C5200A3E8A8 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		F06FFE7C21CD2A1100FA6748 /* ApiModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiModels.swift; sourceTree = "<group>"; };
 		F06FFE7F21CD766F00FA6748 /* SetPointChangerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPointChangerFactory.swift; sourceTree = "<group>"; };
 		F06FFE8221CD768C00FA6748 /* SetPointChanger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPointChanger.swift; sourceTree = "<group>"; };
@@ -298,6 +304,7 @@
 				910F5BD026064D93007F1F43 /* TemperatureValueStepper.swift */,
 				910F5BE42606639E007F1F43 /* LoadingView.swift */,
 				910F5BF0260663E8007F1F43 /* ErrorView.swift */,
+				91F2A36526090B5800A3E8A8 /* HeatingModePicker.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -331,6 +338,7 @@
 		9111B1F41E0946F700B309D5 /* raspberrysauce-ios */ = {
 			isa = PBXGroup;
 			children = (
+				91F2A35D260904FB00A3E8A8 /* HomeView */,
 				917141D21FCB0B2800E9CD6F /* Schedule */,
 				917141CB1FCAEDD100E9CD6F /* Settings */,
 				91DB8BA81E12E9D10006AF0C /* App */,
@@ -561,6 +569,15 @@
 				9124FC231E0C3C6F009D0699 /* HeatingModeChanger.swift */,
 			);
 			path = HeatingMode;
+			sourceTree = "<group>";
+		};
+		91F2A35D260904FB00A3E8A8 /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				91F2A35E2609051A00A3E8A8 /* HomeView.swift */,
+				91F2A36C26090C5200A3E8A8 /* HomeViewModel.swift */,
+			);
+			path = HomeView;
 			sourceTree = "<group>";
 		};
 		9D2EDB750A74F5AB38DB64E8 /* Frameworks */ = {
@@ -828,6 +845,8 @@
 				91DB8BA11E0C8E910006AF0C /* TemperatureColor.swift in Sources */,
 				F06FFE8321CD768C00FA6748 /* SetPointChanger.swift in Sources */,
 				9105EA642607AC0A00B40DC6 /* SauceApiSettingsRepository.swift in Sources */,
+				91F2A36D26090C5200A3E8A8 /* HomeViewModel.swift in Sources */,
+				91F2A36626090B5800A3E8A8 /* HeatingModePicker.swift in Sources */,
 				9124FC121E0BF6B8009D0699 /* HomeViewDataProvider.swift in Sources */,
 				910F5BD126064D93007F1F43 /* TemperatureValueStepper.swift in Sources */,
 				9124FC241E0C3C6F009D0699 /* HeatingModeChanger.swift in Sources */,
@@ -853,6 +872,7 @@
 				91BF44D31E096BF1004EAE03 /* UrlSessionNetworking.swift in Sources */,
 				9111B1F61E0946F700B309D5 /* AppDelegate.swift in Sources */,
 				916A95911E09A58700C512D3 /* TemperatureProvider.swift in Sources */,
+				91F2A35F2609051A00A3E8A8 /* HomeView.swift in Sources */,
 				91BF44C91E096314004EAE03 /* SignInViewController.swift in Sources */,
 				9105EA4726066A8C00B40DC6 /* SettingsViewController.swift in Sources */,
 				91BF44D11E0969F4004EAE03 /* Networking.swift in Sources */,

@@ -32,19 +32,6 @@ struct TemperatureValueStepper: View {
                 ).onChange(of: tempValue) { _ in
                     onChanged(Temperature(value: tempValue))
                 }
-                    
-                
-                
-//
-//                    onIncrement: {
-//                        onIncrement(value)
-//                    },
-//                    onDecrement: {
-//                        onDecrement(value)
-//                    },
-//                    label: {
-//                        Text(value.description)
-//                    })
             }
         }
         .padding()

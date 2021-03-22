@@ -64,8 +64,10 @@
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES"
       launchAutomaticallySubstyle = "32">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <RemoteRunnable
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.Carousel"
+         RemotePath = "/Raspberry Sauce">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "916A959D1E09C2D200C512D3"
@@ -73,7 +75,7 @@
             BlueprintName = "raspberrysaucewatch"
             ReferencedContainer = "container:raspberrysauce-ios.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </RemoteRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -82,8 +84,10 @@
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES"
       launchAutomaticallySubstyle = "32">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <RemoteRunnable
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.Carousel"
+         RemotePath = "/Raspberry Sauce">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "916A959D1E09C2D200C512D3"
@@ -91,7 +95,16 @@
             BlueprintName = "raspberrysaucewatch"
             ReferencedContainer = "container:raspberrysauce-ios.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </RemoteRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "916A959D1E09C2D200C512D3"
+            BuildableName = "raspberrysaucewatch.app"
+            BlueprintName = "raspberrysaucewatch"
+            ReferencedContainer = "container:raspberrysauce-ios.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
